@@ -73,7 +73,7 @@ public class PageTag extends SimpleTagSupport{
     @Override
     public void doTag() throws JspException, IOException {
         super.doTag();
-        List<String> options = new ArrayList<>();
+        List<String> options = new ArrayList<String>();
         String url = "<a href='%s?curpage=%d&pagesize=%d&%s'>%s</a>";
         //第一页
         String first = String.format(url, this.controller,1,this.pagesize,this.where,"第一页");

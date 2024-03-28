@@ -35,7 +35,7 @@ public class limitServlet extends HttpServlet{
 	        stmt.setInt(1, (curpage - 1) * pagesize);
 	        stmt.setInt(2, pagesize);
 	        ResultSet rs = stmt.executeQuery();
-	        List<products> list = new ArrayList<>();
+	        List<products> list = new ArrayList<products>();
 	        while(rs.next()) {
 	            list.add(new products(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getInt(4)));
 	        }

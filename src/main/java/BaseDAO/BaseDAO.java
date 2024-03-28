@@ -141,9 +141,8 @@ public class BaseDAO {
 	 */
 	public Object singleObject(String sql, Object...params) {
 		List<Object> list = this.executeQuery(sql, new Mapper<Object>() {
-			@Override
 			public List<Object> map(ResultSet rs) throws SQLException {
-				List<Object> list = new ArrayList<>();
+				List<Object> list = new ArrayList<Object>();
 				while(rs.next()) {
 					Object obj = rs.getObject(1);
 					list.add(obj);

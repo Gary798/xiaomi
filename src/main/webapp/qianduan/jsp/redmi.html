@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+			.title{
+				width: 100%;
+				height: 50px;
+				position: fixed;
+				top: 0px;
+				background: white;
+				
+			}
+			.big-box{
+				width: 100%;
+				margin: 0px auto;
+			}
+			#left li{
+				float: left;
+			}
+			ul{
+				margin-right: 10px;
+			}
+			#right li{
+				float: right;
+			}
+			.small{
+				font-size: 10px;
+				color: black;
+				padding: 18px 5px;
+			}
+			.big{
+				padding: 15px 10px;
+				font-size: 15px;
+				color: black;
+			}
+			.title a:hover{
+				color: #FFA500;
+			}
+			.left{
+				width: 650px;
+				margin-left: 60px;
+				margin-top: 50px;
+				float: left;
+			}
+			.left img{
+				width: 560px;
+				height: 560px;
+			}
+			.right{
+				width: 800px;
+				float: left;
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+			h2{
+				margin: 15px;
+			}
+			.jieshao{
+				width: 700px;
+				color: #A9A9A9;
+			}
+			.jieshao a{
+				color: orange;
+			}
+			.xi{
+				margin-top: 20px;
+				color: orange;
+			}
+			.price{
+				margin-top: 5px;
+				margin-bottom: 20px;
+				font-size: 20px;
+				color: orange;
+			}
+			.address{
+				width: 700px;
+				height: 100px;
+				margin-top: 30px;
+				border: 1px solid #A9A9A9;
+			}
+			.address div{
+				width: 600px;
+				height: 20px;
+				padding-left: 30px;
+				margin-left: 10px;
+				display: block;
+			}
+			.diz{
+				padding: 20px 15px;
+			}
+			.diz img{
+				width: 25px;
+				height: 25px;
+				position: relative;
+				top: 5px;
+			}
+			.h{
+				color: #FFA500;
+			}
+			.bb{
+				width: 700px;
+				margin-top: 25px;
+			}
+			.bb button{
+				width: 300px;
+				height: 50px;
+				border: 1px solid #e0e0e0;
+				font-size: 16px;
+				margin: 5px;
+			}
+			.bb button:hover{
+				color: #FFA500;
+				border: 1px solid #FFA500;
+			}
+			.dj{
+				font-size: 15px;
+				color: #FFA500;
+				float: right;
+			}
+			.box{
+				width: 700px;
+				height: 120px;
+				border: 1px solid #e0e0e0;
+			}
+			.nav{
+				padding-bottom: 10px;
+			}
+			.xiao{
+				width: 200px;
+				margin-top: 20px;
+			}
+			.dx{
+				width: 50px;
+				height: 50px;
+				margin-top: 50px;
+				margin-left: 50px;
+			}
+			.dx .img{
+				width: 50px;
+				margin-top: -50px;
+				float: left;
+			}
+			.text{
+				width: 500px;
+				height: 50px;
+				margin-top: -50px;
+				margin-left: 100px;
+			}
+			.text span{
+				width: 150px;
+				background: coral;
+				font-size: 15px;
+				color: white;
+				border-radius: 8px;
+			}
+			.text p{
+				padding-top: 5px;
+				color: #A9A9A9;
+				font-size: 15px;
+			}
+			.box img{
+				width: 80px;
+				height: 80px;
+				padding-left: 10px;
+				padding-top: 40px;
+			}
+			.box input{
+				position: relative;
+				top: 40px;
+				left: 40px;
+			}
+			.fw{
+				color: orange;
+				padding: 5px;
+			}
+			.p{
+				font-size: 15px;
+				padding-left: 200px;
+			}
+			.gwc{
+				margin-top: 50px;
+				width: 300px;
+				height: 50px;
+				background: darkorange;
+				color: white;
+				border: 0px;
+			}
+			.xh{
+				position: relative;
+				top: 11px;
+				margin-left: 10px;
+				width: 150px;
+				height: 50px;
+				background: darkgray;
+				color: white;
+				border: 0px;
+			}
+			.xh span{
+				position: relative;
+				top: -10px;
+				padding-top: -15px;
+			}
+			.xh img{
+				width: 25px;
+				height: 25px;
+				padding-top: 10px;
+			}
+			.sm{
+				text-align: left;
+				padding-left: 20px;
+			}
+			.btm img{
+				width: 1450px;
+				padding-left: 20px;
+			}
+			.xx{
+				width: 600px;
+				margin-top: 10px;
+				color: #A9A9A9;
+			}
+			.xx img{
+				position: relative;
+				top: 5px;
+				width: 20px;
+				height: 20px;
+			}
+			.an{
+				margin-top: 50px;
+			}
+			.an img{
+				position: relative;
+				top: 10px;
+				width: 30px;
+				height: 30px;
+			}
+			.an li{
+				margin-left: 100px;
+				float: left;
+			}
+			.an  li:hover{
+				color: #FFA500;
+			}
+			.bb .def{
+				color: #FFA500;
+				border:1px solid #FFA500;
+			}
+			.gsy{
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			<ul id="left">
+				<li class="big">Redmi K70</li>
+				<li class="small">|</li>
+				<li class="small">
+					<a>Redmi K70E</a>
+				</li>
+				<li class="small">|</li>
+				<li class="small">
+					<a>Redmi K70 Pro</a>
+				</li>
+			</ul>
+			<ul id="right">
+				<li class="big">
+					<a>用户评价</a>
+				</li>
+				<li class="small">|</li>
+				<li class="big">
+					<a>咨询客服</a>
+				</li>
+				<li class="small">|</li>
+				<li class="big">
+					<a>F码通道</a>
+				</li>
+				<li class="small">|</li>
+				<li class="big">
+					<a>参数页</a>
+				</li>
+				<li class="small">|</li>
+				<li class="big">
+					<a href="1.html" class="gsy">概述页</a>
+				</li>
+			</ul>
+		</div>
+		<div class="big-box">
+			<div class="left">
+				<img src="img/qianduan/概述页/pms_1701682022.1651733.png" />
+			</div>
+			<div class="right">
+				<h1>Redmi K70</h1>
+				<div class="jieshao">
+					<a>「购机至高享6期免息」</a>
+					第二代骁龙8｜小米澎湃OS｜狂暴引擎3.0｜冰封散热系统｜2K 护眼屏｜5000mAh超大电量
+					<p title="企业名称：小米通讯技术有限公司
+					企业执照注册号：91110108558521630L
+					企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号
+					企业电话：400-100-5678
+					营业期限：2010年08月25日 至 2040年08月24日
+					经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）" class="xi">小米自营</p>
+					<input  type="text" class="price p1" value="2399元" style="border: 0px;">
+					<input class="price p2" value="2499元" style="border: 0px; text-decoration: line-through;color: #A9A9A9; margin-left: -190px;font-size: 15px;"/>
+					<hr />
+				</div>
+				<div class="address">
+					<div class="diz">
+						<img src="img/qianduan/概述页/位置.png" />
+							<span>北京</span>
+							<span>北京市</span>
+							<span>海淀区</span>
+							<span>清河街道</span>
+							<a class="h">修改</a>
+					</div>
+					
+					<div class="h">有现货</div>
+				</div>
+				
+				<div class="bb" id="GB">
+					<h3>选择版本</h3>
+					<button class="def" id="a1">12G+256GB</button>
+					<button id="a2">12G+512GB</button>
+					<button id="a3">16G+256GB</button>
+					<button id="a4">16G+512GB</button>
+					<button id="a5">16G+1TB</button>
+				</div>
+				<div class="bb"  id="color">
+					<h3>选择颜色</h3>
+					<button class="def">墨羽</button>
+					<button>晴雪</button>
+					<button>竹月蓝</button>
+					<button>浅茄紫</button>
+				</div>
+				<div class="bb radio">
+					<div class="nav">
+						<h3>选择小米提供的尊享换新计划 <a class="dj">了解尊享换新计划></a></h3>
+					</div>
+					<div class="box">
+						<input type="radio" />
+						<div class="xiao">
+							<div class="dx">
+									<div class="img">
+										<img src="img/qianduan/概述页/pms_1700727351.77193332.png" />
+									</div>
+									<div class="text">
+										<h3>保值换新服务<span>已省89元</span></h3>
+										<p>Redmi K70 Pro保值换新服务</p>
+										<a>购买前请阅读<a class="fw">服务条款 | 常见问题 </a><a class="p">29元</a></a>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bb">
+				<ul class="radio1">
+					<li>
+					<div class="nav">
+						<h3>选择小米提供的意外保护 <a class="dj">了解意外保护 ></a></h3>
+					</div>
+					
+					<div class="box">
+						<input type="radio" />
+						<div class="xiao">
+							<div class="dx">
+									<div class="img">
+										<img src="img/qianduan/概述页/79E8B4A5C643271EA2CCA3EA58D460F4.png" />
+									</div>
+									<div class="text">
+										<h3>碎屏保 2年<span>已省114元</span></h3>
+										<p>2年1次碎屏 官方原厂 免费维修</p>
+										<a>购买前请阅读<a class="fw">服务条款 | 常见问题 </a><a class="p">265元</a></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="box">
+							<input type="radio" />
+							<div class="xiao">
+								<div class="dx">
+									<div class="img">
+										<img src="img/qianduan/概述页/79E8B4A5C643271EA2CCA3EA58D460F4.png" />
+									</div>
+									<div class="text">
+										<h3>意外保 1年<span>意外损免费修</span></h3>
+										<p>1年1次意外损坏 官方原厂 免费维修</p>
+										<a>购买前请阅读<a class="fw">服务条款 | 常见问题 </a><a class="p">299元</a></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="box">
+							<input type="radio" />
+								<div class="xiao">
+									<div class="dx">
+											<div class="img">
+												<img src="img/qianduan/概述页/79E8B4A5C643271EA2CCA3EA58D460F4.png" />
+											</div>
+											<div class="text">
+												<h3>碎屏保 1年<span>碎屏免费修</span></h3>
+												<p>1年1次碎屏 官方原厂 免费维修</p>
+												<a>购买前请阅读<a class="fw">服务条款 | 常见问题 </a><a class="p">179元</a></a>
+											</div>
+									</div>
+								</div>
+							</div>
+					</li>
+				</ul>
+				</div>
+			
+					<div class="bb radio3">
+							<div class="nav">
+							<h3>选择小米提供的延长保修 <a class="dj">了解延长保修></a></h3>
+							</div>
+							<div class="box">
+								<input type="radio" />
+								<div class="xiao">
+									<div class="dx">
+										<div class="img">
+										<img src="img/qianduan/概述页/79E8B4A5C643271EA2CCA3EA58D460F4.png" />
+										</div>
+										<div class="text">
+										<h3>延长保 1年<span>质保延长一年</span></h3>
+										<p>性能故障 官方原厂 多次免费维修</p>
+										<a>购买前请阅读<a class="fw">服务条款 | 常见问题 </a><a class="p">129元</a></a>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+				
+				<div class="bb">
+					<ul class="radio2">
+						<li>
+							<div class="nav">
+							<h3>选择小米提供的云空间服务 <a class="dj">了解云空间服务 ></a></h3>
+							</div>
+							<div class="box">
+								<input type="radio" />
+								<div class="xiao">
+										<div class="dx">
+										<div class="img">
+										<img src="img/qianduan/概述页/pms_1600176290.50372543.png" />
+										</div>
+										<div class="text">
+										<h3>云空间月卡 50G<span>6元</span></h3>
+										<p>主商品签收后，自动激活至下单帐号</p>
+										<a>购买前请阅读<a class="fw">注意事项 | 常见问题 </a><a class="p">6元</a></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box">
+								<input type="radio" />
+								<div class="xiao">
+									<div class="dx">
+											<div class="img">
+												<img src="img/qianduan/概述页/pms_1600176290.50372543.png" />
+											</div>
+											<div class="text">
+												<h3>云空间年卡 200G<span>208元</span></h3>
+												<p>主商品签收后，自动激活至下单帐号</p>
+												<a>购买前请阅读<a class="fw">注意事项 | 常见问题 </a><a class="p">208元</a></a>
+											</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box">
+								<input type="radio" />
+								<div class="xiao">
+									<div class="dx">
+											
+											<div class="img">
+												<img src="img/qianduan/概述页/pms_1600176290.50372543.png" />
+											</div>
+											<div class="text">
+												<h3>云空间年卡 50G<span>58元</span></h3>
+												<p>主商品签收后，自动激活至下单帐号</p>
+												<a>购买前请阅读<a class="fw">注意事项 | 常见问题 </a><a class="p">58元</a></a>
+											</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="box">
+								<input type="radio" />
+								<div class="xiao">
+									<div class="dx">
+											<div class="img">
+												<img src="img/qianduan/概述页/pms_1600176290.50372543.png" />
+											</div>
+											<div class="text">
+												<h3>云空间月卡 200G<span>21元</span></h3>
+												<p>主商品签收后，自动激活至下单账号</p>
+												<a>购买前请阅读<a class="fw">注意事项 | 常见问题 </a><a class="p">21元</a></a>
+											</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+					<button class="gwc">加入购物车</button>
+					<button class="xh">
+						<img src="img/qianduan/概述页/爱心.png" />
+						<span>喜欢</span>
+					</button>
+				
+					<div class="xx">
+						<img src="img/qianduan/概述页/打勾.png" />小米自营
+						<img src="img/qianduan/概述页/打勾.png" />小米发货
+						<img src="img/qianduan/概述页/打勾.png" />7天无理由退货（到店自取拆封后不支持）
+						<img src="img/qianduan/概述页/打勾.png" />运费说明
+						<img src="img/qianduan/概述页/打勾.png" />企业信息
+						<img src="img/qianduan/概述页/打勾.png" />7天价格保护
+					</div>
+				
+				
+			</div>
+		</div>
+		
+		<div class="btm">
+				<h1 class="sm">价格说明</h1>
+				<img  src="img/qianduan/概述页/43e2954feb6d1b108438481f1d5b0bd3.png" />
+				
+				<div class="an">
+					<ul>
+						<li><img src="img/qianduan/概述页/扳手.png" />预约维修服务</li>
+						<li><img src="img/qianduan/概述页/7天无理由退货.png"/>7天无理由退货</li>
+						<li><img src="img/qianduan/概述页/15天免费换货_24px..png"/>15天免费换货</li>
+						<li><img src="img/qianduan/概述页/礼物 活动.png"/>满69包邮</li>
+						<li><img src="img/qianduan/概述页/位置.png"/>1100余家售后网店</li>
+					</ul>
+				</div>
+		</div>
+		<script src="js/jquery-3.1.0.js"></script>
+		<script>
+			 $("#a1").click(function(){
+				 $("#GB button").css("color","black")
+				 $("#GB button").css("border","1px solid #e0e0e0")
+				 $(this).css("color","#FFA500")
+				 $(this).css("border","1px solid #FFA500")
+				 $(".p1").val("2399元")
+				 $(".p2").val("2499元")
+			 })
+			 $("#a2").click(function(){
+			 	$("#GB button").css("color","black")
+			 	$("#GB button").css("border","1px solid #e0e0e0")
+			 	$(this).css("color","#FFA500")
+				$(this).css("border","1px solid #FFA500")
+				$(".p1").val("2699元")
+				$(".p2").val("2799元")
+			 })
+			 $("#a3").click(function(){
+			 	$("#GB button").css("color","black")
+			 	$("#GB button").css("border","1px solid #e0e0e0")
+				$(this).css("color","#FFA500")
+				$(this).css("border","1px solid #FFA500")
+				$(".p1").val("2599元")
+				$(".p2").val("2699元")
+			 })
+			 $("#a4").click(function(){
+				$("#GB button").css("color","black")
+			 	$("#GB button").css("border","1px solid #e0e0e0")
+			 	$(this).css("color","#FFA500")
+			 	$(this).css("border","1px solid #FFA500")
+				$(".p1").val("2899元")
+				$(".p2").val("2999元")
+			 })
+			 $("#a5").click(function(){
+			 	$("#GB button").css("color","black")
+			 	$("#GB button").css("border","1px solid #e0e0e0")
+			 	$(this).css("color","#FFA500")
+			 	$(this).css("border","1px solid #FFA500")
+				$(".p1").val("3299元")
+				$(".p2").val("3399元")
+			 })
+			 $("#color button").click(function(){
+			 	$("#color button").css("color","black")
+			 	$("#color button").css("border","1px solid #e0e0e0")
+			 	$(this).css("color","#FFA500")
+			 	$(this).css("border","1px solid #FFA500")
+			 })
+			 $(".radio1 input").click(function(){
+				$(".radio1 input").parent().css("border","1px solid #e0e0e0")
+				$(this).parent().css("border","1px solid #FFA500")
+				$(".radio1 input").prop("checked",false)
+				$(this).prop("checked","true")
+			 })
+			 $(".radio2 input").click(function(){
+				 $(".radio2 input").parent().css("border","1px solid #e0e0e0")
+				 $(this).parent().css("border","1px solid #FFA500")
+			 	$(".radio2 input").prop("checked",false)
+				$(this).prop("checked","true")
+			 })
+			 $(".radio input").click(function(){
+				$(".radio input").parent().css("border","1px solid #e0e0e0")
+				$(this).parent().css("border","1px solid #FFA500")
+			 })
+			 $(".radio3 input").click(function(){
+			 	$(".radio3 input").parent().css("border","1px solid #e0e0e0")
+				$(this).parent().css("border","1px solid #FFA500")
+				var zt = $(this).is(':checked');
+				if(zt == true){
+					$(this).prop("checked",false)
+				}
+			 })
+		</script>
+	</body>
+</html>

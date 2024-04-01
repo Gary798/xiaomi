@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+		    text-decoration: none;
+		}
+		.mi-head{
+			height: 60px;
+			padding: 20px;
+		}
+		.mi-head-tilte{
+			width: 180px;
+			color: #333;
+			font-size: 26px;
+		    font-weight: 500px;
+		    height: 60px;
+		    line-height: 75px;	
+			float: left;
+			position: relative;
+		}
+		#tilte{
+			padding-left: 70px;
+			font-size: 27px;
+		}
+		#pahd{
+			position: absolute;
+			top: 10px;
+		}
+		.mi-mve{
+			float: right;
+			margin-top: 20px;
+			margin-right: -60px;
+		}
+		
+		.mi-id-a{
+			color: #838383;
+			display: inline-block;
+			font-size: 18px;
+			font-weight: 400;
+			height: 40px;
+			line-height: 40px;
+			margin-left: 10px;
+			margin-right: 10px;
+			
+		}
+		
+		
+		.mi-body{
+			text-align: center;
+			position: relative;
+		}
+		.mi-den{
+			width: 550px;
+			height: 650px;
+		    border-radius: 4px;
+		    box-shadow: 0 20px 50px 0 hsla(0,0%,64%,.1);
+		    margin: 0 auto 80px;
+		    padding: 40px 45px;
+		    box-sizing: border-box;
+		    display: inline-block;
+		    min-width: 450px;
+		    overflow: hidden;
+			position: relative;
+			text-align: left;
+		}
+		.mi-zhuce{
+			width: 550px;
+			height: 650px;
+			border-radius: 4px;
+			box-shadow: 0 20px 50px 0 hsla(0,0%,64%,.1);
+			margin: 0 auto 80px;
+			padding: 40px 45px;
+			box-sizing: border-box;
+			display: inline-block;
+			min-width: 450px;
+			overflow: hidden;
+			position: relative;
+			text-align: left;
+		}
+		.mi-den-y{
+			align-items: center;
+			    
+			    flex: none;
+			    position: relative;
+				margin: 0 0 16px;
+		}
+		.mi-den-tilie{
+			    align-self: stretch;
+			    display: inline-block;
+			    display: flex;
+			    flex: auto;
+			    overflow: hidden;
+			    position: relative;
+			    transform: translate(0);
+			    white-space: nowrap;
+				height: 45px;
+				line-height: 41px;
+				
+		}
+		.denlu{
+			display: flex;
+			position: relative;
+			transition: transform .3s;
+			font-size: 25px;
+		    font-weight: 400;
+			color: #ff5c00;
+		    text-shadow: 0 0 .25px currentColor;
+			margin: 0 20px 0 0;
+		
+		}
+		.mi-zhanhao{
+			float: left;
+			width:100%;
+			margin-top: 30px;
+			height: 350px;
+			
+		}
+		.name{
+			    padding: 30px 20px 10px;
+				background: transparent;
+				border: none;
+			    appearance: none;
+			    box-sizing: border-box;
+			    color: #333;
+			    font-size: 18px;
+			    height: 75px;
+			    line-height: 20px;
+				background-color: whitesmoke;
+				width: 100%;
+		}
+		.pass{
+			padding: 30px 20px 10px;
+			background: transparent;
+			border: none;
+			appearance: none;
+			box-sizing: border-box;
+			color: #333;
+			font-size: 18px;
+			height: 75px;
+			line-height: 20px;
+			background-color: whitesmoke;
+			width: 100%;
+		}
+		.mi-label{
+			left: 20px;
+			color: rgba(0, 0, 0, .4);
+		    font-size: 17px;
+		    font-weight: 400;
+		    height: 20px;
+		    line-height: 20px;
+		    max-width: calc(100% - 20px);
+		    overflow: hidden;
+		    position: absolute;
+		    text-overflow: ellipsis;
+		    top: 20px;
+		    transition: top .15s cubic-bezier(.4,0,.2,1), font-size .15s cubic-bezier(.4,0,.2,1), color .15s cubic-bezier(.4,0,.2,1);
+		    -webkit-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		    white-space: nowrap;
+			margin-top: 50px;
+		}
+		.mi-form-zhan{
+			margin-top: 20px;
+		}
+		
+		.mi-danxun{
+			width: 20px;
+			height: 20px;
+			direction: ltr;
+			display: block;
+		}
+		.mi-gui{
+			margin-top: 15px;
+			height: 25px;
+			color: #838383;
+		}
+		.danxun{
+			height: 20px;
+			width: 20px;
+			background-color: #ff5c00;
+			margin: 4px;
+		}
+		.mi-button{
+			background-color: #ff5c00;
+			    border: none;
+			    border-radius: 4px;
+			    cursor: pointer;
+			    padding: 0 20px;
+			    text-align: center;
+			width: 100%;
+			color: white;
+			
+			display: inline-block;
+			    font-size: 18px;
+			    font-weight: 400;
+			    height: 75px;
+			    line-height: 60px;
+			    overflow: hidden;
+			    position: relative;
+			    text-overflow: ellipsis;
+			    transition: all .3s cubic-bezier(.645,.045,.355,1);
+			    vertical-align: top;
+			    white-space: nowrap;
+		}
+		.mi-touch{
+			left: 0;
+			    right: 0;
+				    border-radius: inherit;
+					bottom: 0;
+					    overflow: hidden;
+					    pointer-events: none;
+					    position: absolute;
+					    top: 0;
+					    z-index: 0;
+		}
+		.mi-action{
+			color: #ff5c00;
+		}
+		.mi-dibu{
+			padding: 0px 20px;
+			text-align: center;
+		    color: #999;
+		    font-size: 14px;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+			padding-top: 110px;
+		}
+		.mi-background{
+			height: 100%;
+			float: left;
+		}

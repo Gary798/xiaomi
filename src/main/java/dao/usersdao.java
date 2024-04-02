@@ -1,5 +1,9 @@
 package dao;
 
-public class usersdao {
+import java.util.Map;
 
+import BaseDAO.BaseDAO;
+
+public class usersdao extends BaseDAO{
+	
 }

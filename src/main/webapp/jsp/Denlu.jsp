@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<title></title>
 	</head>
-<link rel="stylesheet" href="../css/Denlu.css"/>
+<link rel="stylesheet" href="../css/Denlu.css?v=1"/>
 	<script>
 	  function toggleElements() {
 	    var element1 = document.getElementById("element1");
@@ -20,16 +20,43 @@
 	      element2.style.display = "block";
 	    }
 	  }
+	  function checkRadioButton() {
+          // 获取单选框元素
+          var radioButton = document.getElementById("myRadioButton");
+
+          // 检查单选框是否被选中
+          if (radioButton.checked) {
+        	  return true;
+             
+          } else {
+              alert("请勾选小米用户协议及隐私政策");
+              return false;
+          }
+      }
+	  
+	  function jiaz(){
+			var tijiao=document.querySelector("#tijiao");
+			tijiao.onclick=function(e){
+				var zhao=document.querySelector("#zh").value;
+				var mm=document.querySelector("#mm").value;
+				if(zhao==" "||mm==" "){
+					alert("账号和密码不能为空");
+					return false;
+				}else{
+					return true;
+				}
+			}
+		}
 	</script>
 	<body>
 		<div>
 		<div class="mi-background" style="background-position: 50%;background-size: cover;width: 25%;">
-			<img style="width: 100%;height: 1000px;" src="../img/ent/登录背景.jpg"/>
+			<img style="width: 100%;height: 1000px;" src="../img/登录背景.jpg"/>
 		</div>
 		<div style="width: 70%; float: left;">
 		<div class="mi-head">
 			<div class="mi-head-tilte">
-				<img id="pahd" src="../img/ent/标题.png" width="60" height="60" />
+				<img id="pahd" src="../img/标题.png" width="60" height="60" />
 				<span id="tilte">小米账号</span>
 			</div>
 			
@@ -58,22 +85,22 @@
 				
 				<div class="mi-zhanhao">
 				
-						<form class="mi-form">
+						<form class="mi-form" action="DenluServlet" method="post" onsubmit="return checkRadioButton()">
 							<div class="mi-form-zhan">
-								<input class="name" type="text"  placeholder="手机号/账号"/>
+								<input class="name" name="zhan" type="text" id="zh" placeholder="手机号/账号"/>
 							</div>
 							<div class="mi-form-zhan">
-								<input class="pass" type="password"  placeholder="密码"/>
+								<input class="pass" name="pass" type="password" id="mm"  placeholder="密码"/>
 							</div>
-						</form>
+						
 						
 						<div class="mi-gui">
-							<span class="mi-danxun"><input class="danxun" type="checkbox"/></span>
+							<span class="mi-danxun"><input class="danxun" type="checkbox" id="myRadioButton" /></span>
 							<span style="font-size: 18px;float: left;position:relative;bottom: 18px;left: 35px">已阅读并同意小米账号<a style="color: #333;" href="">用户协议</a>和<a href="" style="color: #333;">隐私政策</a></span>
 						</div>
 						
-						<button type="submit" class="mi-button" style="margin-top: 20px;margin-bottom: 10px;">登录<span class="mi-touch"></span></button>
-						
+						<button type="submit" class="mi-button" id="tijiao" style="margin-top: 20px;margin-bottom: 10px;">登录<span class="mi-touch"></span></button>
+						</form>
 						<div class="mi-action">
 							<div class="mi-wanji" style="float: left;margin-bottom: 10px;"><a href="" style="color: #ff5c00;font-size: 18px;">忘记密码?</a></div>
 							<div class="mi-shouji" style="float:right;margin-bottom: 10px;"><a href="" style="color: #ff5c00;font-size: 18px;">手机号登录</a></div>
@@ -85,9 +112,6 @@
 					</div>
 					
 			</div>
-			
-			
-			
 			
 			
 			
@@ -105,24 +129,26 @@
 					</div>
 				</div>
 				
-				
 				<div class="mi-zhanhao">
-						<form class="mi-form">
-							<div class="mi-form-zhan">
-								<input class="name" type="text"  placeholder="账号"/>
+						<form class="mi-form" action="ZhuceServlet" method="post" onsubmit="return checkRadioButton1()">
+						<div class="mi-form-zhan">
+								<input class="nichen" type="text" name="name"    placeholder="昵称"/>
 							</div>
 							<div class="mi-form-zhan">
-								<input class="pass" type="password"  placeholder="密码"/>
+								<input class="name" type="text" name="zhan" id="zh"  placeholder="账号"/>
 							</div>
-						</form>
+							<div class="mi-form-zhan">
+								<input class="pass" type="password" name="pass" id="mm"  placeholder="密码"/>
+							</div>
+						
 						
 						<div class="mi-gui">
-							<span class="mi-danxun"><input class="danxun" type="checkbox"/></span>
+							<span class="mi-danxun"><input class="danxun" type="checkbox" id="myRadioButton" /></span>
 							<span style="font-size: 18px;float: left;position:relative;bottom: 18px;left: 30px">已阅读并同意小米账号<a style="color: #333;" href="">用户协议</a>和<a href="" style="color: #333;">隐私政策</a></span>
 						</div>
 						
-						<button type="submit" class="mi-button" style="margin-top: 20px;margin-bottom: 10px;">注册<span class="mi-touch"></span></button>
-						
+						<button type="submit" class="mi-button" id="tijiao" style="margin-top: 20px;margin-bottom: 10px;">注册<span class="mi-touch"></span></button>
+						</form>
 						
 					</div>
 					

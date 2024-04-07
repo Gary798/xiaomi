@@ -1,5 +1,7 @@
 package entity;
 
+import java.sql.Timestamp;
+
 public class users {
 	private Integer user_id;
 	private String user_name;
@@ -10,6 +12,10 @@ public class users {
 	private String img_url;
 	private Integer user_integral;
 	private Integer user_state;
+	private Integer user_identity;
+	private Timestamp createtime;
+	
+	
 	public Integer getUser_id() {
 		return user_id;
 	}
@@ -37,8 +43,21 @@ public class users {
 	public Integer getUser_state() {
 		return user_state;
 	}
+	public Timestamp getCreatetime() {
+		return createtime;
+	}
+	public void setCreatetime(Timestamp createtime) {
+		this.createtime = createtime;
+	}
+	public Integer getUser_identity() {
+		return user_identity;
+	}
+	public void setUser_identity(Integer user_identity) {
+		this.user_identity = user_identity;
+	}
 	public users(Integer user_id, String user_name, String user_sex, String user_account, String user_password,
-			String user_tele, String img_url, Integer user_integral, Integer user_state) {
+			String user_tele, String img_url, Integer user_integral, Integer user_state, Integer user_identity,
+			Timestamp createtime) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
@@ -49,8 +68,12 @@ public class users {
 		this.img_url = img_url;
 		this.user_integral = user_integral;
 		this.user_state = user_state;
+		this.user_identity = user_identity;
+		this.createtime = createtime;
 	}
 	public users() {
 		super();
 	}
+
+	
 }

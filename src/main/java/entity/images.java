@@ -31,4 +31,12 @@ public class images {
 		public images() {
 			super();
 		}
+		/**
+		 * @param img_url
+		 */
+		public images(String img_url) {
+			super();
+			this.img_url = img_url;
+		}
+		
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<!DOCTYPE html>
 	<html>
 		<head>
@@ -10,6 +11,7 @@
 			<link rel="stylesheet" href="../css/jquery.bxslider.css">
 			<!--首页样式-->
 			<link rel="stylesheet" href="../css/小米首页.css"/>
+			<link rel="stylesheet" href="../css/xiala.css"/>
 			<script src="../js/jquery-1.11.3.min.js"></script>
 			<script src="../js/jquery.bxslider.js"></script> 
 			<style>
@@ -80,8 +82,31 @@
 								</form>
 						</div>
 						<div class="xiala">
-							<div class="navDiv">1</div>
-							<div class="navDiv">2</div>
+							<div class="navDiv">
+							<ul class="children-list">
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
+								
+							</ul></div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
 							<div class="navDiv">3</div>
 							<div class="navDiv">4</div>
 							<div class="navDiv">5</div>
@@ -374,69 +399,69 @@
 						
 					</div>
 			<!--下拉列表的js-->
-			<script>
-				$(function(){
-					$(".nav_ul li").mouseover(function(){
-						//显示总容器
-						$(".xiala").css('height','180px');
-						// 获取第几个元素触发
-						var index = $(this).index();
+						<script>
+							$(function(){
+								$(".nav_ul li").mouseover(function(){
+									//显示总容器
+									$(".xiala").css('height','229px');
+									// 获取第几个元素触发
+									var index = $(this).index();
+									
+									if(index === 0) {
+										return; // 不处理第一个 li 元素
+									}
+									
+									//隐藏所有
+									$('.navDiv').hide();
+									//只显示当前
+									$('.navDiv').eq(index-1).show();
+									
+									// 当鼠标悬停在最后两个 <li> 上时，设置 .xiala 的高度为 0
+									if (index >= $(".nav_ul li").length - 2) {
+										$(".xiala").css('height', '0');
+									}
+								});
 						
-						if(index === 0) {
-							return; // 不处理第一个 li 元素
-						}
-						
-						//隐藏所有
-						$('.navDiv').hide();
-						//只显示当前
-						$('.navDiv').eq(index-1).show();
-						
-						// 当鼠标悬停在最后两个 <li> 上时，设置 .xiala 的高度为 0
-						if (index >= $(".nav_ul li").length - 2) {
-							$(".xiala").css('height', '0');
-						}
-					});
-			
-					$(".navDiv").mouseover(function(){
-						// 显示总容器
-						$(".xiala").css('height', '180px');
-						
-						// 获取当前元素的索引
-						var index = $(this).index('.navDiv');
-						
-						// 隐藏所有 .navDiv
-						$('.navDiv').hide();
-						
-						// 显示当前对应的 .navDiv
-						$('.navDiv').eq(index).show();
-					});
-					
-					//移出列表
-					$(".xiala").mouseout(function(e){
-						// 设置总容器
-						$(".xiala").css('height','0');
-						// 判断鼠标移动到的目标不是 .nav_ul 下的子元素时才隐藏
-						if ($(e.relatedTarget).closest('.nav_ul li').length === 0) {
-							$('.navDiv').hide();
-						}
-					});
-					//悬停在第一个li上
-					  $(".nav_ul li:first-child").mouseover(function(){
-					        // 鼠标悬停在第一个 li 元素上时执行移出列表的操作
-					        $(".xiala").css('height', '0');
-					        $('.navDiv').hide();
-					    });
-					//移出列表
-					$(".nav_ul li span").mouseout(function(e){
-						// 设置总容器
-						$(".xiala").css('height','0');
-						// 判断鼠标移动到的目标不是 .nav_ul 下的子元素时才隐藏
-						if ($(e.relatedTarget).closest('.nav_ul li').length === 0) {
-							$('.navDiv').hide();
-						}
-					});
-				});
-			</script>
+								$(".navDiv").mouseover(function(){
+									// 显示总容器
+									$(".xiala").css('height', '229px');
+									
+									// 获取当前元素的索引
+									var index = $(this).index('.navDiv');
+									
+									// 隐藏所有 .navDiv
+									$('.navDiv').hide();
+									
+									// 显示当前对应的 .navDiv
+									$('.navDiv').eq(index).show();
+								});
+								
+								//移出列表
+								$(".xiala").mouseout(function(e){
+									// 设置总容器
+									$(".xiala").css('height','0');
+									// 判断鼠标移动到的目标不是 .nav_ul 下的子元素时才隐藏
+									if ($(e.relatedTarget).closest('.nav_ul li').length === 0) {
+										$('.navDiv').hide();
+									}
+								});
+								//悬停在第一个li上
+								  $(".nav_ul li:first-child").mouseover(function(){
+								        // 鼠标悬停在第一个 li 元素上时执行移出列表的操作
+								        $(".xiala").css('height', '0');
+								        $('.navDiv').hide();
+								    });
+								//移出列表
+								$(".nav_ul li span").mouseout(function(e){
+									// 设置总容器
+									$(".xiala").css('height','0');
+									// 判断鼠标移动到的目标不是 .nav_ul 下的子元素时才隐藏
+									if ($(e.relatedTarget).closest('.nav_ul li').length === 0) {
+										$('.navDiv').hide();
+									}
+								});
+							});
+						</script>
 			<script>
 				$(function(){
 				    $(".con1_masking ul li").mouseover(function(){

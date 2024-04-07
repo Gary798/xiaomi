@@ -595,20 +595,6 @@
 					background: #ff6700;
 					color: #fff;
 				}
-				/** 下拉*/
-				.xiala {
-				  position: relative;
-				  background-color: rgba(0, 0, 0, .5);;
-				  transition: height 0.3s ease; /* 定义高度变化的过渡效果 */
-				  z-index: 9999;
-				  top: -35px;
-				}
-				.navDiv{
-					display: none;
-					height: 180px;
-					transition: display 0.3s ease; /* 定义显示/隐藏的过渡效果 */
-					color: #f5f5f5;
-				}
 				/**二级联动div*/
 				.com_2{
 					position: absolute;

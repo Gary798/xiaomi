@@ -43,4 +43,9 @@ public class usersdao extends BaseDAO{
 		},sname,spass);
 	}
 	
+	public int Xiugai(String tupian,String name,String sex,String tele,String id) {
+		String sql = "UPDATE users SET img_url=?,user_name=?,user_sex=?,user_tele=? WHERE user_id=?";
+		return this.execute(sql, tupian,name,sex,tele,id);
+	}
+	
 }

@@ -7,6 +7,8 @@
 		<title></title>
 	</head>
 	<link rel="stylesheet" href="../css/Geren.css"/>
+	<script src="../js/jquery-3.5.1.min.js">
+	</script>
 	<body>
 		<div class="header">
 					<div class="header_center">
@@ -87,15 +89,34 @@
 				<div id="a4" >
 					<div class="poral">
 						<div class="user-card">
-							<h2 class="username">${list.get(0).getUser_name()}</h2>
+							<h2 class="username" value="name">${list.get(0).getUser_name()}</h2>
 							<p class="tip">下午好~</p>
-							<a href="">修改个人信息 ></a>
-							<img src="../img/1.jpg" width="150" height="150" alt="" class="avatar"/>
+							<a id="uid" style="display: none;">${list.get(0).getUser_id() }</a>
+							<a id="tupian" style="display: none;">${list.get(0).getImg_url() }</a>
+							<a id="sex" style="display: none;">${list.get(0).getUser_sex() }</a>
+							
+							<a id="xougai">修改个人信息 ></a>
+							<script type="text/javascript">
+								$(function() {
+									$("#xougai").click(function() {
+										var name=$(".username").html();
+										var tele=$(".tel").html();
+										var id=$("#uid").html();
+										var tupian=$("#tupian").html();
+										var sex=$("#sex").html();
+										window.location.href = "Xiugai.jsp?name="+name+"&tele="+tele+"&id="+id+"&tupian="+tupian+"&sex="+sex;
+										
+									})
+								})
+							</script>
+							
+							
+							<img src="../img/${list.get(0).getImg_url() }" width="150" height="150" alt="" class="avatar"/>
 						</div>
 						<div class="user-action">
 							<ul class="user-list">
 								<li>账号安全:<span class="level">普通</span></li>
-								<li>绑定手机:<span class="tel">${list.get(0).getUser_tele()}</span></li>
+								<li>绑定手机:<span class="tel" value="tele" id="tele">${list.get(0).getUser_tele()}</span></li>
 								<li>绑定邮箱:<span class="tel">未绑定</span></li>
 							</ul>
 						</div>

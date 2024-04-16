@@ -1,0 +1,57 @@
+.left_ul {
+    float: left;
+    width: 100%;
+}
+
+.left_ul ul {
+    display: none;
+}
+
+.left_ul > li {
+    width: 100%;
+    color: #a7b1c2;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    border-left: 3px solid transparent; /* 初始状态下左边框透明 */
+    transition: border-color 0.3s ease; /* 添加边框颜色过渡动画 */
+}
+
+/* 悬浮状态下的样式 */
+.left_ul > li:hover {
+    background-color: #293846; /* 悬浮时改变背景颜色 */
+    color: #fff; /* 悬浮时改变字体颜色 */
+}
+
+.left_ul > li.active {
+    border-left-color: #f39c12; /* 点击后添加左边框颜色 */
+    background-color: #293846; /* 点击后改变背景颜色 */
+    color: #fff; /* 点击后改变文字颜色 */
+}
+
+.left_ul > li > span {
+    display: inline-block;
+    padding: 10px 15px 10px 20px;
+}
+
+.li2_ul li span {
+    display: inline-block;
+    padding: 10px 75px 10px 54px;
+    margin: 0 3px;
+    font-size: 13px;
+}
+
+.li2_ul li {
+    font-size: 13px;
+}
+
+.li2_ul li span:hover {
+    color: #fff;
+    background-color: #2f4050;
+}
+
+
+
+
+
+

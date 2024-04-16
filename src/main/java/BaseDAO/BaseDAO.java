@@ -10,8 +10,6 @@ import java.util.List;
 
 /**
  * 父类DAO，为抽象类
- * @author LiZanhong
- *
  */
 public class BaseDAO {
 	/**
@@ -21,7 +19,7 @@ public class BaseDAO {
 	public Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tr03802?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/xm_phone?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456");
 			return conn;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -153,7 +151,11 @@ public class BaseDAO {
 		
 		return list.get(0);//只需要List集合中的第0个元素
 	}
+	
+	
 }
+
+
 
 
 

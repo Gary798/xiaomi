@@ -14,8 +14,9 @@
 				    text-align: center;
 				}
 				.imgdiv img{
-					width: 160px;
+					width: 130px;
 					height: 110px;
+					object-fit: cover;
 				}
 				.xiala_a p{
 					margin: 0;

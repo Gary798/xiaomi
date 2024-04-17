@@ -63,12 +63,15 @@
 					margin-top: 10px;
 					float: left;
 					margin-left: 23px;
+					margin-right: 8px;
 				}
 				.cen_right_box span{
-					margin-right: 23px;
-					display: block;
+					
 					line-height: 40px;
-					float: right;
+					
+				}
+				a{
+				 color: inherit; 
 				}
 				/*导航栏样式*/
 				.nav{
@@ -192,28 +195,31 @@
 					margin-bottom: 8px;
 				}
 				.con3_title h2{
-					font-size: 22px;
-					font-weight: 200;
-					line-height: 60px;
-					color: #333;
-					float: left;
+					    line-height: 60px;
+    					color: #333;
+    					text-align: center;
+    					font-size: 32px;
+    					font-weight: 400;
+    					font-family: STXinwei;
 				}
 				.con3_title a{
-					display: block;
-					font-size: 16px;
-					line-height: 60px;
-					float: right;
+					    display: inline;
+    					font-size: 16px;
+    					float: right;
+    					position: relative;
+    					top: -33px;
+    					right: 10px
 				}
 				.con3_cont{
 					width: 1230px;
 					height: 614px;
-					background: skyblue;
+					
 					margin: 0 auto;
 				}
 				.con3_cont_left{
 					height: 614px;
 					width: 20%;
-					background: plum;
+					
 					float: left;
 				}
 				.con3_cont_left img{
@@ -223,16 +229,16 @@
 				.con3_cont_right{
 					height: 614px;
 					width: 80%;
-					background: pink;
+					margin-top: -14px;
 					float: right;
 				}
 				.con3_cont_right_img{
 					width: 23%;
-					height: 275px;
-					background: greenyellow;
+					height: 295px;
+					background: #fff;
 					float: left;
 					margin-left: 1.7%;
-					margin-top: 20px;
+					margin-bottom: 20px;
 					transition: transform 0.3s;
 					box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 				}
@@ -247,9 +253,18 @@
 				.con4{
 					background: #f5f5f5;
 					padding-top:30px;
-					padding-bottom:30px;
+					padding-bottom:60px;
 				}
-				
+				.con4_top{
+					width: 1230px;
+					height: 120px;
+					margin: 0 auto;
+					background:pink ;
+				}
+				.con4_top img{
+					width: 1230px;
+					height: 120px;
+				}
 				.con4_title{
 					width: 1230px;
 					height: 58px;
@@ -259,28 +274,29 @@
 					margin-bottom: 8px;
 				}
 				.con4_title h2{
-					font-size: 22px;
-					font-weight: 200;
 					line-height: 60px;
-					color: #333;
-					float: left;
+    					color: #333;
+    					text-align: center;
+    					font-size: 32px;
+    					font-weight: 400;
+    					font-family: STXinwei;
 				}
 				.con4_title a{
-					display: block;
-					font-size: 16px;
-					line-height: 60px;
-					float: right;
+					display: inline;
+    					font-size: 16px;
+    					float: right;
+    					position: relative;
+    					top: -33px;
+    					right: 10px
 				}
 				.con4_cont{
 					width: 1230px;
 					height: 614px;
-					background: skyblue;
 					margin: 0 auto;
 				}
 				.con4_cont_left{
 					height: 614px;
 					width: 20%;
-					background: plum;
 					float: left;
 				}
 				.con4_cont_left img{
@@ -290,13 +306,12 @@
 				.con4_cont_right{
 					height: 614px;
 					width: 80%;
-					background: pink;
+					    margin-top: -14px;
 					float: right;
 				}
 				.con4_cont_right_img{
 					width: 23%;
 					height: 275px;
-					background: greenyellow;
 					float: left;
 					margin-left: 1.7%;
 					margin-top: 20px;
@@ -441,7 +456,7 @@
 					padding-bottom: 38px;
 				}
 				.nav_ul li:first-child {
-					  visibility: hidden;
+					 
 				}
 
 				.nav_ul li span{

@@ -15,6 +15,37 @@
 			<script src="../js/jquery-1.11.3.min.js"></script>
 			<script src="../js/jquery.bxslider.js"></script> 
 			<style>
+					.zsimg{
+					margin-left: 30px;
+					margin-top: 20px;
+					width: 160px;
+					height: 160px;
+				}
+				
+				.h3name{
+					text-align: center;
+					    margin: 0 10px 2px;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
+					    overflow: hidden;
+					font-size: 16px;
+				    font-weight: 400;
+				    color: #333;
+				}
+				.pzsname{
+					text-align: center;
+					    margin: 0 10px 10px;
+					    height: 18px;
+					    font-size: 12px;
+					    color:#ff0000a3;
+					     text-overflow: ellipsis;
+					    white-space: nowrap;
+					    overflow: hidden;
+				}
+				.pzsjg{
+					text-align: center;
+					color:#ff6700;
+				}
 				
 			</style>
 		</head>
@@ -53,8 +84,10 @@
 						<span>|</span>
 						<a>消息通知</a>
 						<div class="cen_right_box">
+						<a href="GwServlet">
 							<img src="../img/购物车空-copy.png">
-							<span>购物车(0)</span>
+							<span>购物车(<span>0</span>)</span>
+						</a>
 						</div>
 					</div>
 				</div>
@@ -83,15 +116,35 @@
 						</div>
 						<div class="xiala">
 							<div class="navDiv">
-							<ul class="children-list">
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								<li><a class="xiala_a"><div class="imgdiv"><img src="../img/k70下拉.webp" /></div><div>Redmi K70</div><p>2399起</p></a></li>
-								
-							</ul></div>
+								<ul class="children-list">
+									<c:forEach var="image" items="${listsp1}" varStatus="loop">
+									<li>
+										<a class="xiala_a" href="xq?id=${listsp1[loop.index].pro_id}&Gg=${listGg1[loop.index].spe_id}&Co=${listCo1[loop.index].spe_id}&Jg=${listsp1[loop.index].pri_name}">
+											<div class="imgdiv">
+											<img src="${listtp1[loop.index].img_url}"/>
+											</div>
+											<div>${listsp1[loop.index].pro_name}</div>
+											<p>${listsp1[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a" href="xq?id=${listsp[loop.index].pro_id}&Gg=${listGg[loop.index].spe_id}&Co=${listCo[loop.index].spe_id}&Jg=${listsp[loop.index].pri_name}">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
 							<div class="navDiv">
 								<ul class="children-list">
 									<c:forEach var="image" items="${listtp}" varStatus="loop">
@@ -101,17 +154,72 @@
 											<img src="${listtp[loop.index].img_url}"/>
 											</div>
 											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}</p>
+											<p>${listsp[loop.index].pri_name}起</p>
 										</a>
 									</li>
 								</c:forEach>
 								</ul>
 							</div>
-							<div class="navDiv">3</div>
-							<div class="navDiv">4</div>
-							<div class="navDiv">5</div>
-							<div class="navDiv">6</div>
-							<div class="navDiv">7</div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
+							<div class="navDiv">
+								<ul class="children-list">
+									<c:forEach var="image" items="${listtp}" varStatus="loop">
+									<li>
+										<a class="xiala_a">
+											<div class="imgdiv">
+											<img src="${listtp[loop.index].img_url}"/>
+											</div>
+											<div>${listsp[loop.index].pro_name}</div>
+											<p>${listsp[loop.index].pri_name}起</p>
+										</a>
+									</li>
+								</c:forEach>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -142,16 +250,7 @@
 					<li><span class="lbtspan">电源 配件<img src="../img/右箭头 (1).png"/></span></li>
 				</ul>
 				<div class="com_2">
-					<div class="con1_masking_tow2">1</div>
-					<div class="con1_masking_tow2">2</div>
-					<div class="con1_masking_tow2">3</div>
-					<div class="con1_masking_tow2">4</div>
-					<div class="con1_masking_tow2">5</div>
-					<div class="con1_masking_tow2">6</div>
-					<div class="con1_masking_tow2">7</div>
-					<div class="con1_masking_tow2">8</div>
-					<div class="con1_masking_tow2">9</div>
-					<div class="con1_masking_tow2">10</div>
+					
 				</div>
 				</div>
 				<!-- banner1-->
@@ -194,67 +293,52 @@
 				</div>
 				<div class="con3_cont">
 					<div class="con3_cont_left">
-						<!--<img src="../img/d91bb6cf7da0947e8a6e50e03f4daf06.webp">-->
+						<img src="../img/侧边xm14.webp">
 						
 					</div>
-					<div class="con3_cont_right">
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
-						<div class="con3_cont_right_img"></div>
+						<div class="con3_cont_right">
+					<c:forEach var="zs" items="${listrdsp}" varStatus="loop">
+					<a class="xiala_a" href="xq?id=${listrdsp[loop.index].pro_id}&Gg=${listGgrm[loop.index].spe_id}&Co=${listCorm[loop.index].spe_id}&Jg=${listrdsp[loop.index].pri_name}">
+						<div class="con3_cont_right_img">
+						<img src="${listtprm[loop.index].img_url}" class="zsimg"/>
+						<h3 class="h3name">${listrdsp[loop.index].pro_name}</h3>
+						<p class="pzsname">${listrdsp[loop.index].pro_description}</p>
+						<p class="pzsjg"><span class="zsjg">${listrdsp[loop.index].pri_name}</span>元<span>起</span></p>
+						</div>
+					</a>
+					</c:forEach>
 					</div>
 				</div>
 				
 			</div>
 			<div class="con4">
-				
+				<div class="con4_top">
+					<img  src="../img/con4top.webp">
+				</div>
 				<div class="con4_title">
 					<h2>最新上架</h2>
 					<a>查看更多</a>
 				</div>
 				<div class="con4_cont">
 					<div class="con4_cont_left">
-						<!--<img src="../img/d91bb6cf7da0947e8a6e50e03f4daf06.webp">-->
+						<img src="../img/diannao.webp">
 					</div>
 					<div class="con4_cont_right">
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
-						<div class="con4_cont_right_img"></div>
+						<c:forEach var="zs" items="${listspsj}" varStatus="loop">
+					<a class="xiala_a" href="xq?id=${listspsj[loop.index].pro_id}&Gg=${listGgsj[loop.index].spe_id}&Co=${listCosj[loop.index].spe_id}&Jg=${listspsj[loop.index].pri_name}">
+						<div class="con3_cont_right_img">
+						<img src="${listtpsj[loop.index].img_url}" class="zsimg"/>
+						<h3 class="h3name">${listspsj[loop.index].pro_name}</h3>
+						<p class="pzsname">${listspsj[loop.index].pro_description}</p>
+						<p class="pzsjg"><span class="zsjg">${listspsj[loop.index].pri_name}</span>元<span>起</span></p>
+						</div>
+					</a>
+					</c:forEach>
 					</div>
 				</div>
 				
 			</div>
-			<div class="con5">
-				<div class="con5_title">
-					<h2>商品分类</h2>
-					<a>查看更多</a>
-				</div>
-				<div class="con5_cont">
-					<div class="con5_cont_left">
-						<!--<img src="../img/d91bb6cf7da0947e8a6e50e03f4daf06.webp">-->
-					</div>
-					<div class="con5_cont_right">
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-						<div class="con5_cont_right_img"></div>
-					</div>
-				</div>
-				<div class="con5_wei"><img src="../img/88e35cffc82cd98cd53172460067af17.webp"/></div>
-			</div>
+			
 			<div class="con_bottom">
 				<div class="con6">
 				<div class="con6_1">

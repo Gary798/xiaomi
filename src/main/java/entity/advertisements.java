@@ -4,7 +4,38 @@ public class advertisements {
 	 	private int ad_id;
 	    private String ad_url;
 	    private int ad_display;
-	    private String ad_href;
+	    private int pro_id;
+		/**
+		 * @param ad_url
+		 */
+		public advertisements(String ad_url) {
+			super();
+			this.ad_url = ad_url;
+		}
+		@Override
+		public String toString() {
+			return "advertisements [ad_id=" + ad_id + ", ad_url=" + ad_url + ", ad_display=" + ad_display + ", pro_id="
+					+ pro_id + "]";
+		}
+		/**
+		 * @param ad_id
+		 * @param ad_url
+		 * @param ad_display
+		 * @param pro_id
+		 */
+		public advertisements(int ad_id, String ad_url, int ad_display, int pro_id) {
+			super();
+			this.ad_id = ad_id;
+			this.ad_url = ad_url;
+			this.ad_display = ad_display;
+			this.pro_id = pro_id;
+		}
+		public int getPro_id() {
+			return pro_id;
+		}
+		public void setPro_id(int pro_id) {
+			this.pro_id = pro_id;
+		}
 		public int getAd_id() {
 			return ad_id;
 		}
@@ -23,19 +54,8 @@ public class advertisements {
 		public void setAd_display(int ad_display) {
 			this.ad_display = ad_display;
 		}
-		public String getAd_href() {
-			return ad_href;
-		}
-		public void setAd_href(String ad_href) {
-			this.ad_href = ad_href;
-		}
-		public advertisements(int ad_id, String ad_url, int ad_display, String ad_href) {
-			super();
-			this.ad_id = ad_id;
-			this.ad_url = ad_url;
-			this.ad_display = ad_display;
-			this.ad_href = ad_href;
-		}
+		
+		
 		public advertisements() {
 			super();
 		}

@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.usersdao;
+import dao.usersDAO;
 @WebServlet("/jsp/insertuser")
 public class insertuserServlet extends HttpServlet{
-	usersdao dao = new usersdao();
+	usersDAO dao = new usersDAO();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		    request.setCharacterEncoding("utf-8");

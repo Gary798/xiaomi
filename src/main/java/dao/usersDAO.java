@@ -1,5 +1,4 @@
 package dao;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,10 +8,9 @@ import java.util.Map;
 
 import BaseDAO.BaseDAO;
 import BaseDAO.Mapper;
-import entity.category;
 import entity.users;
 
-public class usersdao extends BaseDAO{
+public class usersDAO extends BaseDAO{
 
 	/**
 	 * 分页查询 
@@ -20,41 +18,6 @@ public class usersdao extends BaseDAO{
 	 * @param pagesize
 	 * @return
 	 */
-	//分页
-	public Map<String, Object> queryByPage(int curpage, int pagesize){
-		String sql = "select * from users order by user_id desc "
-				+ "limit ?,?";
-		List<users> list = this.executeQuery(sql, new Mapper<users>() {
-			@Override
-			public List<users> map(ResultSet rs) throws SQLException {
-				List<users> list = new ArrayList<>();
-				while(rs.next()) {
-					users saying =new users(
-							rs.getInt(1),
-	                        rs.getString(2),
-	                        rs.getString(3),
-	                        rs.getString(4),
-	                        rs.getString(5),
-	                        rs.getString(6),
-	                        rs.getString(7),
-	                        rs.getInt(8),
-	                        rs.getInt(9),
-	                        rs.getInt(10),
-	                        rs.getTimestamp(11)
-							);
-					list.add(saying);
-				}
-				return list;
-			}
-		}, (curpage - 1) * pagesize, pagesize);
-		
-		String sql2 = "select count(*) c from users";
-		Object obj = this.singleObject(sql2);
-		Map<String, Object> map = new HashMap<>();
-		map.put("list", list);
-		map.put("total", obj);
-		return map;
-	}
 	//条件分页
 	public Map<String, Object> queryByPage(String name, String account, int state, String createTime, int curpage, int pagesize) {
 	    String sql = "SELECT * FROM users WHERE 1=1 ";
@@ -83,7 +46,7 @@ public class usersdao extends BaseDAO{
 	    List<users> list = this.executeQuery(sql, new Mapper<users>() {
 	        @Override
 	        public List<users> map(ResultSet rs) throws SQLException {
-	            List<users> list = new ArrayList<>();
+	            List<users> list = new ArrayList<users>();
 	            while (rs.next()) {
 	                users saying = new users(
 	                        rs.getInt(1),
@@ -104,12 +67,9 @@ public class usersdao extends BaseDAO{
 	        }
 	    }, (curpage - 1) * pagesize, pagesize);
 	    
-//	    System.out.println(sql);
-//	    System.out.println(sql2);
-	    
 	    Object obj = this.singleObject(sql2);
 	    
-	    Map<String, Object> map = new HashMap<>();
+	    Map<String, Object> map = new HashMap<String, Object>();
 	    map.put("list", list);
 	    map.put("total", obj);
 	    

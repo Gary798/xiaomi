@@ -137,10 +137,10 @@
 	        	        	$('select[name="upgender"]').val("0");
 	        	        }
 	        	        $('input[name="upaccount"]').val(userAccount);
-	        	        if(userSex=='正常'){
-	        	        	$('select[name="upstatus"]').val("0");
-	        	        }else{
+	        	        if(userState=='正常'){
 	        	        	$('select[name="upstatus"]').val("1");
+	        	        }else{
+	        	        	$('select[name="upstatus"]').val("0");
 	        	        }
 	        	        if(userIdentity=='管理员'){
 	        	        	$('input[name="upisadmin"]').prop('checked', true);
@@ -182,10 +182,10 @@
         	        	$('select[name="upgender"]').val("0");
         	        }
         	        $('input[name="upaccount"]').val(userAccount);
-        	        if(userSex=='正常'){
-        	        	$('select[name="upstatus"]').val("0");
-        	        }else{
+        	        if(userState=='正常'){
         	        	$('select[name="upstatus"]').val("1");
+        	        }else{
+        	        	$('select[name="upstatus"]').val("0");
         	        }
         	        if(userIdentity=='管理员'){
         	        	$('input[name="upisadmin"]').prop('checked', true);
@@ -377,8 +377,6 @@
 					</tr>
 				</c:forEach>
 			 </thead>
-			 <tbody>
-    		</tbody>
 			</table>
 			<!-- 分页 -->
 			<x:page controller="fy" pagesize="8" total="${total}" curpage="${curpage}" />

@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="left">
-    <!-- 标题orlogo -->
+    <!-- 标题logo -->
     <div class="left_title"><p>XiaoMi</p></div>
     <!-- 头像 -->
     <div class="status">

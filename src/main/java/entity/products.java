@@ -11,8 +11,38 @@ public class products {
     private Timestamp pro_time;
     private int pro_statue;
     //临时字段
-    private int cate_name;
+    private String cate_name;
+    private String img_url;
     
+	public products(int pro_id, String pro_name, String pro_description, int pro_sales, Timestamp pro_time,
+			int pro_statue, String cate_name, String img_url) {
+		super();
+		this.pro_id = pro_id;
+		this.pro_name = pro_name;
+		this.pro_description = pro_description;
+		this.pro_sales = pro_sales;
+		this.pro_time = pro_time;
+		this.pro_statue = pro_statue;
+		this.cate_name = cate_name;
+		this.img_url = img_url;
+	}
+
+	public String getImg_url() {
+		return img_url;
+	}
+
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
+	}
+
+	public String getCate_name() {
+		return cate_name;
+	}
+
+	public void setCate_name(String cate_name) {
+		this.cate_name = cate_name;
+	}
+
 	public int getPro_id() {
 		return pro_id;
 	}
@@ -53,17 +83,6 @@ public class products {
 		return pro_statue;
 	}
 	public void setPro_statue(int pro_statue) {
-		this.pro_statue = pro_statue;
-	}
-	public products(int pro_id, String pro_name, String pro_description, int cate_id, int pro_sales, Timestamp pro_time,
-			int pro_statue) {
-		super();
-		this.pro_id = pro_id;
-		this.pro_name = pro_name;
-		this.pro_description = pro_description;
-		this.cate_id = cate_id;
-		this.pro_sales = pro_sales;
-		this.pro_time = pro_time;
 		this.pro_statue = pro_statue;
 	}
 	public products() {

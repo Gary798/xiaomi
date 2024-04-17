@@ -5,16 +5,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.alibaba.fastjson2.JSONArray;
+import dao.categoryDAO;
+import dao.productDAO;
+import entity.category;
+import entity.products;
 
-import dao.usersdao;
-import entity.users;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-@WebServlet(urlPatterns = "/jsp/fy")
-public class limitServlet extends HttpServlet {
-	usersdao dao = new usersdao();
+@WebServlet(urlPatterns = "/jsp/profy")
+public class productServlet extends HttpServlet {
+	productDAO dao = new productDAO();
+	categoryDAO prodao = new categoryDAO();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setCharacterEncoding("utf-8");
@@ -29,23 +31,23 @@ public class limitServlet extends HttpServlet {
        
         //搜索值
         // 获取前端发送的表单数据
-        String name = request.getParameter("uname");
-        String account = request.getParameter("uaccount");
-        String state = request.getParameter("ustate");
-        String creatTime = request.getParameter("creat_time");
-        int State=3;
-        if (state==null) {
-        	 State=3;
+        String name = request.getParameter("pname");
+        String cate = request.getParameter("cate");
+        String pstate = request.getParameter("pstate");
+        String pro_time = request.getParameter("pro_time");
+        int Pstate=3;
+        if (pstate==null) {
+        	Pstate=3;
 		}else {
-			 State=Integer.parseInt(state);
+			Pstate=Integer.parseInt(pstate);
 		}
-     
-		Map<String ,Object> map = dao.queryByPage(name,account,State,creatTime,curpage, pagesize);
-        List<users> list = (List<users>) map.get("list");
+        List<category> prolist = prodao.queryall();  
+		Map<String ,Object> map = dao.queryByPage(name,cate,Pstate,pro_time,curpage, pagesize);
+        List<products> list = (List<products>) map.get("list");
     	 request.setAttribute("curpage", curpage);
     	 request.setAttribute("list", list);
-    	 
+    	 request.setAttribute("prolist", prolist);
     	 request.setAttribute("total",  map.get("total"));
-    	 request.getRequestDispatcher("user.jsp").forward(request, response);
+    	 request.getRequestDispatcher("product.jsp").forward(request, response);
     }
 }

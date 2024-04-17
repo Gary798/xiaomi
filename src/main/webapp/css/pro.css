@@ -1,4 +1,46 @@
 @charset "UTF-8";
+.oy_p{
+	font-size: 14px;
+}
+select{
+	width:40px;
+	margin: 5px 5px;
+	padding: 2px 6px;
+	border-radius:4px;
+}
+a{
+	text-decoration: none;
+	margin: 5px 5px;
+	padding: 2px 6px;
+	border: 1px solid gray;
+	font-size: 12px;
+	border-radius:4px;
+	cursor:pointer;
+}
+.tabdelbtn{
+			background-color: #ef6776;
+			padding: 3px 6px;
+		}
+		.tabdelbtn:hover{
+			background-color: #d9534f;
+		}
+		.tabbjbtn{
+			background-color: #1c84c6;
+			padding: 3px 6px;
+			cursor: pointer;
+		}
+		.tabbjbtn:hover{
+			background-color: #1a7bb9;
+		}
+button{
+			padding: 5px 10px;
+			border: 0px;
+			color: white;
+			border-radius: 3px;
+		}
+
+
+
 .nav{
 	border-radius:10px ;
 	background-color: white;
@@ -79,8 +121,34 @@ table td:nth-child(1)>input{
 	left:10px;
 	
 }
-table td:nth-child(8) { /* 第8列，即"创建时间"那一列 */
-    width: 260px; /* 设置宽度为150像素，根据需要调整 */
+table td:nth-child(3) { /* 第8列，即"创建时间"那一列 */
+    width:53%; /* 设置宽度为150像素，根据需要调整 */
+}
+
+
+.inbtn{
+	background-color: #1c84c6;
+}
+.inbtn:hover{
+	background-color: #1a7bb9;
+}
+.upbtn{
+	background-color: #1dc5a3;
+}
+.upbtn:hover{
+	background-color: #18a689;
+}
+.delbtn{
+	background-color: #ef6776;
+}
+.delbtn:hover{
+	background-color: #d9534f;
+}
+.flubtn{
+	background-color: #f8ac59;
+}
+.flubtn:hover{
+	background-color: #ec971f;
 }
 
 .cont{
@@ -89,4 +157,45 @@ table td:nth-child(8) { /* 第8列，即"创建时间"那一列 */
 	padding: 10px 15px;
 	box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
 	margin-top: 10px;
+}
+.updatebox{
+	width: 800px;
+}
+.proimg{
+	width: 49%;
+	float: left;
+	padding: 10px 0px;
+	text-align: center;
+}
+.proimg img{
+	width: 275px;
+	height:275px;
+	margin:0 auto;
+}
+.procont{
+	width: 50%;
+	float: left;
+	padding: 10px 0px
+}
+.procont textarea{
+	margin-left:25px;
+	outline: none;
+}
+.procont input{
+	margin: 16px 8px;
+}
+#la2{
+	margin-top:0px;
+}
+#la3{
+	margin-top:15px;
+}
+#la4{
+	margin-top:0px;
+}
+#la5{
+	margin-top:15px;
+}
+#proname{
+	margin-top:0px;
 }

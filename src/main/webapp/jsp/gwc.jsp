@@ -354,6 +354,50 @@
 		});
 		</script>
 		<script type="text/javascript">
+		//消失焦点
+$(document).ready(function(){
+    // 当输入框失去焦点时
+    $(".shu input").on("blur", function() {
+        // 获取购物车 ID
+        var carId = $(this).closest('.hang').find('.car_id').text().trim();
+        // 获取数量
+        var quantity = parseInt($(this).val());
+
+        // 确保数量大于等于0
+        quantity = Math.max(0, quantity);
+
+        // 更新页面显示的数量
+        $(this).val(quantity);
+
+        // 发送 AJAX 请求到 Servlet
+        $.ajax({
+            url: "UPServlet",
+            method: "get",
+            data: {
+                carId: carId,
+                quantity: quantity
+            },
+            success: function(response) {
+                // 处理成功响应
+            },
+            error: function(xhr, status, error) {
+                // 处理错误
+                console.error("Error: " + error);
+            }
+        });
+        
+        // 获取单价
+        var danjia = parseFloat($(this).closest('.hang').find('.danjia .jiaqian').text());
+        // 计算小计
+        var xiaoji = danjia * quantity;
+        // 更新小计显示
+        $(this).closest('.hang').find('.xj .je').text(xiaoji.toFixed(2));
+    });
+});
+</script>
+		
+		
+		<script type="text/javascript">
 		$(document).ready(function(){
 		    $(".jian, .jia").on("click", function() {
 		    	// 获取购物车 ID

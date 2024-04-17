@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.usersdao;
 import entity.images;
 import entity.products;
+import entity.shopping_cart;
 
 @WebServlet("/jsp/xiala")
 public class XialaServlet extends HttpServlet {
@@ -24,7 +25,9 @@ public class XialaServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        
+        //测试用户数据
+        int yhid=1;
+        List<shopping_cart> listcount =dao.Gwcsl(yhid);
         List<products> listsp = dao.selectxiala2(0, 6);
         List<products> listsp1 = dao.selectxiala1(0, 6);
         
@@ -66,6 +69,8 @@ public class XialaServlet extends HttpServlet {
         request.setAttribute("listtprm", listtprm);
         request.setAttribute("listGgrm", listGgrm);
         request.setAttribute("listCorm", listCorm);
+        
+        request.setAttribute("listcount", listcount);
         
         request.setAttribute("listspsj", listspsj);
         request.setAttribute("listtpsj", listtpsj);

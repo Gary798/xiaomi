@@ -12,8 +12,25 @@ public class shopping_cart {
     private int car_count;
     private int user_id;
     private Timestamp car_time;
+    private int count;
     
     /**
+	 * @param count
+	 */
+	public shopping_cart(int count) {
+		super();
+		this.count = count;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	/**
 	 * @param car_id
 	 * @param pro_id
 	 * @param img_url
@@ -54,12 +71,13 @@ public class shopping_cart {
 		this.user_id = user_id;
 		this.car_time = car_time;
 	}
+	
 
 	@Override
 	public String toString() {
 		return "shopping_cart [car_id=" + car_id + ", pro_id=" + pro_id + ", img_url=" + img_url + ", pro_name="
 				+ pro_name + ", car_jg=" + car_jg + ", car_count=" + car_count + ", user_id=" + user_id + ", car_time="
-				+ car_time + "]";
+				+ car_time + ", count=" + count + "]";
 	}
 
 	/**

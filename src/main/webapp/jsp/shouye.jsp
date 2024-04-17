@@ -86,7 +86,9 @@
 						<div class="cen_right_box">
 						<a href="GwServlet">
 							<img src="../img/购物车空-copy.png">
-							<span>购物车(<span>0</span>)</span>
+							<c:forEach var="i" items="${listcount}">
+							<span>购物车(<span>${i.count}</span>)</span>
+							</c:forEach>
 						</a>
 						</div>
 					</div>

@@ -78,6 +78,21 @@ public class usersdao extends BaseDAO{
 			
 		},s,l);
 	}
+	public List<shopping_cart> Gwcsl(Integer yhid) {
+		String sql = "SELECT COUNT(*) AS total_items FROM shopping_cart WHERE user_id=?";
+		return this.executeQuery(sql, new Mapper<shopping_cart>() {
+
+			@Override
+			public List<shopping_cart> map(ResultSet rs) throws SQLException {
+				List<shopping_cart> list = new ArrayList<shopping_cart>();
+				while (rs.next()) {
+					shopping_cart sc = new shopping_cart(rs.getInt(1));
+					list.add(sc);
+				}
+				return list;
+			}
+		},yhid);
+	}
 	//主页展示8条数据根据商品上架时间
 		public List<products> selecsj(Integer s,Integer l) {
 			String sql ="SELECT p.pro_id,\n"
@@ -376,6 +391,6 @@ public class usersdao extends BaseDAO{
 	
 	public static void main(String[] args) {
 		usersdao dao = new usersdao();
-		System.out.println(dao.selecsj(0, 8));
+		System.out.println(dao.Gwcsl(1));
 	}
 }

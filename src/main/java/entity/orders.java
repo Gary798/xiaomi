@@ -3,7 +3,7 @@ import java.sql.Timestamp;
 public class orders {
 	private int or_id;
     private int user_id;
-    private int or_state;
+    private String or_state;
     private Timestamp or_time;
     private String or_name;
     private String or_number;
@@ -21,10 +21,10 @@ public class orders {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public int getOr_state() {
+	public String getOr_state() {
 		return or_state;
 	}
-	public void setOr_state(int or_state) {
+	public void setOr_state(String or_state) {
 		this.or_state = or_state;
 	}
 	public Timestamp getOr_time() {
@@ -57,7 +57,7 @@ public class orders {
 	public void setOr_note(String or_note) {
 		this.or_note = or_note;
 	}
-	public orders(int or_id, int user_id, int or_state, Timestamp or_time, String or_name, String or_number,
+	public orders(int or_id, int user_id, String or_state, Timestamp or_time, String or_name, String or_number,
 			String or_address, String or_note) {
 		super();
 		this.or_id = or_id;

@@ -56,17 +56,17 @@ public class users {
 	public void setImg_url(String img_url) {
 		this.img_url = img_url;
 	}
+	public Integer getUser_integral() {
+		return user_integral;
+	}
+	public void setUser_integral(Integer user_integral) {
+		this.user_integral = user_integral;
+	}
 	public Integer getUser_state() {
 		return user_state;
 	}
 	public void setUser_state(Integer user_state) {
 		this.user_state = user_state;
-	}
-	public Timestamp getCreatetime() {
-		return createtime;
-	}
-	public void setCreatetime(Timestamp createtime) {
-		this.createtime = createtime;
 	}
 	public Integer getUser_identity() {
 		return user_identity;
@@ -74,11 +74,18 @@ public class users {
 	public void setUser_identity(Integer user_identity) {
 		this.user_identity = user_identity;
 	}
-	public Integer getUser_integral() {
-		return user_integral;
+	public Timestamp getCreatetime() {
+		return createtime;
 	}
-	public void setUser_integral(Integer user_integral) {
-		this.user_integral = user_integral;
+	public void setCreatetime(Timestamp createtime) {
+		this.createtime = createtime;
+	}
+	@Override
+	public String toString() {
+		return "users [user_id=" + user_id + ", user_name=" + user_name + ", user_sex=" + user_sex + ", user_account="
+				+ user_account + ", user_password=" + user_password + ", user_tele=" + user_tele + ", img_url="
+				+ img_url + ", user_integral=" + user_integral + ", user_state=" + user_state + ", user_identity="
+				+ user_identity + ", createtime=" + createtime + "]";
 	}
 	public users(Integer user_id, String user_name, String user_sex, String user_account, String user_password,
 			String user_tele, String img_url, Integer user_integral, Integer user_state, Integer user_identity,
@@ -98,5 +105,8 @@ public class users {
 	}
 	public users() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
+
+	
 }

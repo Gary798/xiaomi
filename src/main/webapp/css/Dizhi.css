@@ -1,0 +1,145 @@
+	  *{
+		  margin: 0;
+		  padding: 0;
+		  
+	  }
+	  .dizhi{
+		  width: 600px;
+		  height: 320px;
+		  background-color: #f9f9f9;;
+		  margin: 250px auto; /* 左右外边距设置为 auto */
+		  border: 0.5px solid #b0b0b0;
+		  opacity: 1;
+		  overflow: inherit;
+	  }
+	  .box{
+		  width: 100%;
+	  }
+    	
+        /* Style the form container */
+        .form-container {
+            padding: 20px;
+            border-radius: 5px;
+			opacity: 1;
+        }
+
+        /* Style the form fields */
+        select {
+            width: 32%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+			  display: inline-block;
+        }
+
+         .ti{
+            width: 25%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff5c00;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+			margin-right: 20px;
+        }
+		
+		.qu{
+		    width: 25%;
+		    padding: 10px;
+		    border: none;
+		    border-radius: 5px;
+		    background-color: #b0b0b0;
+		    color: #fff;
+		    font-size: 16px;
+		    cursor: pointer;
+		}
+		
+       .ti:hover {
+            background-color: #ef5300;
+        }
+		
+		.qu:hover {
+		     background-color: #939393;
+		 }
+
+        /* Style the result container */
+        .result-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+		.item{
+			display: flex;
+			margin-bottom: 14px;
+			width: 100%;
+		}
+		.item input{
+			color: inherit;
+			font: inherit;
+			margin: 0px 15px 5px 1px;
+			width: 50%;
+			height: 30px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		.myTextarea{
+			height: 111px;
+			width: 98%;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		.mohu{
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.7;
+			background: #000;
+		}
+		.mohu .ii{
+			opacity: 0.5;
+			background-color: #000;
+		}
+		.mi-box{
+			padding: 36px 48px;
+			background-color: #fff;
+			border-bottom: 0.5px solid black;
+		}
+		.shouhuo{
+			    width: 268px;
+			    height: 178px;
+			    border: 1px solid #e0e0e0;
+			    position: relative;
+			    margin-right: 20px;
+			    margin-bottom: 20px;
+				margin-top: 20px;
+				padding:20px;
+				float: left;
+		}
+		.wos{
+			width:810px;
+		}
+		.shancu{
+			color:#ff5c00;
+			border: none;
+			margin-top: 35px;
+			margin-right: 20px;
+			float: right;
+			background-color: white;
+		}
+		.shouhuo h4,p{
+			margin: 15px;
+		}
+		.shouhuo h3{
+			text-align: center;
+			margin-top: 28%;
+		}

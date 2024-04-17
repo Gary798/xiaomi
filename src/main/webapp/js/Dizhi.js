@@ -12,3 +12,13 @@ function Dizhi() {
 	  	    }
 	  		
 	  	  }
+function Yanzhen(){
+	
+	 var numericInput = document.getElementById("numericInput");
+	 var sas = numericInput.value;
+		if (sas.length < 11) {
+                // 如果超过11位，则截断为前11位
+                alert('电话不符合格式');
+    		    event.preventDefault(); // 阻止表单提交
+            }
+}

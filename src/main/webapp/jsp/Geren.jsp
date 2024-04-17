@@ -6,9 +6,25 @@
 		<meta charset="utf-8">
 		<title></title>
 	</head>
-	<link rel="stylesheet" href="../css/Geren.css"/>
+	<link rel="stylesheet" href="../css/Geren.css?v=1"/>
+	<link rel="stylesheet" href="../css/Mima.css?v=1"/>
 	<script src="../js/jquery-3.5.1.min.js">
 	</script>
+	<script>
+	  function toggleElements() {
+	    var element1 = document.getElementById("element1");
+	    var element2 = document.getElementById("element2");
+	
+	    if (element1.style.display === "none") {
+	      element1.style.display = "block";
+	      element2.style.display = "none";
+	    } else {
+	      element1.style.display = "none";
+	      element2.style.display = "block";
+	    }
+	  }
+	  </script>
+
 	<body>
 		<div class="header">
 					<div class="header_center">
@@ -79,7 +95,7 @@
 					<h3 class="title">账号管理</h3>
 					<ul class="list">
 						<li>个人信息</li>
-						<li>修改密码</li>
+						<li id="element1" onclick="toggleElements()">修改密码</li>
 						<li>账号注销</li>
 					</ul>
 				</div>
@@ -134,5 +150,49 @@
 
 			</div>
 		</div>
+		<div class="ant-moder" style="display: none;" id="element2">
+			<div class="ant-mask"></div>
+			<div class="ant-wrap">
+				<div class="ant-diaolg" style="width: 450px;">
+					<div class="ant-content">
+						<div class="ant-header">
+							<div class="ant-title">修改密码</div>
+						</div>
+						
+						<div class="ant-body">
+							<form action="MiMaServlet" method="post" id="myForm">
+								<div class="mi-field" style="margin-top: 0px;margin-bottom: 20px;">
+									<div class="mi-field_fild mi-fiesd">
+									<input type="password" name="pass" id="password" class="mi-input" placeholder="输入新密码"/>
+									</div>
+								</div> 
+								<input type="text" name="id" value="${list.get(0).getUser_id() }" style="display: none;"/>
+								<div class="mi-field" style="margin-bottom: 10px;">
+									<div class="mi-field_fild mi-fiesd">
+									<input type="password" name="pass2" id="confirmPassword" class="mi-input" placeholder="重复新密码"/>
+									</div>
+								</div>
+								
+								<div class="btn-contanin" style="display: flex;margin-top: 50px;">
+									<button type="button" class="btn-button button1">取消</button>
+									<button type="submit" class="btn-button button2">确定</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			  <script>
+	  	document.getElementById('myForm').addEventListener('submit', function(event) {
+		  var password = document.getElementById('password').value;
+		  var confirmPassword = document.getElementById('confirmPassword').value;
+		  
+		  if (password !== confirmPassword) {
+		    alert('请输入和第一次一样的密码');
+		    event.preventDefault(); // 阻止表单提交
+		  }
+		});
+	  </script>
 	</body>
 </html>

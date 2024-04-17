@@ -47,5 +47,8 @@ public class usersdao extends BaseDAO{
 		String sql = "UPDATE users SET img_url=?,user_name=?,user_sex=?,user_tele=? WHERE user_id=?";
 		return this.execute(sql, tupian,name,sex,tele,id);
 	}
-	
+	public int MimaXiugai(String id,String pass) {
+		String sql = "UPDATE users SET user_password=? WHERE user_id=?";
+		return this.execute(sql, pass,id);
+	}
 }

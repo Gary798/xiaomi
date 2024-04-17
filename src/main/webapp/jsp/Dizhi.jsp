@@ -35,7 +35,6 @@
 							<p>${l.getAdd_tel()}</p>
 							<p>${l.getAddress()}</p>
 							<input class="shancu" type="submit" value="删除" />
-							<input class="shancu" type="button" value="修改" />
 							
 							</div>
 						</form>
@@ -53,7 +52,7 @@
         <form action="DizhiServlet" method="get">
 			<div class="item">
 			<input type="text" name="name" placeholder="收货人" style="padding-left: 10px"/>
-			<input type="text" name="tele" placeholder="电话" style="padding-left: 10px"/>
+			<input type="text" name="tele" id="numericInput" oninput="handleInput(event)" placeholder="电话" style="padding-left: 10px"/>
 			</div>
             <div class="diqu" data-toggle="distpicker" data-autoselect="3">
                 <select v-model="work.province" name="shen"></select>
@@ -63,7 +62,7 @@
 			
 			<textarea class="myTextarea" name="myTextarea" value="" placeholder="详细信息" style="padding-left: 5px;padding-top: 5px"></textarea>
 			<div style="margin: 20px;text-align: center;">
-				<input type="submit" class="ti" value="提交">
+				<input type="submit" class="ti" onclick="Yanzhen()" value="提交">
 				<input type="button" class="qu" id="dizhi1" onclick="Dizhi()" value="取消">
 			</div>
             
@@ -72,6 +71,31 @@
 	</div>
 	</div>
 	</div>
+	  <script>
+        function handleInput(event) {
+            // 获取输入框元素
+            var input = event.target;
+            
+            // 获取输入的值
+            var value = input.value;
+            
+            // 检查是否为数字
+            if (!(/^\d*$/).test(value)) {
+                // 如果不是数字，则清除非数字字符
+                input.value = value.replace(/[^\d]/g, '');
+                alert('请输入数字');
+    		    event.preventDefault(); // 阻止表单提交
+            }
+            
+            // 检查长度是否超过11位
+            if (value.length >= 11) {
+                // 如果超过11位，则截断为前11位
+                input.value = value.slice(0, 11);
+                alert('电话不符合格式');
+    		    event.preventDefault(); // 阻止表单提交
+            }
+        }
+    </script>
 </body>
 </html>
 

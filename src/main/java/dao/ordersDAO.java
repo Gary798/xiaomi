@@ -16,7 +16,7 @@ public class ordersDAO extends BaseDAO{
 				+ "    orders.or_name,"
 				+ "    orders.or_number,"
 				+ "    orders.or_address,"
-				+ "    CASE\r\n"
+				+ "    CASE"
 				+ "        WHEN orders.or_state = 1 THEN '待支付'"
 				+ "        WHEN orders.or_state = 2 THEN '待收货'"
 				+ "        WHEN orders.or_state = 3 THEN '已完成'"
@@ -29,13 +29,13 @@ public class ordersDAO extends BaseDAO{
 				+ "    shopping_cart.pro_name,"
 				+ "    shopping_cart.car_jg,"
 				+ "    shopping_cart.car_count"
-				+ "FROM"
+				+ " FROM"
 				+ "    users"
-				+ "JOIN"
+				+ " JOIN"
 				+ "    orders ON users.user_id = orders.user_id"
-				+ "JOIN"
+				+ " JOIN"
 				+ "    shopping_cart ON users.user_id = shopping_cart.user_id"
-				+ "WHERE"
+				+ " WHERE"
 				+ "    (orders.or_state = 1 OR orders.or_state = 2 OR orders.or_state = 3) AND users.user_id = ?";
 			return this.executeQuery(sql,new Mapper<orders>() {
 				@Override
@@ -45,13 +45,17 @@ public class ordersDAO extends BaseDAO{
 						while (rs.next()) {
 							orders orders = new orders(
 									rs.getInt(1),
-									rs.getInt(2),
+									rs.getString(2),
 									rs.getString(3),
-									rs.getTimestamp(4),
+									rs.getString(4),
 									rs.getString(5),
-									rs.getString(6),
-									rs.getString(7),
-									rs.getString(8)
+									rs.getTimestamp(6),
+									rs.getInt(7),
+									rs.getInt(8),
+									rs.getString(9),
+									rs.getString(10),
+									rs.getBigDecimal(11),
+									rs.getInt(12)
 									);
 							list.add(orders);
 						}
@@ -61,10 +65,10 @@ public class ordersDAO extends BaseDAO{
 					}
 					return list;
 				}
-			});
+			},id);
 	}
 	public int insrtorders(Integer id,String name,String tele,String dizhi) {
-		String sql = "INSERT INTO orders (user_id,or_time, or_name,or_number,or_address,or_note) VALUES (?,NOW(),?,?,?, '尽快发货');";
+		String sql = "INSERT INTO orders (user_id,or_time, or_name,or_number,or_address,or_note) VALUES (?,NOW(),?,?,?, '尽快发货')";
 		return this.execute(sql, id,name,tele,dizhi);
 	}
 }

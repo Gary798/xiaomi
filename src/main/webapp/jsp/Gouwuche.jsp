@@ -74,11 +74,12 @@
 						var dtele;
 						var dress;
 						$(".shouhuo").click(function() {
-							dname = $(".dname").text();
-							dtele = $(".dtele").text();
-							dress = $(".dress").text();
+							dname = $(this).find(".dname").text();
+							dtele = $(this).find(".dtele").text();
+							dress = $(this).find(".dress").text();
 							
 						}) 
+						
 						$("#xiadan").click(function() {
 							window.location.href="DindanServlet?dname="+dname+"&dtele="+dtele+"&dress="+dress;
 						}) 
@@ -167,7 +168,7 @@ $(function () {
 					<div class="cleadsi">
 						<div class="hendle">
 							<div class="operating">
-								<a href="DindanServlet" id="xiadan" class="btn btn-primary">立即下单</a>
+								<a href="javascript:void(0)" id="xiadan" class="btn btn-primary">立即下单</a>
 								<a href="javascript:void(0)" class="btn btn-return">返回购物车</a>
 							</div>
 						</div>

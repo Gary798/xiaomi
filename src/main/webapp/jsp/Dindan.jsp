@@ -74,7 +74,7 @@
 						<div>
 						<ul class="order-item">
 							<li>
-								<div class="fiurs"><img src="../img/${l.getImg_url()}"></div>
+								<div class="fiurs"><img class="img-din" src="../img/${l.getImg_url()}"></div>
 								<p>${l.getPro_name()}</p>
 								<p>${l.getCar_jg()}×${l.getCar_count()}</p>
 							</li>

@@ -29,13 +29,33 @@
 		
 		#a5{
 			width: 978px;
-			height: 677px;
 			background-color:white;
 			float: left;
 			margin-top: -987px;
 			margin-left: 250px;
 			padding: 20px 40px;
 		}
+		#span{
+			width: 138px;
+			height: 184px;
+			background-color: white;
+			margin: 0 48px 12px;
+			padding-top: 10px;
+		}
+		.list{
+			    margin:0;
+			    padding: 0;
+			    list-style: none;
+		}
+		.list li{
+			    margin: 10px;
+				font-size: 13px;
+		}
+		.title{
+			margin: 20px 10px ;
+			padding-top: 20px;
+		}
+		
 		.poral-2{
 			padding: 36px 0;
 		}
@@ -153,4 +173,11 @@
 			border-color: #b0b0b0;
 			    background: #fff;
 			    color: #757575;
+		}
+		.img-din{
+		    width: 80px;
+    height: 86px;
+    position: absolute;
+    left: 0;
+    top: 0;
 		}

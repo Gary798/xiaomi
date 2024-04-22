@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.addressDAO;
 import dao.ordersDAO;
-import dao.usersdao;
-import entity.shopping_cart;
 
 
 
@@ -23,7 +21,6 @@ public class DindanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ordersDAO ordersDAO = new ordersDAO();
 	addressDAO addressDAO = new addressDAO();
-	usersdao dao = new usersdao();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
@@ -32,7 +29,9 @@ public class DindanServlet extends HttpServlet {
 		String dname = request.getParameter("dname");
 		String dtele = request.getParameter("dtele");
 		String dress = request.getParameter("dress");
+		System.out.println(dname);
 		ordersDAO.insrtorders(Yhid, dname, dtele, dress);
+		
 		
 		request.setAttribute("list", ordersDAO.selectDindan(Yhid));
         request.getRequestDispatcher("Dindan.jsp").forward(request, response);

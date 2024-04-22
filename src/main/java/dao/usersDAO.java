@@ -75,18 +75,18 @@ public class usersDAO extends BaseDAO{
 	    
 	    return map;
 	}
-
+	//新增
 	public int insertuser(String name, String sex,String phone,int status,String account,String password,int isadmin) {
 		String sql = "INSERT INTO users (user_name, user_sex, user_account, user_password, user_tele, img_url, user_integral, user_state, user_identity, createtime)  VALUES"
 				+ "(?, ?, ?, ?, ?, '/images/zhangsan.jpg', 0, ?, ?, NOW())";
 		return this.execute(sql, name,sex,account,password,phone,status,isadmin);
 	}
-	
+	//删除
 	public int deleteuser(int id) {
 		String sql = "DELETE FROM users WHERE user_id=?;";
 		return this.execute(sql,id);
 	}
-	
+	//修改
 	public int updateuser(String upname,String upphone,String upgender, int upstatus,int isadmin,int id) {
 		String sql = "UPDATE users SET user_name=?,user_tele=?,user_sex=?,user_state=?,user_identity=? WHERE user_id=?";
 		return this.execute(sql,upname,upphone,upgender,upstatus,isadmin,id);

@@ -53,7 +53,6 @@
 			<ul class="li2_ul">
 				<li onclick="showPage(2)"><span>商品详情</span></li>
 				<li onclick="showPage(3)"><span>规格管理</span></li> 
-				<li onclick="showPage(4)"><span>商品分类</span></li>
 			</ul>
 		</li>
 		<li class="parent"><span>

@@ -39,9 +39,13 @@ public class userServlet extends HttpServlet {
      
 		Map<String ,Object> map = dao.queryByPage(name,account,State,creatTime,curpage, pagesize);
         List<users> list = (List<users>) map.get("list");
+        request.setAttribute("name", name);
+        request.setAttribute("account", account);
+        request.setAttribute("state", State);
+        request.setAttribute("creatTime", creatTime);
+        
     	 request.setAttribute("curpage", curpage);
     	 request.setAttribute("list", list);
-    	 
     	 request.setAttribute("total",  map.get("total"));
     	 request.getRequestDispatcher("user.jsp").forward(request, response);
     }

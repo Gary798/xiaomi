@@ -171,7 +171,7 @@
 	        	    var userTele = currentRow.find('td:eq(4)').text();
 	        	    var userIdentity = currentRow.find('td:eq(5)').text();
 	        	    var userState = currentRow.find('td:eq(6)').text();
-	        	    // 将数据填充到修改弹窗中的表单中，这里假设表单元素的ID分别为user_id、user_name等
+	        	    // 将数据填充到修改弹窗中的表单中
 	        	    $('input[name="uid"]').val(userId);
         	        $('input[name="upname"]').val(userName);
         	        $('input[name="upphone"]').val(userTele);
@@ -194,6 +194,7 @@
         	        }
 	        	    // 显示修改弹窗
 	        	    $('#overlay').css('display', 'block');
+	        	    //禁用文本框
 	        	    $('input[name="upaccount"]').prop("disabled", true);
 	        	});
 	         
@@ -224,7 +225,7 @@
 	     	        });
 	     	    });
      	 
-		       
+	     	  
 
      });
 	//刷新
@@ -250,26 +251,26 @@
 	     checkbox.checked = false;
 	  });
 	}
-
+	
 	</script>
 	<body>
 		<div class="nav">
 			<!-- 搜索 -->
 			<form action="fy" method="get">
 				<label for="">用户名：</label>
-				<input type="text" id="name" name="uname"/>
+				<input type="text" id="name" name="uname" value='${name }'/>
 				<label for="">用户账号：</label>
-				<input type="text" id="account" name="uaccount"/>
+				<input type="text" id="account" name="uaccount" value='${account }'/>
 				<label for="">用户状态：</label>
 				<select id="state" name="ustate">
-				  <option value="3" selected>所有</option>
-				  <option value="0">停用</option>
-				  <option value="1">正常</option>
+				  <option value="3" >所有</option>
+				  <option value="0" ${state==0?"selected":" " }>停用</option>
+				  <option value="1" ${state==1?"selected":" " }>正常</option>
 				</select>
 				<label for="">创建时间：</label>
-				<input type="date" id="creat_time" name="creat_time">
+				<input type="date" id="creat_time" name="creat_time" value='${creatTime }'>
 				<input type="submit" value="搜索" class="sel" />
-				<input type="reset" class="res"/>
+				<input type="reset" class="res" />
 			</form>
 		</div>
 		<div class="cont">
@@ -379,7 +380,11 @@
 			 </thead>
 			</table>
 			<!-- 分页 -->
-			<x:page controller="fy" pagesize="8" total="${total}" curpage="${curpage}" />
+			<c:set var="name" value="${name}" />
+			<c:set var="account" value="${account}" />
+			<c:set var="state" value="${state}" />
+			<c:set var="creatTime" value="${creatTime}" />
+			<x:page controller="fy" pagesize="8" total="${total}" curpage="${curpage}" where="uname=${name}&uaccount=${uaccount}&ustate=${state}&creat_Time=${creatTime}"/>
 		</div>
 		<!-- 刷新表格数据 -->
 		<c:if test="${list==null}">

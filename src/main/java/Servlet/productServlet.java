@@ -44,6 +44,11 @@ public class productServlet extends HttpServlet {
         List<category> prolist = prodao.queryall();  
 		Map<String ,Object> map = dao.queryByPage(name,cate,Pstate,pro_time,curpage, pagesize);
         List<products> list = (List<products>) map.get("list");
+         request.setAttribute("name", name);
+         request.setAttribute("cate", cate);
+         request.setAttribute("pstate", Pstate);
+         request.setAttribute("pro_time", pro_time);
+         
     	 request.setAttribute("curpage", curpage);
     	 request.setAttribute("list", list);
     	 request.setAttribute("prolist", prolist);

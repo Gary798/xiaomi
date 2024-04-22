@@ -30,79 +30,6 @@ public class shopping_cart {
 		this.count = count;
 	}
 
-	/**
-	 * @param car_id
-	 * @param pro_id
-	 * @param img_url
-	 * @param pro_name
-	 * @param car_jg
-	 * @param car_count
-	 * @param user_id
-	 */
-	public shopping_cart(int car_id, int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count,
-			int user_id) {
-		super();
-		this.car_id = car_id;
-		this.pro_id = pro_id;
-		this.img_url = img_url;
-		this.pro_name = pro_name;
-		this.car_jg = car_jg;
-		this.car_count = car_count;
-		this.user_id = user_id;
-	}
-
-	/**
-	 * @param pro_id
-	 * @param img_url
-	 * @param pro_name
-	 * @param car_jg
-	 * @param car_count
-	 * @param user_id
-	 * @param car_time
-	 */
-	public shopping_cart(int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count, int user_id,
-			Timestamp car_time) {
-		super();
-		this.pro_id = pro_id;
-		this.img_url = img_url;
-		this.pro_name = pro_name;
-		this.car_jg = car_jg;
-		this.car_count = car_count;
-		this.user_id = user_id;
-		this.car_time = car_time;
-	}
-	
-
-	@Override
-	public String toString() {
-		return "shopping_cart [car_id=" + car_id + ", pro_id=" + pro_id + ", img_url=" + img_url + ", pro_name="
-				+ pro_name + ", car_jg=" + car_jg + ", car_count=" + car_count + ", user_id=" + user_id + ", car_time="
-				+ car_time + ", count=" + count + "]";
-	}
-
-	/**
-	 * @param car_id
-	 * @param pro_id
-	 * @param img_url
-	 * @param pro_name
-	 * @param car_jg
-	 * @param car_count
-	 * @param user_id
-	 * @param car_time
-	 */
-	public shopping_cart(int car_id, int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count,
-			int user_id, Timestamp car_time) {
-		super();
-		this.car_id = car_id;
-		this.pro_id = pro_id;
-		this.img_url = img_url;
-		this.pro_name = pro_name;
-		this.car_jg = car_jg;
-		this.car_count = car_count;
-		this.user_id = user_id;
-		this.car_time = car_time;
-	}
-
 	public int getCar_id() {
         return car_id;
     }
@@ -166,4 +93,69 @@ public class shopping_cart {
     public void setCar_time(Timestamp car_time) {
         this.car_time = car_time;
     }
+    
+    public shopping_cart(int car_id, int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count,
+			int user_id) {
+		super();
+		this.car_id = car_id;
+		this.pro_id = pro_id;
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+		this.user_id = user_id;
+	}
+
+	/**
+	 * @param pro_id
+	 * @param img_url
+	 * @param pro_name
+	 * @param car_jg
+	 * @param car_count
+	 * @param user_id
+	 * @param car_time
+	 */
+	public shopping_cart(int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count, int user_id,
+			Timestamp car_time) {
+		super();
+		this.pro_id = pro_id;
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+		this.user_id = user_id;
+		this.car_time = car_time;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "shopping_cart [car_id=" + car_id + ", pro_id=" + pro_id + ", img_url=" + img_url + ", pro_name="
+				+ pro_name + ", car_jg=" + car_jg + ", car_count=" + car_count + ", user_id=" + user_id + ", car_time="
+				+ car_time + ", count=" + count + "]";
+	}
+
+	/**
+	 * @param car_id
+	 * @param pro_id
+	 * @param img_url
+	 * @param pro_name
+	 * @param car_jg
+	 * @param car_count
+	 * @param user_id
+	 * @param car_time
+	 */
+	public shopping_cart(int car_id, int pro_id, String img_url, String pro_name, BigDecimal car_jg, int car_count,
+			int user_id, Timestamp car_time) {
+		super();
+		this.car_id = car_id;
+		this.pro_id = pro_id;
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+		this.user_id = user_id;
+		this.car_time = car_time;
+	}
+    
 }

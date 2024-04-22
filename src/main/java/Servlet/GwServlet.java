@@ -24,6 +24,5 @@ public class GwServlet extends HttpServlet{
         List<shopping_cart> listgwc =dao.selectgwc(Yhid);
         session.setAttribute("listgwc", listgwc);
         request.getRequestDispatcher("gwc.jsp").forward(request, response);
-
 	}
 }

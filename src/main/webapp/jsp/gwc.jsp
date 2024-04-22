@@ -284,7 +284,7 @@
             
             <div class="hangimg">
            
-                <img src="${listgwc[loop.index].img_url}"/>
+                <img class="tupian" src="${listgwc[loop.index].img_url}"/>
 		
             </div>
             	
@@ -319,7 +319,15 @@
 								<span class="yssp">已选择<span class="slsp">0</span>件</span>
 							</div>
 							<span class="hj">合计：<span>0</span>元</span>
-							<a class="a_js">去结算</a>
+							<a class="a_js" id="jiesuan">去结算</a>
+							<script type="text/javascript">
+								$(function() {
+									$("#jiesuan").click(function() {
+										window.location.href = "QueRenServlet";
+										
+									})
+								})
+							</script>
 						</div>
 						
 					</div>

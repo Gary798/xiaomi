@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.addressDAO;
 
@@ -29,8 +30,10 @@ public class DizhiServlet extends HttpServlet {
 		String name=request.getParameter("name");
 		String tele=request.getParameter("tele");
 		String dizhi = shen+shi+qu+myTextarea;
+		HttpSession session = request.getSession();
+	    Integer Yhid = (Integer) session.getAttribute("Yhid");
 		if (!name.isEmpty() && !tele.isEmpty()) {
-			addressDAO.selectDizhi(name, tele, dizhi);
+			addressDAO.selectDizhi(name, tele, dizhi,Yhid);
 			request.setAttribute("list", addressDAO.executeDizhi());
 	        request.getRequestDispatcher("Dizhi.jsp").forward(request, response);
 		}else { 

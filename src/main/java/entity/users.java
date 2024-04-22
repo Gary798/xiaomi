@@ -14,6 +14,8 @@ public class users {
 	private Integer user_state;
 	private Integer user_identity;
 	private Timestamp createtime;
+	
+	
 	public Integer getUser_id() {
 		return user_id;
 	}

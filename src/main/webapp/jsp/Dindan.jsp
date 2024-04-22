@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="m" %>
 
 <!DOCTYPE html>
 <html>
@@ -63,22 +64,21 @@
 						</div>
 						<ul class="filter2">
 							<li class="first active"><span>${l.getOr_time()}</span></li>
-							<li><span>mt</span></li>
+							<li><span>${l.getOr_name()}</span></li>
 							<li><span>订单号:${l.getOr_id() }</span></li>
 							<li><span>在线支付</span></li>
 							<div class="col-sub"><p>应付金额:
-							<span style="margin-right: 5px;font-size: 28px;line-height: 1;color: #333;">1990.00</span>元</p></div>
+							<span style="margin-right: 5px;font-size: 28px;line-height: 1;color: #333;">${l.getCar_jg()*l.getCar_count()}</span>元</p></div>
 						</ul>
 						
 						<div>
 						<ul class="order-item">
 							<li>
-								<div class="fiurs"><img src="../img/商品.png"></div>
-								<p>Redmi Turbo 3 12GB+256GB 墨晶</p>
-								<p>1999元 × 1</p>
+								<div class="fiurs"><img class="img-din" src="../img/${l.getImg_url()}"></div>
+								<p>${l.getPro_name()}</p>
+								<p>${l.getCar_jg()}×${l.getCar_count()}</p>
 							</li>
 						</ul>
-						
 						<div class="order-actions">
 							<a href="" class="btn btn-small btn-sasmwy">立即支付</a>
 							<a href="" class="btn btn-small btn-sasmwy1" >订单详情</a>

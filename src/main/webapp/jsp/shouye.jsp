@@ -104,7 +104,7 @@
 					</div>
 					<div class="cen_right">
 						<div class="dropdown">
-  						<a href="#">墨瞳</a>
+  						<a href="Geren.jsp">墨瞳</a>
   						<div class="dropdown-content">
    		 					<a href="#">个人中心</a>
     						<a href="#">我的收藏</a>

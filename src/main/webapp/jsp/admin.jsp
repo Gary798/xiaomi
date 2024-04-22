@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="left">
-    <!-- 标题orlogo -->
+    <!-- 标题logo -->
     <div class="left_title"><p>XiaoMi</p></div>
     <!-- 头像 -->
     <div class="status">
@@ -53,7 +53,6 @@
 			<ul class="li2_ul">
 				<li onclick="showPage(2)"><span>商品详情</span></li>
 				<li onclick="showPage(3)"><span>规格管理</span></li> 
-				<li onclick="showPage(4)"><span>商品分类</span></li>
 			</ul>
 		</li>
 		<li class="parent"><span>

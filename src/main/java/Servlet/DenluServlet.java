@@ -23,7 +23,7 @@ import entity.users;
 public class DenluServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 response.setCharacterEncoding("UTF-8");
 		 response.setContentType("text/html;charset=UTF-8");
 		String pass=request.getParameter("pass");
@@ -37,33 +37,14 @@ public class DenluServlet extends HttpServlet {
                 session.setAttribute("list", userList);
                 request.getRequestDispatcher("NewFile.jsp").forward(request, response);
             } else {
-                request.setAttribute("list", userList);
-                request.getRequestDispatcher("Geren.jsp").forward(request, response);
+            	
+                 session.setAttribute("list",userList);
+                request.getRequestDispatcher("/jsp/xiala").forward(request, response);
             }
         }else {
 			response.sendRedirect("Demo");
 		}
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 response.setCharacterEncoding("UTF-8");
-		 response.setContentType("text/html;charset=UTF-8");
-		String pass=request.getParameter("pass");
-		String zhan=request.getParameter("zhan");
-		usersdao usersdao = new usersdao();
-		HttpSession session=request.getSession();
-	    List<users> userList = usersdao.executeQuery(zhan, pass);
-	    if (userList != null && !userList.isEmpty()) {
-           users currentUser = userList.get(0);
-           if (currentUser.getUser_identity() == 1) {
-               session.setAttribute("list", userList);
-               request.getRequestDispatcher("NewFile.jsp").forward(request, response);
-           } else {
-               request.setAttribute("list", userList);
-               request.getRequestDispatcher("Geren.jsp").forward(request, response);
-           }
-       }else {
-			response.sendRedirect("Demo");
-		}
-	}
+	
 
 }

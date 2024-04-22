@@ -260,9 +260,13 @@
 							<span>|</span>
 							<a>消息通知</a>
 							<div class="cen_right_box">
-								<img src="../img/购物车空-copy.png">
-								<span>购物车(0)</span>
-							</div>
+						<a href="GwServlet">
+							<img src="../img/购物车空-copy.png">
+							<c:forEach var="i" items="${listcount}">
+							<span>购物车(<span>${i.count}</span>)</span>
+							</c:forEach>
+						</a>
+						</div>
 						</div>
 					</div>
 				</div>

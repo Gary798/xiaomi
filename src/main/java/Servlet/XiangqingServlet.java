@@ -10,12 +10,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.usersdao;
 import entity.advertisements;
 import entity.images;
 import entity.products;
 import entity.products_specification;
+import entity.shopping_cart;
+import entity.users;
 
 @WebServlet("/jsp/xq")
 public class XiangqingServlet extends HttpServlet {
@@ -25,7 +28,11 @@ public class XiangqingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-
+        //测试用户数据
+        // 获取 userList 属性值
+        HttpSession session = request.getSession();  
+        Integer userId = (Integer) session.getAttribute("userId");
+        List<shopping_cart> listcount =dao.Gwcsl(userId);
         // 获取价格
         String Jg = request.getParameter("Jg");
         BigDecimal jg = new BigDecimal(Jg);
@@ -72,7 +79,11 @@ public class XiangqingServlet extends HttpServlet {
         request.setAttribute("listGg1", listGg1);
         request.setAttribute("listCo1", listCo1);
         request.setAttribute("Jg", jg);
-        request.setAttribute("ID", id);
+        request.setAttribute("ID", id); 
+        
+        request.setAttribute("listcount", listcount);
+        
+        
         request.setAttribute("listxqimg", listxqimg);
         request.setAttribute("listsp", listsp);
         request.setAttribute("listtp", listtp);

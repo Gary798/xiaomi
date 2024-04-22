@@ -27,12 +27,16 @@ public class GwcServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Color = request.getParameter("Color");
         String Gg = request.getParameter("Gg");
-        System.out.println(Gg);
+       
         String ids = request.getParameter("id");
         Integer id = Integer.parseInt(ids);
         String jg = request.getParameter("jg");
         BigDecimal Jg =new BigDecimal(jg);
-        System.out.println(Jg);
+       
+     // 获取当前用户 ID（假设 ID 存储在 session 中）
+        HttpSession session = request.getSession();
+        Integer YhID = (Integer) session.getAttribute("userId");
+        System.out.println(YhID);
         //获取name
         List<products> spmz = dao.selectPName(id);
         StringBuilder stringBuilder = new StringBuilder();
@@ -47,19 +51,18 @@ public class GwcServlet extends HttpServlet {
         List<images> listtp = dao.xialatp(id);
         StringBuilder tpBu = new StringBuilder();
         for (images images : listtp) {
-            tpBu.append(images.getImg_url()); // 仅获取 getImg_url 字段
+            tpBu.append(images.getImg_url()); // 仅获取 getImg_url 字段	
         }
         String img = tpBu.toString(); // 获取不带逗号的字符串
         
         System.out.println(img);
-        //数量默认1
-        Integer number=1;
+       
         //测试数据用户id为1
-        Integer Yhid =1;
+        Integer Yhid =YhID;
+       
         dao.Insertgwc(id, img, name, Jg, Yhid);
         
-     // 将数据存入 session
-        HttpSession session = request.getSession();
+     
         
         session.setAttribute("Yhid", Yhid);
      // 重定向到 GwServlet

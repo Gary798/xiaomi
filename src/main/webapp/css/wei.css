@@ -1,0 +1,171 @@
+					.con6{
+							width: 1230px;
+							height: 500px;
+							margin: 0 auto;
+							background: white;
+					}
+					.con6_1{
+						padding: 27px 0;
+						border-bottom: 1px solid black;
+					}
+					.con6_1_ul{
+						list-style-type: none;
+					}
+					.con6_1_ul li{
+							display: inline;
+							width: 19.8%;
+							height: 25px;
+							border-left: 1px solid black;
+							font-size: 16px;
+							line-height: 25px;
+							text-align: center;
+							padding-left: 60px;
+							margin-left: 40px;
+					}
+					.con6_1_ul li img,
+					.con6_1_ul li span {
+						vertical-align: middle;
+					}
+					.con6_1_ul li img{
+						margin-right: 5px;
+					}
+					.con6_1_ul li span{
+						transition: color 0.1s;
+					}
+					.con6_1_ul li span:hover{
+							cursor: pointer;
+							color: #f60;
+					}
+					.con6_1_ul li:nth-child(1){
+						 border-left: none;
+					}
+					/*选购指南-服务中心-线下门店-关于小米-关注我们*/
+					.con6_2{
+						padding: 40px 0;
+					}
+					.first_dl,.con6_dl{
+						float: left;
+						width: 160px;
+						margin: 0;
+					}
+					.first_dl dt,.con6_dl dt{
+						margin: -1px 0 26px;
+						font-size: 16px;
+						line-height: 1.25;
+						color: #424242;
+					}
+					.con6_dl dd{
+							margin: 10px 0 0;
+							font-size: 14px;
+							transition: color 0.1s;
+					}
+					.con6_dl dd:hover{
+							cursor: pointer;
+							color: #f60;
+					}
+					/**联系电话**/
+					.lxdh{
+							float: right;
+							width: 251px;
+							border-left: 1px solid #e0e0e0;
+							text-align: center;
+							color: #616161;
+					}
+					.lxdh_p1{
+							font-size: 24px;
+							line-height: 1;
+							color: #ff6700;
+					}
+					.lxdh_p2{
+						margin: 0 0 5px 0;
+						font-size: 14px;
+					}
+					.btn-line-primary {
+						border-color: #ff6700;
+						background: #fff;
+						color: #ff6700;
+					}
+					.btn-small {
+						width: 118px;
+						height: 28px;
+						font-size: 12px;
+						line-height: 28px;
+					}
+					.btn {
+						display: inline-block;
+						width: 158px;
+						height: 38px;
+						border: 1px solid red;
+						font-size: 14px;
+						line-height: 38px;
+						text-align: center;
+						color: red;
+						cursor: pointer;
+						transition: color 1s,border 1s,background 1s ;
+					}
+					.btn:hover{
+						border: 1px solid #333;
+						background: #ff6700;
+						color: #fff;
+					}
+					.logo1{
+						    width: 56px;
+						    height: 56px;
+					}
+					.info-text{
+					    padding: 30px 0;
+					    font-size: 12px;
+					    display: flex;
+					    justify-content: flex-start;
+					    width: 1230px;
+					    margin: auto;
+					}
+					.info-text .sites{
+						margin-top: 0;
+						line-height: 18px;
+						color: #757575;
+						
+					}
+					.info-text .sites a{
+						color: #757575;
+					}
+					.stons{
+						margin: 0;
+						line-height: 18px;
+						 color: #b0b0b0;
+					}
+					.stons a{
+						    color: #b0b0b0;
+					}
+					.con2_left ul li img{
+						display: block;
+						    width: 24px;
+						    height: 24px;
+						    margin: 0 auto 4px;
+					}
+					.con2_left ul li a{
+						    display: block;
+						    padding-top: 18px;
+						    text-overflow: ellipsis;
+						    color: #fff;
+						    opacity: .7;
+						    -webkit-transition: opacity .2s;
+						    transition: opacity .2s;
+					}
+					.con2_left ul li{
+						    position: relative;
+						    float: left;
+						    width: 70px;
+						    height: 82px;
+						    padding: 0 3px;
+					}
+					.con2_left ul{
+						    margin: 0;
+						    list-style-type: none;
+						    font-size: 12px;
+						    text-align: center;
+						    background: #5f5750;
+					}		
+					a{
+						text-decoration: none;
+					}

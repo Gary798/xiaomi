@@ -82,7 +82,7 @@
 						<span>|</span>
 						<a>注册</a>
 						<span>|</span>
-						<a>消息通知</a>
+						<a>我的订单</a>
 						<div class="cen_right_box">
 						<a href="GwServlet">
 							<img src="../img/购物车空-copy.png">

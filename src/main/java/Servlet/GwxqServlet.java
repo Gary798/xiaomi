@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import dao.usersdao;
 import entity.shopping_cart;
-@WebServlet("/jsp/GwServlet")
-public class GwServlet extends HttpServlet{
+@WebServlet("/jsp/GwxqServlet")
+public class GwxqServlet extends HttpServlet{
 	usersdao dao = new usersdao();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,7 +23,7 @@ public class GwServlet extends HttpServlet{
 		System.out.println(Yhid);
         List<shopping_cart> listgwc =dao.selectgwc(Yhid);
         session.setAttribute("listgwc", listgwc);
-        request.getRequestDispatcher("gwc.jsp").forward(request, response);
+        request.getRequestDispatcher("xiangqing.jsp").forward(request, response);
 
 	}
 }

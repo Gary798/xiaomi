@@ -85,7 +85,7 @@
 				
 				<div class="mi-zhanhao">
 				
-						<form class="mi-form" action="DenluServlet" method="post" onsubmit="return checkRadioButton()">
+						<form class="mi-form" action="DenluServlet" method="get" onsubmit="return checkRadioButton()">
 							<div class="mi-form-zhan">
 								<input class="name" name="zhan" type="text" id="zh" placeholder="手机号/账号"/>
 							</div>

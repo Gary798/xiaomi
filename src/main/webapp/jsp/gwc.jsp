@@ -452,7 +452,7 @@ $(document).ready(function(){
 		            checkboxes.forEach(function(checkbox, index) {
 		                if (checkbox.checked) {
 		                    const quantity = parseInt(quantityInputs[index].value);
-		                    const price = parseFloat(checkbox.closest('.hang').querySelector('.je').textContent);
+		                    const price = parseFloat(checkbox.closest('.hang').querySelector('.jiaqian').textContent);
 		                    totalSelected += quantity;
 		                    totalPrice += price * quantity;
 		                }
@@ -554,7 +554,7 @@ $(document).ready(function(){
 		
 		            if (checkbox.checked) {
 		                const hang = checkbox.closest('.hang');
-		                const je = parseFloat(hang.querySelector('.je').textContent);
+		                const je = parseFloat(hang.querySelector('.jiaqian').textContent);
 		                const shu = parseInt(hang.querySelector('input[type="text"]').value);
 		                totalSelected += shu;
 		                totalPrice += je * shu;
@@ -575,7 +575,7 @@ $(document).ready(function(){
 		            checkboxes.forEach(function(cb) {
 		                if (cb.checked) {
 		                    const hang = cb.closest('.hang');
-		                    const je = parseFloat(hang.querySelector('.je').textContent);
+		                    const je = parseFloat(hang.querySelector('.jiaqian').textContent);
 		                    const shu = parseInt(hang.querySelector('input[type="text"]').value);
 		                    totalSelected += shu;
 		                    totalPrice += je * shu;

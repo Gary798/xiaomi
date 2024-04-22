@@ -35,7 +35,7 @@
 				<div class="mi-body">
 					<div class="mi-body-left">
 						<div class="mi-body-head" style="background-image: url('../img/头像背景.png');">
-							<img class="mi-body-heades" src="../<%=request.getParameter("tupian") %>"/>
+							<img class="mi-body-heades" src="../img/<%=request.getParameter("tupian") %>"/>
 						
 						
 							<div class="mi-body-name"><%=request.getParameter("name") %></div>

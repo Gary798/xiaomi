@@ -14,9 +14,9 @@ import entity.shopping_cart;
 import BaseDAO.BaseDAO;
 import BaseDAO.Mapper;
 import entity.users;
+	
 
 public class usersdao extends BaseDAO{
-
 	/**
 	 * 分页查询 
 	 * @param curpage
@@ -96,9 +96,7 @@ public class usersdao extends BaseDAO{
 		String sql = "UPDATE users SET user_name=?,user_tele=?,user_sex=?,user_state=?,user_identity=? WHERE user_id=?";
 		return this.execute(sql,upname,upphone,upgender,upstatus,isadmin,id);
 	}
-	
-	
-	
+
 	public List<users> executeQuery(String sname,String spass){
 		String sql = "select * from users where user_account=? and user_password=?";
 		return this.executeQuery(sql,new Mapper<users>() {
@@ -123,6 +121,7 @@ public class usersdao extends BaseDAO{
 					}
 					
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return list;
@@ -625,9 +624,6 @@ public class usersdao extends BaseDAO{
 	
 	public static void main(String[] args) {
 		usersdao dao = new usersdao();
-		System.out.println(dao.Gwcsl(1));
+		System.out.println(dao.selectxiala2(0, 6));
 	}
-
-	
-	
 }

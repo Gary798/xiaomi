@@ -49,7 +49,7 @@ public class XialaServlet extends HttpServlet {
         List<shopping_cart> listcount =dao.Gwcsl(userId);
         List<products> listsp = dao.selectxiala2(0, 6);
         List<products> listsp1 = dao.selectxiala1(0, 6);
-        
+        System.out.println(listsp1);
         //热度
         List<products> listrdsp =dao.selecrm(0, 8);
         List<images> listtprm = new ArrayList<>();
@@ -57,7 +57,7 @@ public class XialaServlet extends HttpServlet {
         List<products> listCorm = new ArrayList<>();
         
         //最新上架
-        List<products> listspsj =dao.selecsj(0, 5);
+        List<products> listspsj =dao.selecsj(0, 8);
         List<images> listtpsj = new ArrayList<>();
         List<products> listGgsj = new ArrayList<>();
         List<products> listCosj = new ArrayList<>();

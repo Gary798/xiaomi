@@ -46,7 +46,32 @@
 					text-align: center;
 					color:#ff6700;
 				}
-				
+				  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 90px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* 确保在顶部显示 */
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    
+  }
+  .dropdown-content a:hover{
+    color: #ff6700;
+  }
 			</style>
 		</head>
 		<body>
@@ -78,9 +103,14 @@
 						<a>Select Location</a>
 					</div>
 					<div class="cen_right">
-						<a>登录</a>
-						<span>|</span>
-						<a>注册</a>
+						<div class="dropdown">
+  						<a href="#">墨瞳</a>
+  						<div class="dropdown-content">
+   		 					<a href="#">个人中心</a>
+    						<a href="#">我的收藏</a>
+    						<a href="#">我的评价</a>
+  						</div>
+						</div>
 						<span>|</span>
 						<a>消息通知</a>
 						<div class="cen_right_box">

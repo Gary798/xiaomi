@@ -284,7 +284,7 @@
             
             <div class="hangimg">
            
-                <img src="${listgwc[loop.index].img_url}"/>
+                <img class="tupian" src="${listgwc[loop.index].img_url}"/>
 		
             </div>
             	
@@ -319,7 +319,15 @@
 								<span class="yssp">已选择<span class="slsp">0</span>件</span>
 							</div>
 							<span class="hj">合计：<span>0</span>元</span>
-							<a class="a_js">去结算</a>
+							<a class="a_js" id="jiesuan">去结算</a>
+							<script type="text/javascript">
+								$(function() {
+									$("#jiesuan").click(function() {
+										window.location.href = "QueRenServlet";
+										
+									})
+								})
+							</script>
 						</div>
 						
 					</div>
@@ -452,7 +460,7 @@ $(document).ready(function(){
 		            checkboxes.forEach(function(checkbox, index) {
 		                if (checkbox.checked) {
 		                    const quantity = parseInt(quantityInputs[index].value);
-		                    const price = parseFloat(checkbox.closest('.hang').querySelector('.je').textContent);
+		                    const price = parseFloat(checkbox.closest('.hang').querySelector('.jiaqian').textContent);
 		                    totalSelected += quantity;
 		                    totalPrice += price * quantity;
 		                }

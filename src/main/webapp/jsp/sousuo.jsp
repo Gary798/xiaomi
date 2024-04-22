@@ -91,7 +91,7 @@
 		        background-color: #ff6700;
 		    }
         .zhuti{
-            padding: 20px 0 100px;
+            padding: 100px 0 100px;
             background: #eee;
         }
       

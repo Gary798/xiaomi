@@ -78,10 +78,9 @@
 						<a>Select Location</a>
 					</div>
 					<div class="cen_right">
-						<a>登录</a>
+						<a href="Geren.jsp">个人中心</a>
 						<span>|</span>
-						<a>注册</a>
-						<span>|</span>
+						
 						<a>我的订单</a>
 						<div class="cen_right_box">
 						<a href="GwServlet">

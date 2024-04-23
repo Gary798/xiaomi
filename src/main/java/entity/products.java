@@ -26,7 +26,34 @@ public class products {
     private int pro_sales;
     private Timestamp pro_time;
     private int pro_statue;
+    //临时字段
+    private String cate_name;
+    private String img_url;
     
+	public products(int pro_id, String pro_name, String pro_description, int pro_sales, Timestamp pro_time,
+			int pro_statue, String cate_name, String img_url) {
+		super();
+		this.pro_id = pro_id;
+		this.pro_name = pro_name;
+		this.pro_description = pro_description;
+		this.pro_sales = pro_sales;
+		this.pro_time = pro_time;
+		this.pro_statue = pro_statue;
+		this.cate_name = cate_name;
+		this.img_url = img_url;
+	}
+	public String getCate_name() {
+		return cate_name;
+	}
+	public void setCate_name(String cate_name) {
+		this.cate_name = cate_name;
+	}
+	public String getImg_url() {
+		return img_url;
+	}
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
+	}
 	public int getPro_sales() {
 		return pro_sales;
 	}

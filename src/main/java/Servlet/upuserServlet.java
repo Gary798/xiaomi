@@ -25,6 +25,6 @@ public class upuserServlet extends HttpServlet{
 	      }
 	      String upsex=upgender==1?"男":"女";
 	      // 在控制台输出接收到的数据，方便调试
-	      dao.updateuser(upname, upphone, upsex, upstatus, isadmin, uid);
+	      dao.adminupdateuser(upname, upphone, upsex, upstatus, isadmin, uid);
 	}
 }

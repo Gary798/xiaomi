@@ -14,6 +14,6 @@ public class tabdelbtnServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  request.setCharacterEncoding("utf-8");
 	      Integer id =  Integer.parseInt(request.getParameter("id")) ;
-	      dao.deleteuser(id);
+	      dao.admindeleteuser(id);
 	}
 }

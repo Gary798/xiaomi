@@ -36,6 +36,6 @@ public class insertuserServlet extends HttpServlet{
 	       if(isAdmin.equals("true")){
 	    	   isadmin=1;
 	       }
-	       dao.insertuser(username, sex, phone, status, account, password, isadmin);
+	       dao.admininsertuser(username, sex, phone, status, account, password, isadmin);
 	}
 }

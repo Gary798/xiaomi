@@ -4,16 +4,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.alibaba.fastjson2.JSONArray;
-
 import dao.usersdao;
 import entity.users;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 @WebServlet(urlPatterns = "/jsp/fy")
-public class limitServlet extends HttpServlet {
+public class userServlet extends HttpServlet {
 	usersdao dao = new usersdao();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -40,11 +37,15 @@ public class limitServlet extends HttpServlet {
 			 State=Integer.parseInt(state);
 		}
      
-		Map<String ,Object> map = dao.queryByPage(name,account,State,creatTime,curpage, pagesize);
+		Map<String ,Object> map = dao.adminqueryByPage(name,account,State,creatTime,curpage, pagesize);
         List<users> list = (List<users>) map.get("list");
+        request.setAttribute("name", name);
+        request.setAttribute("account", account);
+        request.setAttribute("state", State);
+        request.setAttribute("creatTime", creatTime);
+        
     	 request.setAttribute("curpage", curpage);
     	 request.setAttribute("list", list);
-    	 
     	 request.setAttribute("total",  map.get("total"));
     	 request.getRequestDispatcher("user.jsp").forward(request, response);
     }

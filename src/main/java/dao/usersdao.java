@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import entity.advertisements;
+import entity.category;
 import entity.images;
 import entity.products;
 import entity.products_specification;
@@ -195,6 +196,23 @@ public class usersdao extends BaseDAO{
 	map.put("list", list);
 	map.put("total", obj);
 	return map;
+	}
+	//查询全部分类
+	public List<category> FenLei() {
+		String sql ="SELECT * FROM category";
+		return this.executeQuery(sql,new Mapper<category>() {
+
+			@Override
+			public List<category> map(ResultSet rs) throws SQLException {
+				List<category> list = new ArrayList<category>();
+				while (rs.next()) {
+					category ca = new category(rs.getInt(1),rs.getString(2));
+					list.add(ca);
+				}
+				return list;
+			}
+			
+		});
 	}
 	//查询类别为4最低价格
 	public List<products> selectxiala2(Integer s,Integer l) {
@@ -545,6 +563,6 @@ public class usersdao extends BaseDAO{
 	
 	public static void main(String[] args) {
 		usersdao dao = new usersdao();
-		System.out.println(dao.Gwcsl(1));
+		System.out.println(dao.FenLei());
 	}
 }

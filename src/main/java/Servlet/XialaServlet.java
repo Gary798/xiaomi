@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import com.mysql.cj.Session;
 
 import dao.usersdao;
+import entity.category;
 import entity.images;
 import entity.products;
 import entity.shopping_cart;
@@ -29,7 +30,6 @@ public class XialaServlet extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-     //测试用户数据
      // 获取 userList 属性值
         HttpSession sessions = request.getSession();
         List<users> userList = (List<users>) sessions.getAttribute("list");
@@ -44,7 +44,9 @@ public class XialaServlet extends HttpServlet {
            System.out.println("User ID: " + userId);
            System.out.println(userName);
 
-        
+        //获取全部手机分类
+        List<category> listFL =dao.FenLei();
+        System.out.println(listFL);
         
         List<shopping_cart> listcount =dao.Gwcsl(userId);
         List<products> listsp = dao.selectxiala2(0, 6);

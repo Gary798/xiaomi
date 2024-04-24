@@ -43,15 +43,17 @@ public class XialaServlet extends HttpServlet {
             // 在控制台打印用户 id 值
            System.out.println("User ID: " + userId);
            System.out.println(userName);
-
-        //获取全部手机分类
-        List<category> listFL =dao.FenLei();
-        System.out.println(listFL);
-        
         List<shopping_cart> listcount =dao.Gwcsl(userId);
-        List<products> listsp = dao.selectxiala2(0, 6);
-        List<products> listsp1 = dao.selectxiala1(0, 6);
-        System.out.println(listsp1);
+        List<category> listFL = dao.FenLei();
+        List<List<products>> listsp = new ArrayList<List<products>>();
+        for (category category : listFL) {
+            int categoryId = category.getCate_id();
+            listsp.add(dao.selectxiala2(categoryId, 0, 6));
+        }
+       List<List<images>> listtp = new ArrayList<>();
+       List< List<products>> listGg = new ArrayList<>();
+       List<List<products>> listCo = new ArrayList<>();
+       
         //热度
         List<products> listrdsp =dao.selecrm(0, 8);
         List<images> listtprm = new ArrayList<>();
@@ -64,16 +66,7 @@ public class XialaServlet extends HttpServlet {
         List<products> listGgsj = new ArrayList<>();
         List<products> listCosj = new ArrayList<>();
         
-        List<images> listtp = new ArrayList<>();
-        List<products> listGg = new ArrayList<>();
-        List<products> listCo = new ArrayList<>();
-        
-        List<images> listtp1 = new ArrayList<>();
-        List<products> listGg1 = new ArrayList<>();
-        List<products> listCo1 = new ArrayList<>();
-        
-        populateLists(listsp, listtp, listGg, listCo);
-        populateLists(listsp1, listtp1, listGg1, listCo1);
+        populateListss(listsp, listtp, listGg, listCo);
         populateLists(listrdsp, listtprm, listGgrm, listCorm);
         populateLists(listspsj, listtpsj, listGgsj, listCosj);
         // 将数据存入 session
@@ -83,15 +76,11 @@ public class XialaServlet extends HttpServlet {
         session.setAttribute("userId", userId);
         session.setAttribute("userName", userName);
         // 商品主页展示
-        request.setAttribute("listsp1", listsp1);
         request.setAttribute("listsp", listsp);
         request.setAttribute("listtp", listtp);
         request.setAttribute("listGg", listGg);
         request.setAttribute("listCo", listCo);
-        request.setAttribute("listtp1", listtp1);
-        request.setAttribute("listGg1", listGg1);
-        request.setAttribute("listCo1", listCo1);
-        
+
         request.setAttribute("listrdsp", listrdsp);
         request.setAttribute("listtprm", listtprm);
         request.setAttribute("listGgrm", listGgrm);
@@ -103,6 +92,9 @@ public class XialaServlet extends HttpServlet {
         request.setAttribute("listtpsj", listtpsj);
         request.setAttribute("listGgsj", listGgsj);
         request.setAttribute("listCosj", listCosj);
+        
+        //分类
+        request.setAttribute("listFL", listFL);
         request.getRequestDispatcher("shouye.jsp").forward(request, response);
     }
     
@@ -117,4 +109,35 @@ public class XialaServlet extends HttpServlet {
             coList.addAll(coListTemp);
         }
     }
+
+	private void populateListss(List<List<products>> productsList, List<List<images>> imagesList,
+			List<List<products>> ggList, List<List<products>> coList) {
+		for (List<products> p : productsList) {
+			// 创建临时的图片列表、gg列表和co列表
+			List<images> imagesListTemp = new ArrayList<>();
+			List<products> ggListTemp = new ArrayList<>();
+			List<products> coListTemp = new ArrayList<>();
+
+			// 查询与当前产品相关的图片列表
+			for (products product : p) {
+				imagesListTemp.addAll(dao.xialatp(product.getPro_id()));
+			}
+
+			// 查询与当前产品相关的gg列表
+			for (products product : p) {
+				ggListTemp.addAll(dao.selectGg(product.getPro_id()));
+			}
+			
+			// 查询与当前产品相关的co列表
+			for (products product : p) {
+				coListTemp.addAll(dao.selectCo(product.getPro_id()));
+			}
+
+			// 将查询结果添加到对应的列表中
+			imagesList.add(imagesListTemp);
+			ggList.add(ggListTemp);
+			coList.add(coListTemp);
+		}
+	}
+
 }

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.usersdao;
 import entity.advertisements;
+import entity.category;
 import entity.images;
 import entity.products;
 import entity.products_specification;
@@ -47,7 +48,8 @@ public class XiangqingServlet extends HttpServlet {
         String Ggs = request.getParameter("Gg");
         Integer Gg = Integer.parseInt(Ggs);
         
-        //获取商品规格
+      //获取全部手机分类
+        List<category> listFL =dao.FenLei();
        
         // 查询商品信息
         List<products> listspxx = dao.selectProducts(id);
@@ -60,19 +62,16 @@ public class XiangqingServlet extends HttpServlet {
         List<advertisements> listxqimg = dao.selectXQimg(id);
 
         // 查询相关商品（下拉）
-        List<products> listsp1 = dao.selectxiala1(0, 6);
-        List<images> listtp1 = new ArrayList<>();
-        List<products> listGg1 = new ArrayList<>();
-        List<products> listCo1 = new ArrayList<>();
-        populateLists(listsp1, listtp1, listGg1, listCo1);
-
-        // 查询相关商品（其他）
-        List<products> listsp = dao.selectxiala2(0, 6);
-        List<images> listtp = new ArrayList<>();
-        List<products> listGga = new ArrayList<>();
-        List<products> listCoa = new ArrayList<>();
-        populateLists(listsp, listtp, listGga, listCoa);
-
+        
+        List<List<products>> listsp1 = new ArrayList<List<products>>();
+        for (category category : listFL) {
+            int categoryId = category.getCate_id();
+            listsp1.add(dao.selectxiala2(categoryId, 0, 6));
+        }
+       List<List<images>> listtp1 = new ArrayList<>();
+       List< List<products>> listGg1 = new ArrayList<>();
+       List<List<products>> listCo1 = new ArrayList<>();
+       populateListss(listsp1, listtp1, listGg1, listCo1);
         // 设置请求属性
         request.setAttribute("listsp1", listsp1);
         request.setAttribute("listtp1", listtp1);
@@ -85,14 +84,12 @@ public class XiangqingServlet extends HttpServlet {
         
         
         request.setAttribute("listxqimg", listxqimg);
-        request.setAttribute("listsp", listsp);
-        request.setAttribute("listtp", listtp);
-        request.setAttribute("listGg", listGga);
-        request.setAttribute("listCos", listCoa);
         request.setAttribute("listCC", listCC);
         request.setAttribute("listCo", listCo);
         request.setAttribute("listspxx", listspxx);
-
+        
+        //分类
+        request.setAttribute("listFL", listFL);
         // 转发到详情页
         request.getRequestDispatcher("xiangqing.jsp").forward(request, response);
     }
@@ -108,4 +105,33 @@ public class XiangqingServlet extends HttpServlet {
             coList.addAll(listCos);
         }
     }
+    private void populateListss(List<List<products>> productsList, List<List<images>> imagesList,
+			List<List<products>> ggList, List<List<products>> coList) {
+		for (List<products> p : productsList) {
+			// 创建临时的图片列表、gg列表和co列表
+			List<images> imagesListTemp = new ArrayList<>();
+			List<products> ggListTemp = new ArrayList<>();
+			List<products> coListTemp = new ArrayList<>();
+
+			// 查询与当前产品相关的图片列表
+			for (products product : p) {
+				imagesListTemp.addAll(dao.xialatp(product.getPro_id()));
+			}
+
+			// 查询与当前产品相关的gg列表
+			for (products product : p) {
+				ggListTemp.addAll(dao.selectGg(product.getPro_id()));
+			}
+			
+			// 查询与当前产品相关的co列表
+			for (products product : p) {
+				coListTemp.addAll(dao.selectCo(product.getPro_id()));
+			}
+
+			// 将查询结果添加到对应的列表中
+			imagesList.add(imagesListTemp);
+			ggList.add(ggListTemp);
+			coList.add(coListTemp);
+		}
+	}
 }

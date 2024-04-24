@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://www.trkj.com/lim/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,170 +9,222 @@
     <title></title>
 	<link rel="stylesheet" href="../css/wei.css"/>
     <style>
-        *{
-            margin: 0 auto;
-        }
-        li{
-            list-style-type: none;
-        }
-        .s_top{
-            height: 80px;
-            font-size: 12px;
-            line-height: 40px;
-            background: #fff;
-            color: #757575;
-        }
-        .s_by{
-            margin: auto;
-            width: 1226px;
-            padding: 18px 0;
-        }
-        .fl_wai{
-            height: 40px;
-            font-size: 12px;
-            line-height: 40px;
-            background: #eee;
-            color: #757575;
-        }
-        .fl_nei{
-            width: 1226px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        .fl_ul li{
-            display: inline-block;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            color: #424242;
-            font-size: 14px;
-            width: 148px;
-            padding: 14px 0;
-            height: 20px;
-            line-height: 20px;
-        }
-		.search-container {
-		    background-color: #fff;
-		    border-radius: 5px;
-		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-		    padding: 10px;
-		    width: 314px;
-		    position: relative;
-		    top: -73px;
-		    right: -500px;
-		    }
-		
-		    .search-container input[type="text"] {
-		        flex: 1;
-		        padding: 10px;
-		        border: 1px solid #ccc;
-		        border-radius: 3px;
-		        margin-right: 5px;
-		        font-size: 16px;
-		    }
-		
-		    .search-container button {
-		        padding: 11px;
-		        background-color: #007bff;
-		        border: none;
-		        border-radius: 3px;
-		        color: #fff;
-		        cursor: pointer;
-		        font-size: 16px;
-		        background-image: url(../img/搜索.png);
-		        background-repeat: no-repeat;
-		        background-position: 14px center;
-		        height: 35px;
-		        width: 50px;
-		    }
-		
-		    .search-container button img {
-		        width: 40px;
-		    }
-		
-		    .search-container button:hover {
-		        background-color: #ff6700;
-		    }
-        .zhuti{
-            padding: 100px 0 100px;
-            background: #eee;
-        }
-      
-        .sousuo_zt{
-         width: 100%;
-         float: left;
-            
-        }
-        .zhuti_nr {
-            position: relative;
-            margin: 0 auto;
-            width: 1230px;
-        }
-        
-        .zhanshi {
-                width: 23%;
-                height: 365px;
-                background: #fff;
-                float: left;
-                margin-left: 1.7%;
-                margin-bottom: 20px;
-                transition: transform 0.3s;
-                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-            }
+* {
+	margin: 0 auto;
+}
 
-        }
-        
-        /* 清除浮动 */
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        
-		.zhanshi:hover {
-			cursor: pointer;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
-			transform: scale(1.01); /* 缩放效果 */
-		}
-		
-				.sou_a{
-						display: block;
-						padding-top: 47px;
-						-webkit-box-sizing: border-box;
-						box-sizing: border-box;
-						height: 100%;
-				}
-				.div_img{
-						width: 200px;
-						height: 200px;
-						margin: 0 auto 16px;
-				}
-				.div_img img{
-						width: 100%;
-						height: 100%;
-				}
-				.h3name{
-					text-align: center;
-					    margin: 0 10px 2px;
-					    text-overflow: ellipsis;
-					    white-space: nowrap;
-					    overflow: hidden;
-					font-size: 16px;
-				    font-weight: 400;
-				    color: #333;
-				}
-				.pzsname{
-					text-align: center;
-					    margin: 0 10px 10px;
-					    height: 18px;
-					    font-size: 12px;
-					    color:#ff0000a3;
-				}
-				.pzsjg{
-					text-align: center;
-					color:#ff6700; ;
-				}
-    </style>
+li {
+	list-style-type: none;
+}
+
+.s_top {
+	height: 80px;
+	font-size: 12px;
+	line-height: 40px;
+	background: #fff;
+	color: #757575;
+}
+
+.s_by {
+	margin: auto;
+	width: 1226px;
+	padding: 18px 0;
+}
+
+.fl_wai {
+	height: 40px;
+	font-size: 12px;
+	line-height: 40px;
+	background: #eee;
+	color: #757575;
+}
+
+.fl_nei {
+	width: 1226px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.fl_ul li {
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	color: #424242;
+	font-size: 14px;
+	width: 130px;
+	padding: 14px 0;
+	height: 20px;
+	line-height: 20px;
+}
+
+.search-container {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	width: 314px;
+	position: relative;
+	top: -73px;
+	right: -500px;
+}
+
+.search-container input[type="text"] {
+	flex: 1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-right: 5px;
+	font-size: 16px;
+}
+
+.search-container button {
+	padding: 11px;
+	background-color: #007bff;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	background-image: url(../img/搜索.png);
+	background-repeat: no-repeat;
+	background-position: 14px center;
+	height: 35px;
+	width: 50px;
+}
+
+.search-container button img {
+	width: 40px;
+}
+
+.search-container button:hover {
+	background-color: #ff6700;
+}
+
+.zhuti {
+	padding: 50px 0 50px;
+	background: #eee;
+}
+
+.sousuo_zt {
+	width: 100%;
+	float: left;
+}
+
+.zhuti_nr {
+	position: relative;
+	margin: 0 auto;
+	width: 1230px;
+}
+
+.zhanshi {
+	width: 23%;
+	height: 365px;
+	background: #fff;
+	float: left;
+	margin-left: 1.7%;
+	margin-bottom: 20px;
+	transition: transform 0.3s;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+}
+
+/* 清除浮动 */
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.zhanshi:hover {
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+	transform: scale(1.01); /* 缩放效果 */
+}
+
+.sou_a {
+	display: block;
+	padding-top: 47px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.div_img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto 16px;
+}
+
+.div_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.h3name {
+	text-align: center;
+	margin: 0 10px 2px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 16px;
+	font-weight: 400;
+	color: #333;
+}
+
+.pzsname {
+	text-align: center;
+	margin: 0 10px 10px;
+	height: 18px;
+	font-size: 12px;
+	color: #ff0000a3;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.pzsjg {
+	text-align: center;
+	color: #ff6700;;
+}
+
+
+
+.oy a{
+	text-decoration: none;
+	margin: 5px 5px;
+	padding: 2px 6px;
+	border: 1px solid gray;
+	font-size: 12px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+
+
+
+table {
+	border-collapse: collapse;
+	width: 30%;
+}
+
+td {
+	text-align: center;
+	padding: 5px;
+	border: none;
+}
+.oy{
+	margin 0 auto;
+	width:1230px;
+	
+}
+.sousuobt{
+	font-size: 40px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+</style>
 	
 	<script>
 		window.addEventListener('load', function() {
@@ -196,19 +250,19 @@
 </head>
 <body> 
         <div class="fl_wai">
-            <div class="fl_nei"><a>首页 </a>   >   <a> 搜索结果</a></div>
+            <div class="fl_nei"><a href="xiala">首页 </a>   >   <a> 搜索结果</a></div>
 			
         </div>
         <div class="s_top">
             <div class="s_by">
                 <ul class="fl_ul">
                     <li>分类:</li>
-                    <li>全部</li>
-                    <li>红米手机</li>
+                    <li>${flname}</li>
+                   
 				</ul>
 				<div class="search-container">
-				<form action="">
-				    <input type="text" placeholder="请搜索......" required>
+				<form action="SouSuoServlet" method="get">
+				    <input type="text" name="ssz" placeholder="请搜索......" >
 				    <button type="submit">
 				      
 				    </button>
@@ -219,29 +273,35 @@
 		
         <div class="zhuti">
             <div class="zhuti_nr">
-           
-            <div class="sousuo_zt">
-                <div class="zhanshi">
-					<a class="sou_a">
-						<div class="div_img">
-							<img src="../img/Redmi K70下拉.png"/>
+			<div class="sousuo_zt">
+				<c:if test="${empty listsp}">
+					<p>暂无搜索结果~</p>
+				</c:if>
+				<c:if test="${not empty listsp}">
+					<p class="sousuobt">搜索结果</p>
+					<c:forEach var="s" items="${listsp}" varStatus="loop">
+						<div class="zhanshi">
+							<a class="sou_a"
+								href="xq?id=${listsp[loop.index].pro_id}&Gg=${listGg[loop.index].spe_id}&Co=${listCo[loop.index].spe_id}&Jg=${listsp[loop.index].pri_name}">
+								<div class="div_img">
+									<img src="${listtp[loop.index].img_url}" />
+								</div>
+								<h3 class="h3name">${s.pro_name}</h3>
+								<p class="pzsname">${s.pro_description}</p>
+								<p class="pzsjg">
+									<span class="zsjg">${s.pri_name}</span>元<span>起</span>
+								</p>
+							</a>
 						</div>
-						<h3 class="h3name">Xiaomi 13</h3>
-						<p class="pzsname">性能旋风，席卷而来</p>
-						<p class="pzsjg"><span class="zsjg">1999</span>元<span>起</span></p>
-					</a>
-				</div>
-				
-                <div class="zhanshi"></div>
-                <div class="zhanshi"></div>
-				<div class="zhanshi"></div>
-				<div class="zhanshi"></div>
-				<div class="zhanshi"></div>
-				<div class="zhanshi"></div>
-			
-               </div>
-           
-            </div>
+					</c:forEach>
+				</c:if>
+			</div>
+
+		</div>
+        </div>
+        <div class="oy">
+        	            <x:page controller="SouSuoServlet" pagesize="8" total="${total}" curpage="${curpage}" where="ssz=${name}&fenlei=${fl}"/>
+        	
         </div>
 		<div class="con_bottom">
 			<div class="con6">

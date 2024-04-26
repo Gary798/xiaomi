@@ -99,19 +99,19 @@
 					z-index: 99;
 					
 				}
-				.con1_masking ul{
+				.con1_masking .com_left_ul{
 					list-style: none;
 					margin-top: 20px;
 						
 				}
-				.con1_masking ul li{
+				.con1_masking .com_left_ul li{
 					height: 42px;
 					line-height: 42px;
 					color: #fff;
 					font-size: 14px;
 				}
 				
-				.con1_masking ul li span{
+				.con1_masking .com_left_ul li span{
 					color: #fff;
 					padding-left: 30px;
 					 display: block;
@@ -126,15 +126,18 @@
 					margin-left: 90px !important;
 				}
 				.spanimg1{
-					margin-left: 137px !important;
+					margin-left: 109px !important;
 				}
-				.con1_masking ul li span,
-				.con1_masking ul li {
+				.spanimg2{
+					margin-left: 127px !important;
+				}
+				.con1_masking .com_left_ul li span,
+				.con1_masking .com_left_ul li {
 				  transition: background-color 0.3s;
 				}
 				
-				.con1_masking ul li span:hover,
-				.con1_masking ul li:hover {
+				.con1_masking .com_left_ul li span:hover,
+				.con1_masking .com_left_ul li:hover {
 				  background-color: #f60;
 				  cursor: pointer;
 				}
@@ -417,14 +420,15 @@
 						z-index: 99; 
 						border: none;
 						outline: none; 
-						background-color: #f7d197; /* 设置背景颜色，你可以设置自己想要的颜色或图片 */
+						background-color: rgba(0, 0, 0, 0); /* 设置背景颜色，你可以设置自己想要的颜色或图片 */
 						color: white; /* 文本颜色 */
 						cursor: pointer; 
-					   
+					   	border:2px solid #aaa;
 						border-radius: 10px; /* 圆角 */
 				}
 				#ftop:hover{
-					background: pink;
+					
+					border: 2px solid #f7b500; 
 				}
 				#ftop img{
 					 padding: 15px; 
@@ -620,8 +624,7 @@
 				.con1_masking_tow2{
 					display: none;
 					width: 978px;
-					height: 461px;
-					background: #f7d197;
+					background: #fff;
 					
 				}
 				
@@ -682,4 +685,37 @@
 							    font-size: 12px;
 							    text-align: center;
 							    background: #5f5750;
-						}		
+						}	
+						.com_right_ul {
+						  display: flex;
+						  flex-wrap: wrap;
+						}
+						
+						.com_right_li {
+						  width: 244px; /* 100% / 6 */
+						  box-sizing: border-box; /* 让元素的宽度包括padding和border */
+						  text-align: center; /* 让文本居中显示 */
+						  padding: 10px; /* 添加一些内边距 */
+							height: 77px;
+						}
+						.com_right_a{
+							    display: block;
+							    padding: 14px 20px;
+							    line-height: 40px;
+							    color: #333;
+							    -webkit-transition: color .2s;
+							    transition: color .2s;
+						}
+						.com_right_a_img{
+							    float: left;
+							    margin-right: 12px;
+							    vertical-align: middle;
+								width: 40px;
+						}
+						.com_right_a_span{
+							float: left;
+							line-height: 40px;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							overflow: hidden;
+						}	

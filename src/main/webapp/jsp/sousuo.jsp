@@ -195,7 +195,6 @@ li {
 	margin: 5px 5px;
 	padding: 2px 6px;
 	border: 1px solid gray;
-	font-size: 12px;
 	border-radius: 4px;
 	cursor: pointer;
 }
@@ -223,6 +222,18 @@ td {
 	font-size: 40px;
     text-align: center;
     margin-bottom: 18px;
+}
+.wjg{
+	font-size: 30px;
+	text-align: center;
+}
+.oy_p{
+	text-align: center;
+	font-size: 14px;
+}
+.oy_wai{
+	background: #eee;
+	height: 35px;
 }
 </style>
 	
@@ -275,7 +286,7 @@ td {
             <div class="zhuti_nr">
 			<div class="sousuo_zt">
 				<c:if test="${empty listsp}">
-					<p>暂无搜索结果~</p>
+					<p class="wjg">暂无搜索结果,试试搜索其他关键词吧~</p>
 				</c:if>
 				<c:if test="${not empty listsp}">
 					<p class="sousuobt">搜索结果</p>
@@ -299,10 +310,12 @@ td {
 
 		</div>
         </div>
+       <div class="oy_wai">
         <div class="oy">
         	            <x:page controller="SouSuoServlet" pagesize="8" total="${total}" curpage="${curpage}" where="ssz=${name}&fenlei=${fl}"/>
         	
         </div>
+       </div>
 		<div class="con_bottom">
 			<div class="con6">
 			<div class="con6_1">

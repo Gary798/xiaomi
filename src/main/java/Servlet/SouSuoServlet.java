@@ -41,6 +41,7 @@ public class SouSuoServlet extends HttpServlet {
 	            e.printStackTrace();
 	        }
 	    }
+	    //判断是否从点击分类进来的
 	    Integer fl=-1;
 	    String fls = request.getParameter("fenlei");
 	    if (fls==null) {

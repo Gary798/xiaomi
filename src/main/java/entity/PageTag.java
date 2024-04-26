@@ -113,7 +113,7 @@ public class PageTag extends SimpleTagSupport{
         sel += "</select>";
         //拼出最后的结果
         StringBuffer sb = new StringBuffer();
-        sb.append("<div class=''oy_p>").append(first).append(pre).append(sel).append(next).append(last).append(info).append("</div>");
+        sb.append("<div class='oy_p'>").append(first).append(pre).append(sel).append(next).append(last).append(info).append("</div>");
         //输出
         JspWriter out = this.getJspContext().getOut();
         out.print(sb);

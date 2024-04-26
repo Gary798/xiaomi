@@ -116,22 +116,22 @@
 						</div>
 						<div class="xiala">
 						<c:forEach var="image" items="${listFL}" varStatus="loop">
-    <div class="navDiv">
-        <ul class="children-list">
-            <c:forEach items="${listsp[loop.index]}" var="pi" varStatus="o">
-                <li>
-                    <a class="xiala_a" href="xq?id=${pi.pro_id}&Gg=${listGg[loop.index][o.index].spe_id}&Co=${listCo[loop.index][o.index].spe_id}&Jg=${pi.pri_name}">
-                        <div class="imgdiv">
-                            <img src="${listtp[loop.index][o.index].img_url}"/>
-                        </div>
+   							<div class="navDiv">
+       							 <ul class="children-list">
+           						 <c:forEach items="${listsp[loop.index]}" var="pi" varStatus="o">
+              					  <li>
+                   					 <a class="xiala_a" href="xq?id=${pi.pro_id}&Gg=${listGg[loop.index][o.index].spe_id}&Co=${listCo[loop.index][o.index].spe_id}&Jg=${pi.pri_name}">
+                       				 <div class="imgdiv">
+                            		 <img src="${listtp[loop.index][o.index].img_url}"/>
+                      	   </div>
                         <div>${pi.pro_name}</div>
-                        <p>${pi.pri_name}起</p>
-                    </a>
-                </li>
-            </c:forEach>
-        </ul>
-    </div>
-</c:forEach>
+                       			 <p>${pi.pri_name}起</p>
+                   				 </a>
+              					 </li>
+            					 </c:forEach>
+       							 </ul>
+    							 </div>
+						</c:forEach>
 
 						</div>
 					</div>
@@ -150,10 +150,10 @@
 			
 			<div class="content1">
 				<div class="con1_masking">
-				<ul>
-					<li><span class="lbtspan">手机<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
-					<li><span class="lbtspan">电脑<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
-					<li><span class="lbtspan">家电<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
+				<ul class="com_left_ul">
+					<li><span class="lbtspan">价格 ↑<img src="../img/右箭头 (1).png"/ class="spanimg2"></span></li>
+					<li><span class="lbtspan">热议商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
+					<li><span class="lbtspan">推荐商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
 					<li><span class="lbtspan">笔记本 平板<img src="../img/右箭头 (1).png" class="spanimg"/></span></li>
 					<li><span class="lbtspan">出行 穿戴<img src="../img/右箭头 (1).png"/></span></li>
 					<li><span class="lbtspan">耳机 音响<img src="../img/右箭头 (1).png"/></span></li>
@@ -163,13 +163,54 @@
 					<li><span class="lbtspan">电源 配件<img src="../img/右箭头 (1).png"/></span></li>
 				</ul>
 				<div class="com_2">
-					
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<c:forEach var="tj" items="${listspJGG}" varStatus="loop">
+							<li class="com_right_li"><a class="com_right_a"
+								href="xq?id=${tj.pro_id}&Gg=${listGgJGG[loop.index].spe_id}&Co=${listCoJGG[loop.index].spe_id}&Jg=${tj.pri_name}">
+									<img src="${listtpJGG[loop.index].img_url}"
+									class="com_right_a_img" /> <span class="com_right_a_span">${tj.pro_name}</span>
+							</a></li>
+						</c:forEach>
+						</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<li	class="com_right_li">
+								<a class="com_right_a">
+									<img src="../img/Xiaomi 13下拉.png" class="com_right_a_img"/>
+									<span class="com_right_a_span">Xiaomi 数字旗舰</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+						<c:forEach var="tj" items="${listspRAND}" varStatus="loop">
+							<li class="com_right_li"><a class="com_right_a"
+								href="xq?id=${tj.pro_id}&Gg=${listGgRAND[loop.index].spe_id}&Co=${listCoRAND[loop.index].spe_id}&Jg=${tj.pri_name}">
+									<img src="${listtpRAND[loop.index].img_url}"
+									class="com_right_a_img" /> <span class="com_right_a_span">${tj.pro_name}</span>
+							</a></li>
+						</c:forEach>
+					</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<li	class="com_right_li">
+								<a class="com_right_a">
+									<img src="../img/Xiaomi 13下拉.png" class="com_right_a_img"/>
+									<span class="com_right_a_span">Xiaomi 数字旗舰</span>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 				</div>
 				<!-- banner1-->
 				<div class="bannerPc banner banner1">
 					<ul class="bxslider">
-							<li><a href="#"><img src="../img/4.jpg" alt="" title=""/></a> </li>
+							<li><a href="#"><img src="../img/lbtx.png" alt="" title=""/></a> </li>
 							<li><a href="#"><img src="../img/3.webp" alt="" title=""/></a> </li>
 							<li><a href="#"><img src="../img/6.webp" alt="" title=""/> </a></li>
 							<li><a href="#"><img src="../img/2.webp" alt="" title=""/> </a></li>

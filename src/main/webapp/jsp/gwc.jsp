@@ -333,7 +333,9 @@
 		    $(".sc").on("click", function() {
 		        // 获取购物车 ID
 		        var carId = $(this).closest('.hang').find('.car_id').text().trim();
-		        alert(carId)
+		        var result = confirm("您确定要删除该商品吗？");
+        	    if (result) {
+        	     // 用户点击了确认按钮，执行删除操作
 		        // 发送 AJAX 请求到 Servlet
 		        $.ajax({
 		            url: "GwcdeleteServlet",
@@ -350,6 +352,7 @@
 		                console.error("Error: " + error);
 		            }
 		        });
+        	   }
 		    });
 		});
 		</script>

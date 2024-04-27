@@ -1,15 +1,25 @@
 package entity;
 
-import java.math.BigDecimal;
+
 
 public class orders_details {
 	private int or_det_id;
     private int user_id;
     private int or_id;
-    private int pro_id;
-    private int pri_id;
-    private int or_det_count;
-    private BigDecimal or_det_price;
+    private String img_url;
+    private String pro_name;
+    private int car_jg ;
+    private int car_count;
+    private double car_zon;
+    
+    
+	
+	public double getCar_zon() {
+		return car_zon;
+	}
+	public void setCar_zon(Double car_zon) {
+		this.car_zon = car_zon;
+	}
 	public int getOr_det_id() {
 		return or_det_id;
 	}
@@ -28,42 +38,60 @@ public class orders_details {
 	public void setOr_id(int or_id) {
 		this.or_id = or_id;
 	}
-	public int getPro_id() {
-		return pro_id;
+	
+
+	public String getImg_url() {
+		return img_url;
 	}
-	public void setPro_id(int pro_id) {
-		this.pro_id = pro_id;
+	public void setImg_url(String img_url) {
+		this.img_url = img_url;
 	}
-	public int getPri_id() {
-		return pri_id;
+	public String getPro_name() {
+		return pro_name;
 	}
-	public void setPri_id(int pri_id) {
-		this.pri_id = pri_id;
+	public void setPro_name(String pro_name) {
+		this.pro_name = pro_name;
 	}
-	public int getOr_det_count() {
-		return or_det_count;
+	public int getCar_jg() {
+		return car_jg;
 	}
-	public void setOr_det_count(int or_det_count) {
-		this.or_det_count = or_det_count;
+	public void setCar_jg(int car_jg) {
+		this.car_jg = car_jg;
 	}
-	public BigDecimal getOr_det_price() {
-		return or_det_price;
+	public int getCar_count() {
+		return car_count;
 	}
-	public void setOr_det_price(BigDecimal or_det_price) {
-		this.or_det_price = or_det_price;
-	}
-	public orders_details(int or_det_id, int user_id, int or_id, int pro_id, int pri_id, int or_det_count,
-			BigDecimal or_det_price) {
-		super();
-		this.or_det_id = or_det_id;
-		this.user_id = user_id;
-		this.or_id = or_id;
-		this.pro_id = pro_id;
-		this.pri_id = pri_id;
-		this.or_det_count = or_det_count;
-		this.or_det_price = or_det_price;
+	public void setCar_count(int car_count) {
+		this.car_count = car_count;
 	}
 	public orders_details() {
 		super();
 	}
+	public orders_details(String img_url, String pro_name, int car_jg,int car_count,Double car_zon) {
+		super();
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+		this.car_zon = car_zon;
+	}
+	
+	@Override
+	public String toString() {
+		return "orders_details [or_det_id=" + or_det_id + ", user_id=" + user_id + ", or_id=" + or_id + ", img_url="
+				+ img_url + ", pro_name=" + pro_name + ", car_jg=" + car_jg + ", car_count=" + car_count + ", car_zon="
+				+ car_zon + "]";
+	}
+	public orders_details(int or_det_id, int user_id, int or_id, String img_url, String pro_name, int car_jg,
+			int car_count) {
+		super();
+		this.or_det_id = or_det_id;
+		this.user_id = user_id;
+		this.or_id = or_id;
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+	}
+	
 }

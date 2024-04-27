@@ -1,0 +1,165 @@
+
+		*.{
+			margin: 0;
+			padding: 0;
+			
+		}
+		a{
+			text-decoration: none;
+			
+		}
+		.mi-box{
+			padding: 36px 48px;
+			background-color: #fff;
+		
+		}
+		#a1{
+			width: 100%;
+			height: 1028px;
+			background-color: #f5f5f5;
+			padding-bottom: 40px;
+			
+		}
+		#a2{
+			width: 1240px;
+			height: 988px;
+			background-color:#f5f5f5;
+			margin: 0 auto;
+		}
+		#a3{
+			width: 234px;
+			height: 988px;
+			background-color:white;
+			float: none;
+		}
+		#a5{
+			width: 978px;
+			height: 677px;
+			background-color:white;
+			float: left;
+			margin-top: -987px;
+			margin-left: 250px;
+			
+		}
+		#span{
+			width: 138px;
+			height: 184px;
+			background-color: white;
+			margin: 0 48px 12px;
+			
+		}
+		.list{
+			    margin:0;
+			    padding: 0;
+			    list-style: none;
+		}
+		.list li{
+			    margin: 10px;
+				font-size: 13px;
+		}
+		.title1{
+			margin: 20px 10px ;
+			padding-top: 20px;
+		}
+		.box-hd{
+			border-bottom:#757575;
+			padding-bottom: 20px;
+			height: 130px;
+			border-bottom: 1px solid #e0e0e0;
+		}
+		.title{
+			margin: 0;
+			    font-size: 30px;
+			    font-weight: 400;
+			    line-height: 68px;
+			    color: #757575;
+				margin-bottom: 25px;
+		}
+		.btn1{
+			margin-right: 5px;
+			width: 120px;
+			height: 30px;
+			font-size: 12px;
+			line-height: 28px;
+			display: inline-block;
+			text-align: center;
+		}
+		.goods{
+			width: 100%;
+		}
+		.goods-box{
+			border-bottom: 1px solid #e0e0e0;
+		}
+		.cloo{
+			text-align: left;
+			    color: #333;
+				padding-bottom: 20px;
+		}
+		.goods-img{
+			width: 80px;
+		}
+		.order{
+			    position: relative;
+			    padding: 0px 0 35px;
+			    margin-bottom: 30px;
+			    border-bottom: 1px solid #e0e0e0;
+				 color: #757575;
+		}
+		.order table th{
+			 color: #757575;
+			 padding: 3px 0;
+			 padding-right:1em;
+		}
+		.order table td{
+			font-size: 15px;
+		}
+		.btn-small{
+			    width: 118px;
+			    height: 28px;
+			    font-size: 12px;
+			    line-height: 28px;
+				display: block;
+				margin: 18px 0 10px;
+				background: #fff;
+				color: #757575;
+				border: 1px solid #b0b0b0;
+				text-align: center;
+		}
+		.total{
+			margin: 0 0 0 auto;
+			color: #757575;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.total td{
+			width: 150px;
+		}
+		.weos{
+			    position: relative;
+			    
+				color: #757575;
+				height: 123px;
+				text-align: right;
+				
+		}
+		.col-info{
+			    text-align: left;
+			    color: #333;
+			
+		}
+		.col-info{
+			width: 100%;
+		}
+		.col-name{
+			width: 350px;
+			text-align: center;
+			color: black;
+		}
+		.col-price{
+			text-align: left;
+			    color: #333;
+		}
+		.price{
+			margin: 0;
+			width: 145px;
+		}

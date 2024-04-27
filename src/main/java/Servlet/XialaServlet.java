@@ -46,7 +46,10 @@ public class XialaServlet extends HttpServlet {
 
         
         
-        List<shopping_cart> listcount =dao.Gwcsl(userId);
+  
+        //测试用户数据                                                                                      
+        int yhid=1;
+        List<shopping_cart> listcount =dao.Gwcsl(yhid);
         List<products> listsp = dao.selectxiala2(0, 6);
         List<products> listsp1 = dao.selectxiala1(0, 6);
         System.out.println(listsp1);

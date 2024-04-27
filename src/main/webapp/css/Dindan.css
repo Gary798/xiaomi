@@ -33,7 +33,7 @@
 			float: left;
 			margin-top: -987px;
 			margin-left: 250px;
-			padding: 20px 40px;
+			padding: 20px 0px;
 		}
 		#span{
 			width: 138px;
@@ -57,7 +57,8 @@
 		}
 		
 		.poral-2{
-			padding: 36px 0;
+
+			background-color: white;
 		}
 		.title1{
 			margin: 0;
@@ -81,7 +82,7 @@
 		.filter li{
 			    float: left;
 			    padding: 0 20px;
-			    border-left: 1px solid #e0e0e0;
+			    border-right: 1px solid #e0e0e0;
 			    color: #757575;
 		}
 		.filter2 .first{
@@ -125,7 +126,7 @@
 		}
 		.order-item{
 			padding: 10px 30px;
-			width: 450px;
+			
 		}
 		.order-item li{
 			position: relative;
@@ -146,10 +147,12 @@
 			    float: right;
 			    vertical-align: top;
 				padding: 0 30px;
-				margin-top: -95px;
+				
 				display: flex;
 				flex-direction: column;
 				align-items: flex-end;
+				position: relative;
+				    bottom: 120px;
 		}
 		.btn-sasmwy{
 			background: #ff6700;
@@ -175,9 +178,12 @@
 			    color: #757575;
 		}
 		.img-din{
-		    width: 80px;
-    height: 86px;
-    position: absolute;
-    left: 0;
-    top: 0;
+		    width: 100%;
+    		height: 66%;
+    		position: absolute;
+    		left: 0;
+    		top: 8px;
+		}
+		.box{
+			 display: none;
 		}

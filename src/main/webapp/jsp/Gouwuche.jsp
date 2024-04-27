@@ -12,6 +12,7 @@
 </head>
 <link rel="stylesheet" href="../css/Gouwuche.css?v=1" />
 <script src="../js/Dizhi.js"></script>
+<script src="../js/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/distpicker/2.0.1/distpicker.js"></script>
 <body>
@@ -68,23 +69,7 @@
 					</l:forEach>
 													
 					</div>
-					<script type="text/javascript">
-					$(function() {
-						var dname;
-						var dtele;
-						var dress;
-						$(".shouhuo").click(function() {
-							dname = $(this).find(".dname").text();
-							dtele = $(this).find(".dtele").text();
-							dress = $(this).find(".dress").text();
-							
-						}) 
-						
-						$("#xiadan").click(function() {
-							window.location.href="DindanServlet?dname="+dname+"&dtele="+dtele+"&dress="+dress;
-						}) 
-					})
-					</script>
+				
 							
 							
 					</div>
@@ -98,7 +83,7 @@
 							
 							<div class="goods-itme">
 								<div class="goods-img">
-									<img  src="../img/${m.img_url}" style="width: 30px;height: 30px;"/>
+									<img class="image" src="../img/${m.img_url}" style="width: 30px;height: 30px;"/>
 								</div>
 								
 								<div class="goods-name">
@@ -118,6 +103,7 @@
 						
 					</div>
 					</v:forEach>
+					
 					<c:set var="totalPrice" value="0" /> <!-- 初始化总价为0 -->
 
 <script>
@@ -134,8 +120,7 @@ $(function () {
 		$(".num").text(totalPrice)
     // 将 JavaScript 中的总价赋值给 JSP 变量
 })
-   
-    //<c:set var="totalPrice" value="${totalPrice}" />
+
 </script>
 					<!-- 输出商品总价 -->
 					<div class="weos">
@@ -150,7 +135,7 @@ $(function () {
 							<tr>
 								<td>运费:</td>
 								<td>
-									<span class="num">0</span>元
+									<span class="num1">0</span>元
 								</td>
 							</tr>
 							
@@ -162,7 +147,50 @@ $(function () {
 							</tr>
 							</tbody>
 						</table>
+							<script type="text/javascript">
+					$(function() {
+						var dname;
+						var dtele;
+						var dress;
+						$(".shouhuo").click(function() {
+							dname = $(this).find(".dname").text();
+							dtele = $(this).find(".dtele").text();
+							dress = $(this).find(".dress").text();
+							
+						}) 
 						
+						$("#xiadan").click(function() {
+							var img = [];
+							var sname=[];
+							var count=[];
+							var zj=[];
+							var zon = document.querySelector(".num").innerText;
+							
+							$('.image').each(function() {
+							    // 获取相对路径
+							    var relativePath = $(this).attr('src');
+							    
+							    // 如果相对路径包含斜杠，则截取到最后一个斜杠为止，即基本路径部分
+							    var imagePath = relativePath.substring(relativePath.indexOf('img/') + 4);
+							    img.push(imagePath);
+							});
+							$(".goods-itme").each(function() {
+							    // 获取当前商品的名称、数量和单价
+							    var name = $(this).find(".goods-name").text();
+							    var quantity = $(this).find(".good-total1").text();
+							    var price = $(this).find(".good-total").text();
+							    
+							    // 将商品信息存入相应的数组
+							    sname.push(name);
+							    count.push(quantity);
+							    zj.push(price);
+							});
+							
+							window.location.href="DindanServlet?dname="+dname+"&dtele="+dtele+"&dress="+dress
+									+"&img="+img+"&sname="+sname+"&count="+count+"&zj="+zj+"&zon="+zon;
+						}) 
+					})
+					</script>
 					</div>
 					
 					<div class="cleadsi">

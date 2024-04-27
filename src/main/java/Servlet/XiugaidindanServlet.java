@@ -30,6 +30,7 @@ public class XiugaidindanServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Integer Yhid = (Integer) session.getAttribute("Yhid");
+		
 	
 		request.setAttribute("list", orders_detailsDAO.selectiid(Yhid));
 		request.getRequestDispatcher("Dindan2Servlet").forward(request, response);

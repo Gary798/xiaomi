@@ -10,6 +10,7 @@
 	</head>
 	<link rel="stylesheet" href="../js/Shouhuo.css"/>
 	<link rel="stylesheet" href="../js/wei.css"/>
+	<script src="../js/jquery-3.5.1.min.js"></script>
 	<body>
 		<div id="a1">
 		<div id="a2">
@@ -53,16 +54,7 @@
 					<a href="javascript:void(0)" class="btn1" style="border: 1px solid #b0b0b0;color: #757575;background-color: white;">取消订单</a>
 					</div>
 					</div>
-					<script type="text/javascript">
-					$(function() {
-						/*修改订单状态点击事件 */
 					
-						$(".btn1").click(function() {
-							var din =  $(this).closest(".mi-box").find(".din").text();
-							window.location.href="XiugaidindanServlet?din="+din;
-						});
-					})
-					</script>
 					
 					<m:forEach items="${l.details}" var="d" >
 					<div style="padding: 35px 0;">
@@ -115,7 +107,8 @@
 							</tr>
 						</table>
 					</div>
-					<m:forEach items="${l.details}" var="d">
+					<m:forEach items="${l.details}" var="d" varStatus="a">
+					<m:if test="${a.index==0 }">
 					<div class="weos">
 						<table class="total">
 							<tbody>
@@ -143,7 +136,9 @@
 							</tbody>
 						</table>
 					</div>
+					</m:if>
 					</m:forEach>
+					
 				</c:forEach>
 				
 			</div>
@@ -296,7 +291,16 @@
 					</div>
 					
 				</div>
-				
+				<script type="text/javascript">
+					$(function() {
+						/*删除订单点击事件 */
+					
+						$(".btn1").click(function() {
+							var din =  $(this).closest(".mi-box").find(".din").text();
+							window.location.href="ShanchuServlet?din="+din;
+						});
+					})
+					</script>
 				
 	</body>
 </html>

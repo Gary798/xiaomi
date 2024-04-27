@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Demo
  */
-@WebServlet("/jsp/Demo")
+@WebServlet("/jsp/Xiugaichengon")
 public class Xiugaichengon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

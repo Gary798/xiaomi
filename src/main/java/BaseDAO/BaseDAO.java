@@ -153,7 +153,6 @@ public class BaseDAO {
 		return list.get(0);//只需要List集合中的第0个元素
 	}
 	
-	
 }
 
 

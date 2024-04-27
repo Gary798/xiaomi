@@ -512,7 +512,8 @@ public class usersdao extends BaseDAO{
 				public List<shopping_cart> map(ResultSet rs) throws SQLException {
 					List<shopping_cart> list = new ArrayList<>();
 					while (rs.next()) {
-						shopping_cart sp = new shopping_cart(rs.getInt(1),rs.getInt(2),
+						shopping_cart sp = new shopping_cart(
+								rs.getInt(1),rs.getInt(2),
 								rs.getString(3),
 								rs.getString(4),
 								rs.getBigDecimal(5),

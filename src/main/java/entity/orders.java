@@ -11,6 +11,8 @@ public class orders {
     private String or_address;
     private String or_note;
     
+    
+    private String user_name;
     private int car_id;
     private int pro_id;
     private String img_url;
@@ -22,24 +24,27 @@ public class orders {
     
     
 
-	public orders(int or_id,String or_name, String or_number,String or_address,String or_state,Timestamp or_time,
-			int car_id, int pro_id, String img_url, String pro_name,BigDecimal car_jg, int car_count) {
-		super();
-		this.or_id = or_id;
-		this.or_state = or_state;
-		this.or_time = or_time;
-		this.or_name = or_name;
-		this.or_number = or_number;
-		this.or_address = or_address;
-		this.car_id = car_id;
-		this.pro_id = pro_id;
-		this.img_url = img_url;
-		this.pro_name = pro_name;
-		this.car_jg = car_jg;
-		this.car_count = car_count;
-	}
+
+	
+    
 	
 
+
+	
+	
+	@Override
+	public String toString() {
+		return "orders [or_id=" + or_id + ", user_id=" + user_id + ", or_state=" + or_state + ", or_time=" + or_time
+				+ ", or_name=" + or_name + ", or_number=" + or_number + ", or_address=" + or_address + ", or_note="
+				+ or_note + ", user_name=" + user_name + ", car_id=" + car_id + ", pro_id=" + pro_id + ", img_url="
+				+ img_url + ", pro_name=" + pro_name + ", car_jg=" + car_jg + ", car_count=" + car_count + "]";
+	}
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
 	public int getCar_id() {
 		return car_id;
 	}
@@ -124,7 +129,35 @@ public class orders {
 	public void setOr_note(String or_note) {
 		this.or_note = or_note;
 	}
-
+	
+	public orders(String or_state, Timestamp or_time, String user_name,int or_id) {
+		super();
+	
+		this.or_state = or_state;
+		this.or_time = or_time;
+		this.user_name = user_name;
+		this.or_id = or_id;
+	}
+	
+	
+	public orders(String or_state, String or_number,String or_address, String user_name,int or_id) {
+		super();
+	
+		this.or_state = or_state;
+		this.or_number = or_number;
+		this.or_address = or_address;
+		this.user_name = user_name;
+		this.or_id = or_id;
+	}
+	
+	public orders(String img_url, String pro_name,  int car_count,BigDecimal car_jg) {
+		super();
+		this.img_url = img_url;
+		this.pro_name = pro_name;
+		this.car_jg = car_jg;
+		this.car_count = car_count;
+	}
+	
 	public orders() {
 		super();
 	}

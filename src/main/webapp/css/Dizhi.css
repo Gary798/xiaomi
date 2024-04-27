@@ -3,6 +3,7 @@
 		  padding: 0;
 		  
 	  }
+	  
 	  .dizhi{
 		  width: 600px;
 		  height: 320px;
@@ -110,7 +111,8 @@
 			background-color: #000;
 		}
 		.mi-box{
-			padding: 36px 48px;
+			padding-left: 31px;
+    		padding-bottom: 20px;
 			background-color: #fff;
 			border-bottom: 0.5px solid black;
 		}
@@ -143,3 +145,4 @@
 			text-align: center;
 			margin-top: 28%;
 		}
+		

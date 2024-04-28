@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 	<!DOCTYPE html>
 	<html>
 		<head>
@@ -112,9 +114,6 @@
   						</div>
 						</div>
 						<span>|</span>
-						<a href="Geren.jsp">个人中心</a>
-						<span>|</span>
-						
 						<a>我的订单</a>
 						<div class="cen_right_box">
 						<a href="GwServlet">
@@ -132,129 +131,38 @@
 						<div class="header_nav">
 						<div class="logo"><img src="../img/logo-mi2.png"/></div>
 						<ul class="nav_ul">
-							<li><span id="qbsp">全部商品分类</span></li>
-							<li><span id="xm">Xiaomi手机</span></li>
-							<li><span id="hm">Redmi手机</span></li>
-							<li><span id="dn">电脑</span></li>
-							<li><span id="bjb">笔记本</span></li>
-							<li><span id="pb">平板</span></li>
-							<li><span id="jd">家电</span></li>
-							<li><span id="lyq">路由器</span></li>
-							<li><span>服务中心</span></li>
-							<li><span>社区</span></li>
+							<c:forEach var="oy" items="${listFL}">
+							<li class="spfl"><span>${oy.cate_name}</span></li>
+							</c:forEach>
+							<li><span><a href="xiala">小米商城</a></span></li>
 						</ul>
+						
 						<div class="sousuo">
-								<form>
-									<input type="text" class="ssk" style="width:221px;height:16px;background:#eee" />
+								<form action="SouSuoServlet" method="get">
+									
+									<input type="text" class="ssk" name="ssz" style="width:221px;height:16px;background:#eee" />
 									<input type="submit" class="fdj" value=""/>
 								</form>
 						</div>
 						<div class="xiala">
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listsp1}" varStatus="loop">
-									<li>
-										<a class="xiala_a" href="xq?id=${listsp1[loop.index].pro_id}&Gg=${listGg1[loop.index].spe_id}&Co=${listCo1[loop.index].spe_id}&Jg=${listsp1[loop.index].pri_name}">
-											<div class="imgdiv">
-											<img src="${listtp1[loop.index].img_url}"/>
-											</div>
-											<div>${listsp1[loop.index].pro_name}</div>
-											<p>${listsp1[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a" href="xq?id=${listsp[loop.index].pro_id}&Gg=${listGg[loop.index].spe_id}&Co=${listCo[loop.index].spe_id}&Jg=${listsp[loop.index].pri_name}">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
+						<c:forEach var="image" items="${listFL}" varStatus="loop">
+   							<div class="navDiv">
+       							 <ul class="children-list">
+           						 <c:forEach items="${listsp[loop.index]}" var="pi" varStatus="o">
+              					  <li>
+                   					 <a class="xiala_a" href="xq?id=${pi.pro_id}&Gg=${listGg[loop.index][o.index].spe_id}&Co=${listCo[loop.index][o.index].spe_id}&Jg=${pi.pri_name}">
+                       				 <div class="imgdiv">
+                            		 <img src="${listtp[loop.index][o.index].img_url}"/>
+                      	   </div>
+                        <div>${pi.pro_name}</div>
+                       			 <p>${pi.pri_name}起</p>
+                   				 </a>
+              					 </li>
+            					 </c:forEach>
+       							 </ul>
+    							 </div>
+						</c:forEach>
+
 						</div>
 					</div>
 				</div>
@@ -272,10 +180,10 @@
 			
 			<div class="content1">
 				<div class="con1_masking">
-				<ul>
-					<li><span class="lbtspan">手机<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
-					<li><span class="lbtspan">电脑<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
-					<li><span class="lbtspan">家电<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
+				<ul class="com_left_ul">
+					<li><span class="lbtspan" name="JGGD">价格 ↑<img src="../img/右箭头 (1).png"/ class="spanimg2"></span></li>
+					<li><span class="lbtspan">热议商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
+					<li><span class="lbtspan">推荐商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
 					<li><span class="lbtspan">笔记本 平板<img src="../img/右箭头 (1).png" class="spanimg"/></span></li>
 					<li><span class="lbtspan">出行 穿戴<img src="../img/右箭头 (1).png"/></span></li>
 					<li><span class="lbtspan">耳机 音响<img src="../img/右箭头 (1).png"/></span></li>
@@ -285,13 +193,54 @@
 					<li><span class="lbtspan">电源 配件<img src="../img/右箭头 (1).png"/></span></li>
 				</ul>
 				<div class="com_2">
-					
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<c:forEach var="tj" items="${listspJGG}" varStatus="loop">
+							<li class="com_right_li"><a class="com_right_a"
+								href="xq?id=${tj.pro_id}&Gg=${listGgJGG[loop.index].spe_id}&Co=${listCoJGG[loop.index].spe_id}&Jg=${tj.pri_name}">
+									<img src="${listtpJGG[loop.index].img_url}"
+									class="com_right_a_img" /> <span class="com_right_a_span">${tj.pro_name}</span>
+							</a></li>
+						</c:forEach>
+						</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<li	class="com_right_li">
+								<a class="com_right_a">
+									<img src="../img/Xiaomi 13下拉.png" class="com_right_a_img"/>
+									<span class="com_right_a_span">Xiaomi 数字旗舰</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+						<c:forEach var="tj" items="${listspRAND}" varStatus="loop">
+							<li class="com_right_li"><a class="com_right_a"
+								href="xq?id=${tj.pro_id}&Gg=${listGgRAND[loop.index].spe_id}&Co=${listCoRAND[loop.index].spe_id}&Jg=${tj.pri_name}">
+									<img src="${listtpRAND[loop.index].img_url}"
+									class="com_right_a_img" /> <span class="com_right_a_span">${tj.pro_name}</span>
+							</a></li>
+						</c:forEach>
+					</ul>
+					</div>
+					<div class="con1_masking_tow2">
+						<ul class="com_right_ul">
+							<li	class="com_right_li">
+								<a class="com_right_a">
+									<img src="../img/Xiaomi 13下拉.png" class="com_right_a_img"/>
+									<span class="com_right_a_span">Xiaomi 数字旗舰</span>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 				</div>
 				<!-- banner1-->
 				<div class="bannerPc banner banner1">
 					<ul class="bxslider">
-							<li><a href="#"><img src="../img/4.jpg" alt="" title=""/></a> </li>
+							<li><a href="#"><img src="../img/lbtx.png" alt="" title=""/></a> </li>
 							<li><a href="#"><img src="../img/3.webp" alt="" title=""/></a> </li>
 							<li><a href="#"><img src="../img/6.webp" alt="" title=""/> </a></li>
 							<li><a href="#"><img src="../img/2.webp" alt="" title=""/> </a></li>
@@ -324,7 +273,7 @@
 				</div>
 				<div class="con3_title">
 					<h2>热卖商品</h2>
-					<a>查看更多</a>
+					<a></a>
 				</div>
 				<div class="con3_cont">
 					<div class="con3_cont_left">
@@ -352,7 +301,7 @@
 				</div>
 				<div class="con4_title">
 					<h2>最新上架</h2>
-					<a>查看更多</a>
+					<a></a>
 				</div>
 				<div class="con4_cont">
 					<div class="con4_cont_left">
@@ -517,8 +466,26 @@
 						</div>
 						
 					</div>
-			<!--下拉列表的js-->
-						<script>
+				<script type="text/javascript">
+   				 $(function(){
+     				   $(".spfl").click(function(){
+     					   	 var flname =$(this).text();
+          			 		
+     					   	 var currentIndex = $(this).index() + 1; // 获取当前点击的li元素在父元素中的索引，加1是因为索引从0开始
+          			        location.href = 'SouSuoServlet?fenlei=' + currentIndex+'&flname='+flname;
+						
+     					 });
+   					});
+				</script>
+				<script type="text/javascript">
+   				 $(function(){
+     				   $("#JGGD").click(function(){
+     					   	 var name =$(this).text();		
+     					   	 alert(name)
+     					 });
+   					});
+				</script>
+					<script>
 							$(function(){
 								$(".nav_ul li").mouseover(function(){
 									//显示总容器
@@ -526,14 +493,12 @@
 									// 获取第几个元素触发
 									var index = $(this).index();
 									
-									if(index === 0) {
-										return; // 不处理第一个 li 元素
-									}
+									
 									
 									//隐藏所有
 									$('.navDiv').hide();
 									//只显示当前
-									$('.navDiv').eq(index-1).show();
+									$('.navDiv').eq(index).show();
 									
 									// 当鼠标悬停在最后两个 <li> 上时，设置 .xiala 的高度为 0
 									if (index >= $(".nav_ul li").length - 2) {
@@ -564,12 +529,6 @@
 										$('.navDiv').hide();
 									}
 								});
-								//悬停在第一个li上
-								  $(".nav_ul li:first-child").mouseover(function(){
-								        // 鼠标悬停在第一个 li 元素上时执行移出列表的操作
-								        $(".xiala").css('height', '0');
-								        $('.navDiv').hide();
-								    });
 								//移出列表
 								$(".nav_ul li span").mouseout(function(e){
 									// 设置总容器

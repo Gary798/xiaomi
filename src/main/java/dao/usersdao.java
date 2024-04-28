@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import entity.advertisements;
+import entity.category;
 import entity.images;
 import entity.products;
 import entity.products_specification;
@@ -281,34 +282,27 @@ public class usersdao extends BaseDAO{
 		
 		
 		
-	//查询并且分页
-	public Map<String, Object> selectxiala(int curpage, int pagesize) {
-		String sql ="SELECT p.pro_id,p.pro_name AS 商品名称,MIN(pr.pri_name) AS 最低价格 FROM products AS p JOIN products_specification AS ps ON p.pro_id=ps.pro_id JOIN specification_detail AS sd ON ps.spe_id=sd.spe_id JOIN price_combinations AS pc ON sd.sp_de_id=pc.sp_de_id JOIN price AS pr ON pc.pri_id=pr.pri_id WHERE p.cate_id=4 GROUP BY p.pro_id,p.pro_name ORDER BY MIN(pr.pri_name) DESC limit ?,?";
-			
-	List<products> list = this.executeQuery(sql, new Mapper<products>() {
-
-		@Override
-		public List<products> map(ResultSet rs) throws SQLException {
-			List<products> list =new ArrayList<>();
-			while (rs.next()) {
-				products sp=new products(rs.getInt(1),rs.getString(2), rs.getBigDecimal(3));
-				list.add(sp);
-			}
-			return list;
-		}
-		
-	}, (curpage - 1) * pagesize, pagesize);
 	
-	String sql2 = "SELECT COUNT(*) AS 总条数 FROM (    SELECT        p.pro_name AS 商品名称,        MIN(pr.pri_name) AS 最低价格    FROM        products AS p    JOIN        products_specification AS ps ON p.pro_id = ps.pro_id    JOIN        specification_detail AS sd ON ps.spe_id = sd.spe_id    JOIN       price_combinations AS pc ON sd.sp_de_id = pc.sp_de_id    JOIN        price AS pr ON pc.pri_id = pr.pri_id    WHERE       p.cate_id = 4    GROUP BY       p.pro_name) AS subquery;";
-	Object obj = this.singleObject(sql2);
-	Map<String, Object>map = new HashMap<>();
-	map.put("list", list);
-	map.put("total", obj);
-	return map;
+	//查询全部分类
+	public List<category> FenLei() {
+		String sql ="SELECT * FROM category";
+		return this.executeQuery(sql,new Mapper<category>() {
+
+			@Override
+			public List<category> map(ResultSet rs) throws SQLException {
+				List<category> list = new ArrayList<category>();
+				while (rs.next()) {
+					category ca = new category(rs.getInt(1),rs.getString(2));
+					list.add(ca);
+				}
+				return list;
+			}
+			
+		});
 	}
 	//查询类别为4最低价格
-	public List<products> selectxiala2(Integer s,Integer l) {
-		String sql ="SELECT p.pro_id,p.pro_name AS 商品名称,p.pro_description,MIN(pr.pri_name) AS 最低价格 FROM products AS p JOIN products_specification AS ps ON p.pro_id=ps.pro_id JOIN specification_detail AS sd ON ps.spe_id=sd.spe_id JOIN price_combinations AS pc ON sd.sp_de_id=pc.sp_de_id JOIN price AS pr ON pc.pri_id=pr.pri_id WHERE p.cate_id=4 GROUP BY p.pro_id,p.pro_name ORDER BY MIN(pr.pri_name) DESC limit ?,?";
+	public List<products> selectxiala2(Integer fl,Integer s,Integer l) {
+		String sql ="SELECT p.pro_id,p.pro_name AS 商品名称,p.pro_description,MIN(pr.pri_name) AS 最低价格 FROM products AS p JOIN products_specification AS ps ON p.pro_id=ps.pro_id JOIN specification_detail AS sd ON ps.spe_id=sd.spe_id JOIN price_combinations AS pc ON sd.sp_de_id=pc.sp_de_id JOIN price AS pr ON pc.pri_id=pr.pri_id WHERE p.cate_id="+fl+" GROUP BY p.pro_id,p.pro_name ORDER BY MIN(pr.pri_name) DESC limit ?,?";
 			
 		return this.executeQuery(sql, new Mapper<products>() {
 
@@ -342,6 +336,58 @@ public class usersdao extends BaseDAO{
 			
 		},s,l);
 	}
+		public Map<String, Object> selectsousuo(String name,Integer fl, int curpage, int pagesize) {
+		    String sql = "SELECT p.pro_id, p.pro_name AS 商品名称, p.pro_description, MIN(pr.pri_name) AS 最低价格 "
+		            + "FROM products AS p "
+		            + "JOIN products_specification AS ps ON p.pro_id = ps.pro_id "
+		            + "JOIN specification_detail AS sd ON ps.spe_id = sd.spe_id "
+		            + "JOIN price_combinations AS pc ON sd.sp_de_id = pc.sp_de_id "
+		            + "JOIN price AS pr ON pc.pri_id = pr.pri_id "
+		            + "WHERE 1 = 1";
+
+		    String sqlCount = "SELECT COUNT(*) AS 结果数量 FROM ("
+		            + "SELECT p.pro_id, p.pro_name AS 商品名称, p.pro_description, MIN(pr.pri_name) AS 最低价格 "
+		            + "FROM products AS p "
+		            + "JOIN products_specification AS ps ON p.pro_id = ps.pro_id "
+		            + "JOIN specification_detail AS sd ON ps.spe_id = sd.spe_id "
+		            + "JOIN price_combinations AS pc ON sd.sp_de_id = pc.sp_de_id "
+		            + "JOIN price AS pr ON pc.pri_id = pr.pri_id "
+		            + "WHERE 1 = 1";
+
+		 // 添加条件
+		    if (name != null && !name.isEmpty()) {
+		        sql += " AND p.pro_name LIKE '%" + name + "%'";
+		        sqlCount += " AND p.pro_name LIKE '%" + name + "%'";
+		    }
+		    if (fl>0) {
+		        sql += " AND p.cate_id  =" + fl + "";
+		        sqlCount += " AND p.cate_id  =" + fl + "";
+		    }
+		 
+		    sql += " GROUP BY p.pro_id, p.pro_name ORDER BY MIN(pr.pri_name) DESC LIMIT ?, ?";
+		    sqlCount += " GROUP BY p.pro_id, p.pro_name) AS 查询结果";
+
+		    List<products> list = this.executeQuery(sql, new Mapper<products>() {
+		        @Override
+		        public List<products> map(ResultSet rs) throws SQLException {
+		            List<products> list = new ArrayList<>();
+		            while (rs.next()) {
+		                products sp = new products(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBigDecimal(4));
+		                list.add(sp);
+		            }
+		            return list;
+		        }
+		    }, (curpage - 1) * pagesize, pagesize);
+
+		    Object obj = this.singleObject(sqlCount);
+		    Map<String, Object> map = new HashMap<>();
+		    map.put("list", list);
+		    map.put("total", obj);
+		    return map;
+		}
+
+	
+	//查询购物车id根据id查询不同用户的购物车
 	public List<shopping_cart> Gwcsl(Integer yhid) {
 		String sql = "SELECT COUNT(*) AS total_items FROM shopping_cart WHERE user_id=?";
 		return this.executeQuery(sql, new Mapper<shopping_cart>() {
@@ -414,7 +460,61 @@ public class usersdao extends BaseDAO{
 			
 		},s,l);
 	}
+	//推荐商品随机查询数据
+	public List<products> selectRAND(Integer s,Integer l){
+		String sql = "SELECT p.pro_id,\n"
+				+ "       p.pro_name AS 商品名称,\n"
+				+ "       p.pro_description,\n"
+				+ "       MIN(pr.pri_name) AS 最低价格\n"
+				+ "FROM products p\n"
+				+ "JOIN products_specification ps ON p.pro_id = ps.pro_id\n"
+				+ "JOIN specification_detail sd ON ps.spe_id = sd.spe_id\n"
+				+ "JOIN price_combinations pc ON sd.sp_de_id = pc.sp_de_id\n"
+				+ "JOIN price pr ON pc.pri_id = pr.pri_id\n"
+				+ "GROUP BY p.pro_id, p.pro_name, p.pro_description\n"
+				+ "ORDER BY RAND() DESC LIMIT ?,?;";
+		 return this.executeQuery(sql, new Mapper<products>() {
+
+			@Override
+			public List<products> map(ResultSet rs) throws SQLException {
+				List<products> list =new ArrayList<>();
+				while (rs.next()) {
+					products sp=new products(rs.getInt(1),rs.getString(2),rs.getString(3), rs.getBigDecimal(4));
+					list.add(sp);
+				}
+				return list;
+			}
+		},s,l);
+		
+	}
 	
+	//推荐商品随机查询数据
+		public List<products> selectJGG(Integer s,Integer l){
+			String sql = "SELECT p.pro_id,\n"
+					+ "       p.pro_name AS 商品名称,\n"
+					+ "       p.pro_description,\n"
+					+ "       MIN(pr.pri_name) AS 最低价格\n"
+					+ "FROM products p\n"
+					+ "JOIN products_specification ps ON p.pro_id = ps.pro_id\n"
+					+ "JOIN specification_detail sd ON ps.spe_id = sd.spe_id\n"
+					+ "JOIN price_combinations pc ON sd.sp_de_id = pc.sp_de_id\n"
+					+ "JOIN price pr ON pc.pri_id = pr.pri_id\n"
+					+ "GROUP BY p.pro_id, p.pro_name, p.pro_description\n"
+					+ "ORDER BY MIN(pr.pri_name) ASC LIMIT 0,16;";
+			 return this.executeQuery(sql, new Mapper<products>() {
+
+				@Override
+				public List<products> map(ResultSet rs) throws SQLException {
+					List<products> list =new ArrayList<>();
+					while (rs.next()) {
+						products sp=new products(rs.getInt(1),rs.getString(2),rs.getString(3), rs.getBigDecimal(4));
+						list.add(sp);
+					}
+					return list;
+				}
+			},s,l);
+			
+		}
 	//查询商品图片
 	public List<images> xialatp(Integer tp){
 		String sql ="SELECT i.img_url FROM products p JOIN images i ON p.pro_id = i.pro_id WHERE p.pro_id = "+tp+"";
@@ -448,6 +548,7 @@ public class usersdao extends BaseDAO{
 			}
 		});
 	}
+	
 	//详情图片查询
 		public List<advertisements> selectXQimg(Integer id) {
 			String sql="SELECT ad_url FROM advertisements WHERE pro_id="+id+";";
@@ -656,6 +757,8 @@ public class usersdao extends BaseDAO{
 	
 	public static void main(String[] args) {
 		usersdao dao = new usersdao();
-		System.out.println(dao.selectxiala2(0, 6));
+
+		System.out.println(dao.selectRAND(0,6));
+		
 	}
 }

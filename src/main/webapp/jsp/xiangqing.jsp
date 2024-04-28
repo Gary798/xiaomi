@@ -12,7 +12,7 @@
 		<script src="../js/头尾.js"></script>
 		<style>
 			.sousuo{
-				left: 500px;
+				left: 563px;
 			}
 			*{
 				margin: 0 auto;
@@ -275,129 +275,32 @@
 							<div class="header_nav">
 							<div class="logo"><img src="../img/logo-mi2.png"/></div>
 							<ul class="nav_ul">
-								<li><span id="qbsp">全部商品分类</span></li>
-								<li><span id="xm">Xiaomi手机</span></li>
-								<li><span id="hm">Redmi手机</span></li>
-								<li><span id="dn">电脑</span></li>
-								<li><span id="bjb">笔记本</span></li>
-								<li><span id="pb">平板</span></li>
-								<li><span id="jd">家电</span></li>
-								<li><span id="lyq">路由器</span></li>
-								<li><span>服务中心</span></li>
-								<li><span>社区</span></li>
+								<c:forEach var="oy" items="${listFL}">
+								<li><span>${oy.cate_name}</span></li>
+								</c:forEach>
+								
+								<li><span><a href="xiala">小米商城</a></span></li>
 							</ul>
-							<div class="sousuo">
-									<form>
-										<input type="text" class="ssk" style="width:221px;height:27px;background:#eee" />
-										<input type="submit" class="fdj" value=""/>
-									</form>
-							</div>
+							
 							<div class="xiala">
-								<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listsp1}" varStatus="loop">
-									<li>
-										<a class="xiala_a" href="xq?id=${listsp1[loop.index].pro_id}&Gg=${listGg1[loop.index].spe_id}&Co=${listCo1[loop.index].spe_id}&Jg=${listsp1[loop.index].pri_name}">
-											<div class="imgdiv">
-											<img src="${listtp1[loop.index].img_url}"/>
-											</div>
-											<div>${listsp1[loop.index].pro_name}</div>
-											<p>${listsp1[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-								<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a" href="xq?id=${listsp[loop.index].pro_id}&Gg=${listGg[loop.index].spe_id}&Co=${listCos[loop.index].spe_id}&Jg=${listsp[loop.index].pri_name}">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
-							<div class="navDiv">
-								<ul class="children-list">
-									<c:forEach var="image" items="${listtp}" varStatus="loop">
-									<li>
-										<a class="xiala_a">
-											<div class="imgdiv">
-											<img src="${listtp[loop.index].img_url}"/>
-											</div>
-											<div>${listsp[loop.index].pro_name}</div>
-											<p>${listsp[loop.index].pri_name}起</p>
-										</a>
-									</li>
-								</c:forEach>
-								</ul>
-							</div>
+								<c:forEach var="image" items="${listFL}" varStatus="loop">
+    <div class="navDiv">
+        <ul class="children-list">
+            <c:forEach items="${listsp1[loop.index]}" var="pi" varStatus="o">
+                <li>
+                    <a class="xiala_a" href="xq?id=${pi.pro_id}&Gg=${listGg1[loop.index][o.index].spe_id}&Co=${listCo1[loop.index][o.index].spe_id}&Jg=${pi.pri_name}">
+                        <div class="imgdiv">
+                            <img src="${listtp1[loop.index][o.index].img_url}"/>
+                        </div>
+                        <div>${pi.pro_name}</div>
+                        <p>${pi.pri_name}起</p>
+                    </a>
+                </li>
+            </c:forEach>
+        </ul>
+    </div>
+</c:forEach>
+
 							</div>
 						</div>
 					</div>

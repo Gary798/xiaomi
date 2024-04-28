@@ -23,4 +23,8 @@ public class category {
 	public category() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "category [cate_id=" + cate_id + ", cate_name=" + cate_name + "]";
+	}
 }

@@ -38,5 +38,9 @@ public class images {
 			super();
 			this.img_url = img_url;
 		}
+		@Override
+		public String toString() {
+			return "images [img_id=" + img_id + ", img_url=" + img_url + ", pro_id=" + pro_id + "]";
+		}
 		
 }

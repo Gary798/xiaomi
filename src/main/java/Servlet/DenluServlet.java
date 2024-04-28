@@ -42,7 +42,9 @@ public class DenluServlet extends HttpServlet {
                 request.getRequestDispatcher("/jsp/xiala").forward(request, response);
             }
         }else {
+
 			response.sendRedirect("Denlushibai");
+
 		}
 	}
 	

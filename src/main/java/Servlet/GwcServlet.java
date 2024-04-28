@@ -23,7 +23,6 @@ import entity.shopping_cart;
 @WebServlet("/jsp/DemoServlet")
 public class GwcServlet extends HttpServlet {
     usersdao dao = new usersdao();
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Color = request.getParameter("Color");
         String Gg = request.getParameter("Gg");

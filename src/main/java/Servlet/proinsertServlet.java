@@ -26,6 +26,7 @@ public class proinsertServlet extends HttpServlet{
 	        dao.insertpro(proName, proDes, cate_id, pro_state);
 	        int id = (int) dao.selectproid();
 	        dao.insertimg(id);
+	        dao.insertadvimg(id);
 		    //类别数据
 		    List<category> prolist = catedao.queryall();  
 		    request.setAttribute("prolist", prolist);

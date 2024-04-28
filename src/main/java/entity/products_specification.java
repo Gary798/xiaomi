@@ -4,7 +4,9 @@ public class products_specification {
 	 	private int spe_id;
 	    private String spe_name;
 	    private int pro_id;
+	    //临时字段
 	    private String spe_det;
+
 		/**
 		 * @param spe_id
 		 * @param spe_det

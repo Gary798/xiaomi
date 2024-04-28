@@ -1,0 +1,157 @@
+@charset "UTF-8";
+li{
+	list-style: none;
+}
+body{
+	background-color: #fff;
+}
+a{
+	text-decoration: none;
+	cursor:pointer;
+}
+.boxleft{
+	width: 20%;
+	border: 1px solid #e7eaec;
+	float: left;
+	border-radius: 3px;
+}
+.cont{
+	padding: 15px 20px 20px 20px;
+}
+.til,.til2{
+	text-align: left;
+	padding: 5px 10px;
+	color: #333;
+	font-size: 14px;
+	background-color: #f0f3f4;
+	border: 1px solid #e7eaec;
+}
+.txbox{
+	height: 150px;
+	background-color: #fff;
+	text-align: center;
+}
+.txbox>a{
+	display: block;
+	font-size: 13px;
+	margin-top: 5px;
+	color: #337ab7;
+}
+.txbox>a:hover{
+	color: #23527c;
+}
+.tp{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.cont ul {
+    padding-left: 0;
+	margin-top:3px ;
+}
+.tp>img{
+	width: 120px;
+	height: 120px;
+}
+.cont {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 20px 20px;
+}
+
+.cont li {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e7eaec;
+	padding: 6px 0px;
+	color: #676a6c;
+}
+.cont li:nth-child(4){
+	border-bottom:1px solid #e7eaec ;
+}
+.cont li > span {
+    font-size: 14px;
+}
+
+.p_r {
+    margin-left: auto;
+}
+/* left */
+.hidden {
+    display: none;
+}
+.boxright{
+	width: 79%;
+	border: 1px solid #e7eaec;
+	float: left;
+	margin-left: 5px;
+	border-radius: 3px;
+}
+.cont2{
+	padding: 15px 20px 20px 20px;
+	float: left;
+	width: 100%;
+}
+.cont2 ul{
+	float: left;
+	margin: 0;
+	width: 100%;
+}
+.cont2 li{
+	float: left;
+	font-size: 14px;
+	padding: 10px 20px 10px 25px;
+	border-top: 3px solid #fff;
+	cursor: pointer;
+}
+.cont2 li:nth-child(1){
+	border-top-color: #1890ff;
+}
+.myform div,.myform2 div{
+	float: left;
+	font-size: 14px;
+	color: #676a6c;
+	width:100%;
+	padding: 10px 0px;
+}
+.myform div label,.myform2 div label{
+	display: block;
+	width: 10%;
+	text-align: right;
+	float: left;
+	margin-top: 1px;
+}
+.myform div input[type=text],.myform2 div input[type=text]{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: none;
+	width: 83%;
+	height: 20px;
+}
+.myform div input[type=button],.myform2 div input[type=button]{
+	 background-color:#1ab394;
+	 border: none;
+	 border-radius: 3px;
+	 color: #fff;
+	 padding: 3px 10px 5px 10px;
+}
+.myform div input[type=button]:nth-child(1),.myform2 div input[type=button]:nth-child(1){
+	 background-color:#1ab394;
+	 margin-left: 10%;
+	 margin-right: 10px;
+}
+.myform div input[type=button]:nth-child(2),.myform2 div input[type=button]:nth-child(2){
+	 background-color: #f8ac59;
+}
+.myform div input[type=button]:nth-child(1):hover,.myform2 div input[type=button]:nth-child(1):hover{
+	 background-color:#18a689;
+}
+.myform div input[type=button]:nth-child(2):hover,.myform2 div input[type=button]:nth-child(2):hover{
+	 background-color: #f7a54a;
+}
+/* 单选 */
+.myform div input[type=radio]{
+	 margin-top: 6px;
+}

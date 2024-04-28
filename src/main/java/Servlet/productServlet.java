@@ -50,7 +50,7 @@ public class productServlet extends HttpServlet {
          request.setAttribute("pro_time", pro_time);
          
     	 request.setAttribute("curpage", curpage);
-    	 request.setAttribute("list", list);
+    	 request.setAttribute("productlist", list);
     	 request.setAttribute("prolist", prolist);
     	 request.setAttribute("total",  map.get("total"));
     	 request.getRequestDispatcher("product.jsp").forward(request, response);

@@ -159,6 +159,9 @@ table td:nth-child(3) { /* 第8列，即"创建时间"那一列 */
 .flubtn:hover{
 	background-color: #ec971f;
 }
+.upadvbtn:hover{
+	background-color: #31b0d5;
+}
 
 .cont{
 	border-radius:10px ;
@@ -170,12 +173,14 @@ table td:nth-child(3) { /* 第8列，即"创建时间"那一列 */
 .updatebox{
 	width: 800px;
 }
+
 .proimg{
 	width: 49%;
 	float: left;
 	padding: 10px 0px;
 	text-align: center;
 }
+
 .proimg img{
 	width: 275px;
 	height:275px;
@@ -186,6 +191,10 @@ table td:nth-child(3) { /* 第8列，即"创建时间"那一列 */
 	float: left;
 	padding: 10px 0px
 }
+
+
+
+
 .procont textarea{
 	margin-left:25px;
 	outline: none;

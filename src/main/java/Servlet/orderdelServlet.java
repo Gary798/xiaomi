@@ -6,15 +6,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.usersdao;
-@WebServlet("/jsp/delbtnSer")
-public class tabdelbtnServlet extends HttpServlet{
-	usersdao dao = new usersdao();
+import dao.ordersDAO;
+@WebServlet("/jsp/orderdelbtnSer")
+public class orderdelServlet extends HttpServlet{
+	ordersDAO dao = new ordersDAO();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		  request.setCharacterEncoding("utf-8");
 	      Integer id =  Integer.parseInt(request.getParameter("id")) ;
-	      dao.deletecart(id);
-	      dao.admindeleteuser(id);
+	      dao.orderdelete(id);
 	}
 }

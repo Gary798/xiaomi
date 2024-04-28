@@ -1,0 +1,242 @@
+@charset "UTF-8";
+.nav{
+	border-radius:10px ;
+	background-color: white;
+	padding: 10px 15px;
+	box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.nav input[type=text]{
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	height:23px;
+	margin-right:5px;
+	outline: none;
+}
+button{
+	cursor: pointer;
+}
+.se{
+	border-radius: 20px;
+	width: 60px;
+	height: 30px;
+	cursor: pointer;
+}
+.re{
+	border-radius: 20px;
+	width: 60px;
+	height: 30px;
+	cursor: pointer;
+}
+.se{
+	background-color: #1ab394;
+	color: #fff;
+	line-height: 28px;
+}
+.re{
+	background-color: #f8ac59;
+	color: #fff;
+	line-height: 28px;
+}
+.se:hover{
+	background-color: #18a689;
+}
+.re:hover{
+	background-color: #f7a54a;
+}
+/* 内容 */
+.cont{
+	border-radius:10px ;
+	background-color: white;
+	padding: 10px 15px;
+	box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+	margin-top: 10px;
+}
+/* 增删改按钮 */
+.inbtn{
+	background-color: #1c84c6;
+}
+.inbtn:hover{
+	background-color: #1a7bb9;
+}
+.upbtn{
+	background-color: #1dc5a3;
+}
+.upbtn:hover{
+	background-color: #18a689;
+}
+.delbtn{
+	background-color: #ef6776;
+}
+.delbtn:hover{
+	background-color: #d9534f;
+}
+.flubtn{
+	background-color: #f8ac59;
+}
+.flubtn:hover{
+	background-color: #ec971f;
+}	
+button{
+	padding: 5px 10px;
+	border: 0px;
+	color: white;
+	border-radius: 3px;
+}
+/* 表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+	color: #676a6c;
+	font-size: 13px;
+	
+}
+
+table tr{
+	border-bottom: 1px solid #e7eaec;
+	position: relative;
+}
+table tr:hover{
+	background-color:#f1f1f1;
+}
+
+table tr:first-child{
+    border-bottom: 1px solid #ccc
+}
+table td {
+    padding: 10px;
+}
+table td:nth-child(1)>span{
+	
+	padding-left: 25px;
+}
+table td:nth-child(1)>input{
+	margin:0px;
+	position: absolute;
+	top:15px;
+	left:15px;
+	
+}
+input[type="checkbox"]{
+	width: 15px;
+	margin: 0px;
+	margin-left: 25px;
+}
+/* 表格按钮 */
+.tabdelbtn{
+	background-color: #ef6776;
+	padding: 3px 6px;
+}
+.tabdelbtn:hover{
+	background-color: #d9534f;
+}
+.tabbjbtn{
+	background-color: #1c84c6;
+	padding: 3px 6px;
+	cursor: pointer;
+}
+.tabbjbtn:hover{
+	background-color: #1a7bb9;
+}
+/* page */
+.oy_p{
+	font-size: 14px;
+}
+select{
+	width:40px;
+	margin: 5px 5px;
+	padding: 2px 6px;
+	border-radius:4px;
+}
+a{
+	text-decoration: none;
+	margin: 5px 5px;
+	padding: 2px 6px;
+	border: 1px solid gray;
+	font-size: 12px;
+	border-radius:4px;
+	cursor:pointer;
+}
+/* 新增弹窗 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.3);
+  background-color:#fff;
+  padding: 20px;
+  border-radius: 5px;
+  width:800px;
+}
+.val>p{
+	text-align: left;
+	color: #6379bb;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+}
+/* 新增窗按钮 */
+.btnbox{
+			width:100%;
+			float: left;
+			text-align: center;
+		}
+		.close-btn {
+		  background-color:#ed5565;
+		  margin-left:10px;
+		  margin-top: 10px;
+		}
+		.close-btn:hover{
+		  background-color:#ef6776;
+		}
+		.save-btn {
+		  background-color:#1ab394;
+	   	  margin-right:10px;
+	   	  margin-top: 10px;
+		}
+		.save-btn:hover{
+		  background-color:#18a689;
+		}
+/* 新增表单 */
+.speinsform div{
+			width: 50%;
+			float: left;
+			padding: 10px 0px
+		}
+.speinsform div>label {
+			float: left;
+			display: block;
+		    padding-top: 3px;
+		    margin-bottom: 0;
+		    text-align: right;
+			font-size: 13px;
+			width: 29.33%;
+		}
+.speinsform div>select{
+			float: left;	
+			width: 175px;
+			outline: none;
+			border: 1px solid #ddd;
+			height: 27px;
+			margin: 0;
+			margin-left: 25px;
+		}
+.speinsform div>input{
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			height:23px;
+			margin-right:5px;
+			outline: none;
+			margin: 0px;
+			margin-left: 25px;
+		}

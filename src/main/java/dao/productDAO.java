@@ -65,7 +65,6 @@ public class productDAO extends BaseDAO{
 		    Map<String, Object> map = new HashMap<String, Object>();
 		    map.put("list", list);
 		    map.put("total", obj);
-		    
 		    return map;
 		}
 		//删除
@@ -114,4 +113,15 @@ public class productDAO extends BaseDAO{
 			Object obj = this.singleObject(sql);
 			return obj;
 		}
+		//新增详情图片
+				public int insertadvimg(int pro_id) {
+					 String sql = "INSERT INTO advertisements (ad_url, ad_display, pro_id)VALUES\r\n"
+					 		+ "('../img/ayou.png', 1, ?),";
+					 return this.execute(sql, pro_id);
+				 }
+				//修改商品图片
+				public int proupadvimg(String img_url,int id) {
+					String sql = "UPDATE advertisements SET ad_url=? WHERE pro_id=?";
+					return this.execute(sql,img_url,id);
+				}
 }

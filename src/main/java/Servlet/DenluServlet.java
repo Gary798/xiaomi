@@ -34,11 +34,11 @@ public class DenluServlet extends HttpServlet {
 	    if (userList != null && !userList.isEmpty()) {
             users currentUser = userList.get(0);
             if (currentUser.getUser_identity() == 1) {
-                request.setAttribute("list", userList);
+            	session.setAttribute("list", userList);
                 request.getRequestDispatcher("admin.jsp").forward(request, response);
             } else {
             	
-                 session.setAttribute("list",userList);
+                session.setAttribute("list",userList);
                 request.getRequestDispatcher("/jsp/xiala").forward(request, response);
             }
         }else {

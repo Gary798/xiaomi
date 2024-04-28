@@ -8,9 +8,14 @@
 		<meta charset="utf-8">
 		<title>角色管理</title>
 	</head>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
 	<link rel="stylesheet" href="../css/user.css"/>
 	<link rel="stylesheet" href="../css/upbox.css"/>
-	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script src="../js/jquery-3.1.0.js"></script>
 	<script>
 	$(function(){
 		 //新增数据
@@ -31,8 +36,6 @@
                  url: 'insertuser',
                  data: formData,
                  success: function(response){
-                     // 处理成功响应
-                     alert('保存成功');
                   	 // 重置表单
                      $('input[name="username"]').val('');
                      $('select[name="gender"]').val('1');
@@ -69,8 +72,6 @@
         	            url: 'delbtnSer',
         	            data: { id: id }, // 将ID包装在对象中传递
         	            success: function(response){
-        	                // 处理成功响应
-        	                alert('删除成功');
         	                // 在此处可能需要刷新页面或更新数据表格等
         	                location.href = "fy";
         	            },
@@ -100,7 +101,6 @@
 	                         type: 'GET',
 	                         data: {userIds: userIds},
 	                         success: function(response) {
-	                        	 alert('删除成功');
 	                        	 location.href = "fy";
 	                         },
 	                         error: function(xhr, status, error) {
@@ -208,7 +208,6 @@
 	     	            type: 'GET', // 使用POST方法发送数据
 	     	            data: upData, // 发送的数据
 	     	            success: function(response) {
-	     	                alert('保存成功');
 	     	                // 关闭修改面板
 	     	                $('#overlay').css('display', 'none');
 	     	                // 获取所有复选框元素
@@ -364,7 +363,7 @@
 					<td>操作</td>
 				</tr>
 				<!-- 循环打印表格 -->
-				<c:forEach items="${list}" var="p">
+				<c:forEach items="${userlist}" var="p">
 					<tr>
 						<td><input type="checkbox" class="checkid" name="checkid" /><span>${p.user_id}</span></td>
 						<td>${p.user_name}</td>
@@ -387,7 +386,7 @@
 			<x:page controller="fy" pagesize="8" total="${total}" curpage="${curpage}" where="uname=${name}&uaccount=${uaccount}&ustate=${state}&creat_Time=${creatTime}"/>
 		</div>
 		<!-- 刷新表格数据 -->
-		<c:if test="${list==null}">
+		<c:if test="${userlist==null}">
 			<script type="text/javascript">
 				location.href = "fy"
 			</script>

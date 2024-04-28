@@ -9,10 +9,16 @@
 		<title>商品管理</title>
 		<link rel="stylesheet" href="../css/pro.css"/>
 		<link rel="stylesheet" href="../css/upbox.css"/>
+		<link rel="stylesheet" href="../css/upadvimg.css"/>
 		<link rel="stylesheet" href="../css/proinsert.css"/>
 	</head>
-	<script src="../js/jquery-3.5.1.min.js"></script>
-	<script>
+	<style type="text/css">
+		body{
+			background-color: #fff;
+		}
+	</style>
+	<script src="../js/jquery-3.1.0.js"></script>
+			<script>
 		$(function(){
 			 //新增数据
 	         $('.save-btn').click(function(){
@@ -29,8 +35,6 @@
 	                 url: 'insertpro',
 	                 data: formData,
 	                 success: function(response){
-	                     // 处理成功响应
-	                     alert('保存成功');
 	                     $('#pro_name').val("");
 	                     $('#pro_des').val("");
 	                     $('#cateco').val("1");
@@ -51,7 +55,7 @@
 	             var checkedCheckboxes = $('.checkid:checked');
 	             if (checkedCheckboxes.length > 0) {
 	                 // 有至少一个复选框被选中
-	                 if (confirm('确定要删除选中的用户吗？')) {
+	                 if (confirm('确定要删除选中的商品吗？')) {
 	                     var proIds = [];
 	                     checkedCheckboxes.each(function() {
 	                         // 获取选中复选框对应的用户ID
@@ -64,7 +68,6 @@
 	                         type: 'GET',
 	                         data: {proIds: proIds},
 	                         success: function(response) {
-	                        	 alert('删除成功');
 	                        	 location.href = "profy";
 	                         },
 	                         error: function(xhr, status, error) {
@@ -75,7 +78,7 @@
 	                 }
 	             } else {
 	                 // 没有复选框被选中
-	                 alert('请先选择要删除的用户');
+	                 alert('请先选择要删除的商品');
 	             }
 	         });
 			//删除当前行数据
@@ -94,8 +97,6 @@
 	        	            url: 'prodelbtnSer',
 	        	            data: { id: id }, // 将ID包装在对象中传递
 	        	            success: function(response){
-	        	                // 处理成功响应
-	        	                alert('删除成功');
 	        	                // 在此处可能需要刷新页面或更新数据表格等
 	        	                location.href = "profy";
 	        	            },
@@ -138,9 +139,9 @@
 	        	        }
 	        	        
 	        	    } else if (checkedCount === 0) {
-	        	        alert('请至少选择一个用户进行修改！');
+	        	        alert('请至少选择一个商品进行修改！');
 	        	    } else {
-	        	        alert('只能选择一个用户进行修改！');
+	        	        alert('只能选择一个商品进行修改！');
 	        	    }
 	        	});
 	         
@@ -189,9 +190,65 @@
 		                 processData: false,
 		                 contentType: false,
 		                 success: function(response) {
-		                	 alert('保存成功');
 		                		// 关闭修改面板
 		     	                $('#overlay').css('display', 'none');
+		     	                // 获取所有复选框元素
+		     	         	    var checkboxes = document.querySelectorAll('.checkid');
+		     	                // 取消所有复选框的选中状态
+		     	                checkboxes.forEach(function(checkbox) {
+		     	         	       checkbox.checked = false;
+		     	         	    });
+		     	               location.href = "profy";
+		                 },
+		                 error: function(xhr, status, error) {
+		                	 alert('保存失败: ');
+		                     // 处理发送失败后的逻辑
+		                 }
+		             });
+		         });
+	      		 
+	      		 
+		         $('.upadvbtn').click(function () {
+		        	    var checkedCount = $('.checkid:checked').length;
+		        	    if (checkedCount === 1) {
+		        	    	var selectedRow = $('.checkid:checked').closest('tr');
+		        	        var proId = selectedRow.find('span').text();
+		        	        var proName = selectedRow.find('td:nth-child(2)').text();
+		        	      	//禁用文本框
+			        	    $('#prodname').prop("disabled", true);
+		        	     	// 显示修改弹窗
+		        	        $('#overlay2').css('display', 'block');
+		        	     	// 将数据填充到修改弹窗中的表单中
+		        	        $('#prodname').val(proName);
+		        	        $('#prodid').val(proId);
+		        	        
+		        	        
+		        	    } else if (checkedCount === 0) {
+		        	        alert('请至少选择一个商品进行修改！');
+		        	    } else {
+		        	        alert('只能选择一个商品进行修改！');
+		        	    }
+		        	});
+		         
+		         
+		      // 点击保存按钮时发送数据到Servlet
+		         $('.up-save-btn2').click(function() {
+		        	 	var prodid = $('input[name="prodid"]').val(); // 获取表单中名为"prodid"的输入框的值
+		        	    var advimg = $('input[name="advimg"]').prop('files')[0]; // 获取上传的文件
+
+		        	    var formData = new FormData(); // 创建一个FormData对象
+		        	    formData.append('prodid', prodid); // 添加名为"prodid"的参数
+		        	    formData.append('advimg', advimg); // 添加名为"advimg"的文件
+	
+		             $.ajax({
+		            	 url: 'proupadvbtnSer',
+		                 type: 'POST',
+		                 data: formData,
+		                 processData: false,
+		                 contentType: false,
+		                 success: function(response) {
+		                		// 关闭修改面板
+		     	                $('#overlay2').css('display', 'none');
 		     	                // 获取所有复选框元素
 		     	         	    var checkboxes = document.querySelectorAll('.checkid');
 		     	                // 取消所有复选框的选中状态
@@ -220,6 +277,17 @@
           var modal = document.getElementById('modal');
           modal.style.display = 'none';
         }
+    	//修改详情图
+    	function upcloseimg() {
+    	  var overlay = document.getElementById('overlay2');
+    	  overlay.style.display = 'none';
+    	  // 获取所有复选框元素
+    	  var checkboxes = document.querySelectorAll('.checkid');
+    	  // 取消所有复选框的选中状态
+    	  checkboxes.forEach(function(checkbox) {
+    	     checkbox.checked = false;
+    	  });
+    	}
     	//修改弹窗
     	function upcloseModal() {
     	  var overlay = document.getElementById('overlay');
@@ -274,7 +342,7 @@
 				                <input type="text" id="pro_name" name="pro_name"></div>
 				                
 				                <div><label for="" class="inlab2" style="margin-right: 15px;">商品简介:</label>
-				                <textarea id="pro_des" name="pro_des" rows="3"></textarea></div>
+				                <textarea id="pro_des" name="pro_des" rows="3" style="max-width: 436px;max-height: 225px;"></textarea></div>
 				                
 				                <div><label for="" id="inla3" style="margin-right: 15px;">商品类别:</label>
 				                <select id="cateco" name="cateco" class="cateco">
@@ -329,10 +397,31 @@
 							
 					</div>
 				</div>
+				<!-- 修改详情图弹窗 -->
+				<div id="overlay2" class="overlay2">
+					<div class="updatebox2">
+						<P>修改详情图</P>
+						<form class="upadvform" enctype="multipart/form-data">
+							
+						<!--<div class="proimg2">
+								<img src="../img/Sonice.jpg" alt="" id="advimg"/>
+							</div> -->
+								<input name="prodid" id="prodid" type="hidden" value="">
+								<div><label for="" >商品名称:</label><input name="prodname" type="text" id="prodname" style="width:249px"></div>
+								<div style="margin-top:15px;margin-bottom:5px;"><label for="" >上传图片:</label><input name="advimg" id="advimg" type="file" ></div>
+							<div class="upbtnbox2" style="width: 100%">
+						     <button type="button" class="up-save-btn2">保存</button>
+						     <button type="button" class="up-close-btn2" onclick="upcloseimg()">关闭</button>
+							</div>
+						</form>
+							
+					</div>
+				</div>
 		<!-- 增删改按钮 -->
 			<div class="contbtn">
 				<button class="inbtn" onclick="showModal()">新增</button>
 				<button class="upbtn">修改</button>
+				<button class="upadvbtn" style="background-color: #23c6c8">修改详情图</button>
 				<button class="delbtn">删除</button>
 				<button class="flubtn" onclick="flu()">刷新</button>
 			</div>
@@ -355,7 +444,7 @@
 				<td>操作</td>
 			</tr>
 			<!-- 循环打印表格 -->
-			<c:forEach items="${list}" var="p">
+			<c:forEach items="${productlist}" var="p">
 				<tr>
 					<td><input type="checkbox" class="checkid" name="checkid" /><span>${p.pro_id}</span></td>
 					<td><input type="hidden" name="img_url" value="${p.img_url}">${p.pro_name}</td>
@@ -376,7 +465,7 @@
 			<x:page controller="profy" pagesize="8" total="${total}" curpage="${curpage}" where="pname=${name}&cate=${cate}&pstate=${pstate}&pro_time=${pro_time}"/>
 		</div>
 		<!-- 刷新表格数据 -->
-		<c:if test="${list==null}">
+		<c:if test="${productlist==null}">
 			<script type="text/javascript">
 				location.href = "profy"
 			</script>

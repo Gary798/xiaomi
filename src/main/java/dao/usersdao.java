@@ -91,6 +91,10 @@ public class usersdao extends BaseDAO{
 		String sql = "DELETE FROM users WHERE user_id=?;";
 		return this.execute(sql,id);
 	}
+	public int deletecart(int id) {
+		String sql = "DELETE FROM shopping_cart WHERE user_id=?;";
+		return this.execute(sql,id);
+	}
 	//修改
 	public int adminupdateuser(String upname,String upphone,String upgender, int upstatus,int isadmin,int id) {
 		String sql = "UPDATE users SET user_name=?,user_tele=?,user_sex=?,user_state=?,user_identity=? WHERE user_id=?";
@@ -121,7 +125,6 @@ public class usersdao extends BaseDAO{
 					}
 					
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return list;

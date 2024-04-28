@@ -178,6 +178,9 @@ iframe {
 	background-color: #ddd;
 	color: black;
 }
+.popup-box li a:hover {
+	color: black;
+}
 .popup-box li:hover path{
 	fill: black;
 }

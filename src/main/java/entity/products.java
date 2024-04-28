@@ -18,6 +18,12 @@ public class products {
 		this.pro_description = pro_description;
 		this.pri_name = pri_name;
 	}
+	/* 查名和id */
+	public products(int pro_id, String pro_name) {
+		super();
+		this.pro_id = pro_id;
+		this.pro_name = pro_name;
+	}
 	private String pro_name;
     private String pro_description;
     private int cate_id;

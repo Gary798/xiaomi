@@ -151,7 +151,7 @@
 			<div class="content1">
 				<div class="con1_masking">
 				<ul class="com_left_ul">
-					<li><span class="lbtspan">价格 ↑<img src="../img/右箭头 (1).png"/ class="spanimg2"></span></li>
+					<li><span class="lbtspan" name="JGGD">价格 ↑<img src="../img/右箭头 (1).png"/ class="spanimg2"></span></li>
 					<li><span class="lbtspan">热议商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
 					<li><span class="lbtspan">推荐商品<img src="../img/右箭头 (1).png"/ class="spanimg1"></span></li>
 					<li><span class="lbtspan">笔记本 平板<img src="../img/右箭头 (1).png" class="spanimg"/></span></li>
@@ -444,6 +444,14 @@
      					   	 var currentIndex = $(this).index() + 1; // 获取当前点击的li元素在父元素中的索引，加1是因为索引从0开始
           			        location.href = 'SouSuoServlet?fenlei=' + currentIndex+'&flname='+flname;
 						
+     					 });
+   					});
+				</script>
+				<script type="text/javascript">
+   				 $(function(){
+     				   $("#JGGD").click(function(){
+     					   	 var name =$(this).text();		
+     					   	 alert(name)
      					 });
    					});
 				</script>

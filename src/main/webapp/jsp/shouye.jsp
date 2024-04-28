@@ -112,6 +112,9 @@
   						</div>
 						</div>
 						<span>|</span>
+						<a href="Geren.jsp">个人中心</a>
+						<span>|</span>
+						
 						<a>我的订单</a>
 						<div class="cen_right_box">
 						<a href="GwServlet">
